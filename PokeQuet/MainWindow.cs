@@ -1,11 +1,15 @@
 ﻿using System;
 using Gtk;
 using PokeQuet;
+using Newtonsoft.Json;
+using System.IO;
 
 public partial class MainWindow : Gtk.Window
 {
-
+    public Card[] AllCards;
     public Player ActivePlayer { get; set; }
+    public Player Player1 { get; set; }
+    public Player Player2 { get; set; }
     public Deck TieCards { get; set; }
 
     public MainWindow() : base(Gtk.WindowType.Toplevel)
@@ -15,12 +19,15 @@ public partial class MainWindow : Gtk.Window
 
     public void InitGame()
     {
-
+        LoadCards();
+        Player1 = new Player("Red");
+        Player2 = new Player("Bug Catcher");
+        Deck.FillDecksFromCardPool(AllCards, Player1.Deck, Player2.Deck);
     }
 
     public void LoadCards()
     {
-
+        AllCards = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));;
     }
 
     public void RestartGame()

@@ -10,6 +10,7 @@ namespace PokeQuet
     }
 
     public class Deck : LinkedList<Card> {
+        public static readonly Random RNG = new Random();
 
         public Card GetCurrentCard()
         {
@@ -21,12 +22,20 @@ namespace PokeQuet
 
         }
 
-        public static void FillDecksFromCardPool(IEnumerable<Card> pool, Deck deck1, Deck deck2)
+        public static void FillDecksFromCardPool(Card[] pool, Deck deck1, Deck deck2)
         {
             deck1.Clear();
             deck2.Clear();
             //TODO: Kartenmischlogik hier
-        }
+
+            for (int i = 1; pool.Length > i ; i++ )
+            {
+                int j = Deck.RNG.Next(i+1);
+                var card1 = pool[i];
+                pool[i] = pool[j];
+                pool[j] = card1;
+            }
+
     }
 
     public class Player{

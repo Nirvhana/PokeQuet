@@ -5,6 +5,8 @@ public partial class MainWindow
 {
 	private global::Gtk.Table table1;
 
+	private global::Gtk.Button button1;
+
 	private global::Gtk.Label label3;
 
 	protected virtual void Build()
@@ -20,15 +22,29 @@ public partial class MainWindow
 		this.table1.RowSpacing = ((uint)(6));
 		this.table1.ColumnSpacing = ((uint)(6));
 		// Container child table1.Gtk.Table+TableChild
-		this.label3 = new global::Gtk.Label();
-		this.label3.Name = "label3";
-		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("label3");
-		this.table1.Add(this.label3);
-		global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table1[this.label3]));
+		this.button1 = new global::Gtk.Button();
+		this.button1.CanFocus = true;
+		this.button1.Name = "button1";
+		this.button1.UseUnderline = true;
+		this.button1.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+		this.table1.Add(this.button1);
+		global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table1[this.button1]));
+		w1.TopAttach = ((uint)(1));
+		w1.BottomAttach = ((uint)(2));
 		w1.LeftAttach = ((uint)(1));
 		w1.RightAttach = ((uint)(2));
 		w1.XOptions = ((global::Gtk.AttachOptions)(4));
 		w1.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table1.Gtk.Table+TableChild
+		this.label3 = new global::Gtk.Label();
+		this.label3.Name = "label3";
+		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("label3");
+		this.table1.Add(this.label3);
+		global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.table1[this.label3]));
+		w2.LeftAttach = ((uint)(1));
+		w2.RightAttach = ((uint)(2));
+		w2.XOptions = ((global::Gtk.AttachOptions)(4));
+		w2.YOptions = ((global::Gtk.AttachOptions)(4));
 		this.Add(this.table1);
 		if ((this.Child != null))
 		{
