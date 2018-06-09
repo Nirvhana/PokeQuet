@@ -14,11 +14,13 @@ public partial class MainWindow : Gtk.Window
 
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
+        InitGame();
         Build();
     }
 
     public void InitGame()
     {
+        
         LoadCards();
         Player1 = new Deck.Player("Red");
         Player2 = new Deck.Player("Bug Catcher");
@@ -57,7 +59,6 @@ public partial class MainWindow : Gtk.Window
             case 1:
                 if (p1Card.type == "Fire") {
                     label3.Text = "hi fire";
-                    textview1.setTextColor(Color.parseColor("#000"));
 
                 }
 
