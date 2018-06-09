@@ -7,9 +7,9 @@ using System.IO;
 public partial class MainWindow : Gtk.Window
 {
     public Card[] AllCards;
-    public Player ActivePlayer { get; set; }
-    public Player Player1 { get; set; }
-    public Player Player2 { get; set; }
+    public Deck.Player ActivePlayer { get; set; }
+    public Deck.Player Player1 { get; set; }
+    public Deck.Player Player2 { get; set; }
     public Deck TieCards { get; set; }
 
     public MainWindow() : base(Gtk.WindowType.Toplevel)
@@ -20,9 +20,10 @@ public partial class MainWindow : Gtk.Window
     public void InitGame()
     {
         LoadCards();
-        Player1 = new Player("Red");
-        Player2 = new Player("Bug Catcher");
+        Player1 = new Deck.Player("Red");
+        Player2 = new Deck.Player("Bug Catcher");
         Deck.FillDecksFromCardPool(AllCards, Player1.Deck, Player2.Deck);
+        CompareDiscipline();
     }
 
     public void LoadCards()
@@ -43,12 +44,61 @@ public partial class MainWindow : Gtk.Window
     }
 
     //TODO: Vielleicht Enum für Disziplin benutzen
-    public void CompareDiscipline(int discipline)
+    public void CompareDiscipline()
     {
+        var p1Card = Player1.Deck.GetCurrentCard();
+        var p2Card = Player2.Deck.GetCurrentCard();
 
+        int discipline = 1;
+        // selected Discipline needs to get implemented
+        switch (discipline) 
+        {
+            // Type
+            case 1:
+                if (p1Card.type == "Fire") {
+                    label3.Text = "hi fire";
+                    textview1.setTextColor(Color.parseColor("#000"));
+
+                }
+
+                else if (p1Card.type == "Water")
+                {
+                    label3.Text = "hi water";
+
+                }
+
+                else if (p1Card.type == "Grass")
+                {
+                    label3.Text = "hi grass";
+
+                }
+
+
+                break;
+
+            // HP
+            case 2:
+                
+                break;
+
+            // ATK
+            case 3:
+                
+                break;
+
+            // DEF
+            case 4:
+                
+                break;
+
+            // SPEED
+            case 5:
+                
+                break;
+        }
     }
 
-    public void RoundDecided(Player winningPlayer, Player losingPlayer)
+    public void RoundDecided(Deck.Player winningPlayer, Deck.Player losingPlayer)
     {
 
     }
