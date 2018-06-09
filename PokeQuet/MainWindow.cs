@@ -7,23 +7,23 @@ using System.IO;
 public partial class MainWindow : Gtk.Window
 {
     public Card[] AllCards;
-    public Deck.Player ActivePlayer { get; set; }
-    public Deck.Player Player1 { get; set; }
-    public Deck.Player Player2 { get; set; }
+    public Player ActivePlayer { get; set; }
+    public Player Player1 { get; set; }
+    public Player Player2 { get; set; }
     public Deck TieCards { get; set; }
 
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
-        InitGame();
         Build();
+        InitGame();
     }
 
     public void InitGame()
     {
         
         LoadCards();
-        Player1 = new Deck.Player("Red");
-        Player2 = new Deck.Player("Bug Catcher");
+        Player1 = new Player("Red");
+        Player2 = new Player("Bug Catcher");
         Deck.FillDecksFromCardPool(AllCards, Player1.Deck, Player2.Deck);
         CompareDiscipline();
     }
@@ -59,6 +59,7 @@ public partial class MainWindow : Gtk.Window
             case 1:
                 if (p1Card.type == "Fire") {
                     label3.Text = "hi fire";
+                    return;
 
                 }
 
@@ -99,14 +100,22 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-    public void RoundDecided(Deck.Player winningPlayer, Deck.Player losingPlayer)
+    public void RoundDecided(Player winningPlayer, Player losingPlayer)
     {
-
+        //take the current card form losing player and put it on winningPlayers Deck
+        //take the cards from the tie pile and put them on winningPlayers Deck
+        //check if the active player needs to be changed
     }
 
     public void CheckWinningState()
     {
-
+        //check if player1 has no cards
+        //  yes? check if player2 has no cards
+        //        yes? game draw!
+        //        no? player 2 wins!
+        //    no? check if player2 has no cards
+        //        yes? player 1 wins!
+        //        no? game continues!
     }
 
 

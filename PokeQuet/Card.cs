@@ -42,18 +42,18 @@ namespace PokeQuet
             deck1.AddRange(pool.Take(pool.Length / 2));
             deck2.AddRange(pool.Skip(pool.Length / 2));
         }
+    }
 
-        public class Player
+    public class Player
+    {
+        public Deck Deck { get; } = new Deck();
+        public string Name { get; set; }
+
+        public Player(string name)
         {
-            public Deck Deck { get; } = new Deck();
-            public string Name { get; set; }
-
-            public Player(string name)
-            {
-                this.Name = name;
-            }
-
-            //TODO: Abgrenzen von CPU und menschlichen Spielern
+            this.Name = name;
         }
+
+        //TODO: Abgrenzen von CPU und menschlichen Spielern
     }
 }
