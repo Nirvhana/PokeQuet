@@ -53,7 +53,26 @@ namespace PokeQuet
         {
             this.Name = name;
         }
+    }
 
-        //TODO: Abgrenzen von CPU und menschlichen Spielern
+    public abstract class AIPlayer : Player
+    {
+        public AIPlayer(string name) : base(name){}
+
+        public abstract void Init(Card[] cardPool);
+        public abstract int MakeTurn(Player opponent, Deck tieCards);
+    }
+
+    public class AIPlayerRandom : AIPlayer
+    {
+        //Name ist immer Bug Catcher Toby!
+        public AIPlayerRandom() : base("Bug Catcher Toby") { }
+
+        public override void Init(Card[] cardPool){}
+
+        public override int MakeTurn(Player opponent, Deck tieCards)
+        {
+            return Deck.RNG.Next(5);
+        }
     }
 }
