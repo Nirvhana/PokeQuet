@@ -3,13 +3,14 @@ using Gtk;
 using PokeQuet;
 using Newtonsoft.Json;
 using System.IO;
+using System.Threading;
 
 public partial class MainWindow : Gtk.Window
 {
-    public Card[] AllCards;
+    public Card[] CardPool { get; set; }
     public Player ActivePlayer { get; set; }
     public Player Player1 { get; set; }
-    public Player Player2 { get; set; }
+    public AIPlayer Player2 { get; set; }
     public Deck TieCards { get; set; }
 
     public MainWindow() : base(Gtk.WindowType.Toplevel)
@@ -20,39 +21,43 @@ public partial class MainWindow : Gtk.Window
 
     public void InitGame()
     {
-        
         LoadCards();
         Player1 = new Player("Red");
-        Player2 = new Player("Bug Catcher");
-        Deck.FillDecksFromCardPool(AllCards, Player1.Deck, Player2.Deck);
-        CompareDiscipline();
+        Player2 = new AIPlayerRandom();
+        Player2.Init(CardPool);
+        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
+        StartGame();
     }
 
     public void LoadCards()
     {
-        AllCards = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));;
+        CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
+    }
+
+    public void StartGame()
+    {
+        //TODO: Main Game loop
     }
 
     public void RestartGame()
     {
-
+        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
+        TieCards.Clear();
     }
 
     //TODO: Auswahl der Disziplin durch Event-Callback bei Klick
 
     public void MakeCPUMove()
     {
-
+        CompareDiscipline(Player2.MakeTurn(Player1,TieCards));
     }
 
     // Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt / verliert / unentschieden
-    public void CompareDiscipline()
+    public void CompareDiscipline(int selectedDiscipline)
     {
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
-
-        // Needs to be changed
-        int selectedDiscipline = 1;
+        
 
         // selected Discipline needs to get implemented
         switch (selectedDiscipline) 
