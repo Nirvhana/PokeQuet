@@ -64,6 +64,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Card.cs" />
+    <Compile Include="GameOverDialog.cs" />
+    <Compile Include="gtk-gui\PokeQuet.GameOverDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AllCards.json">
