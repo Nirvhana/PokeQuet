@@ -54,6 +54,7 @@
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
+      <IncludeInPackage>false</IncludeInPackage>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

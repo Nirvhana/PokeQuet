@@ -64,10 +64,12 @@ public partial class MainWindow : Gtk.Window
                     if (p2Card.type == "Fire")
                     {
                         RoundDecided(null, null);
+                        return;
                     }
                     if (p2Card.type == "Grass")
                     {
                         RoundDecided(Player1, Player2);
+                        return;
                     }
                     if (p2Card.type == "Water")
                     {
@@ -79,10 +81,12 @@ public partial class MainWindow : Gtk.Window
                     if (p2Card.type == "Fire")
                     {
                         RoundDecided(Player1, Player2);
+                        return;
                     }
                     if (p2Card.type == "Grass")
                     {
                         RoundDecided(Player2, Player1);
+                        return;
                     }
                     if (p2Card.type == "Water")
                     {
@@ -95,10 +99,12 @@ public partial class MainWindow : Gtk.Window
                     if (p2Card.type == "Fire")
                     {
                         RoundDecided(Player2, Player1);
+                        return;
                     }
                     if (p2Card.type == "Grass")
                     {
                         RoundDecided(null, null);
+                        return;
                     }
                     if (p2Card.type == "Water")
                     {
@@ -112,10 +118,13 @@ public partial class MainWindow : Gtk.Window
                 if (p1Card.hp > p2Card.hp) 
                 {
                     RoundDecided(Player1, Player2);
+                    return;
                 }
                 if (p1Card.hp < p2Card.hp)
                 {
                     RoundDecided(Player2, Player1);
+                    return;
+
                 }
                 if (p1Card.hp == p2Card.hp) 
                 {
@@ -128,10 +137,12 @@ public partial class MainWindow : Gtk.Window
                 if (p1Card.atk > p2Card.atk)
                 {
                     RoundDecided(Player1, Player2);
+                    return;
                 }
                 if (p1Card.atk < p2Card.atk)
                 {
                     RoundDecided(Player2, Player1);
+                    return;
                 }
                 if (p1Card.atk == p2Card.atk) 
                 {
@@ -144,10 +155,12 @@ public partial class MainWindow : Gtk.Window
                 if (p1Card.def > p2Card.def)
                 {
                     RoundDecided(Player1, Player2);
+                    return;
                 }
                 if (p1Card.def < p2Card.def)
                 {
                     RoundDecided(Player2, Player1);
+                    return;
                 }
                 if (p1Card.def == p2Card.def)
                 {
@@ -160,10 +173,12 @@ public partial class MainWindow : Gtk.Window
                 if (p1Card.spd > p2Card.spd)
                 {
                     RoundDecided(Player1, Player2);
+                    return;
                 }
                 if (p1Card.spd < p2Card.spd)
                 {
                     RoundDecided(Player2, Player1);
+                    return;
                 }
                 if (p1Card.spd == p2Card.spd)
                 {
@@ -177,6 +192,7 @@ public partial class MainWindow : Gtk.Window
     {
         
 
+        CheckWinningState();
         //take the current card form losing player and put it on winningPlayers Deck
         //take the cards from the tie pile and put them on winningPlayers Deck
         //check if the active player needs to be changed
@@ -184,6 +200,26 @@ public partial class MainWindow : Gtk.Window
 
     public void CheckWinningState()
     {
+        var p1Count = Player1.Deck.Count;
+        var p2Count = Player2.Deck.Count;
+
+        if (p1Count == 0 || p2Count == 0)
+        {
+            if (p1Count == 0 && p2Count == 0)
+            {
+                
+            }
+            if (p1Count == 0)
+            {
+
+            }
+            if (p2Count == 0)
+            {
+
+            }
+        }
+
+
         //check if player1 has no cards
         //  yes? check if player2 has no cards
         //        yes? game draw!
