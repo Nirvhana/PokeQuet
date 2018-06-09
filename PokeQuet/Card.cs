@@ -19,7 +19,7 @@ namespace PokeQuet
             return this.First();
         }
 
-        public void PutCardAtBack(Card card)
+        public void PutCardAtBack(Card card1, Card card2)
         {
 
         }

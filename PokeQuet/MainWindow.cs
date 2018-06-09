@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Threading;
 
+
 public partial class MainWindow : Gtk.Window
 {
     public Card[] CardPool { get; set; }
@@ -26,6 +27,7 @@ public partial class MainWindow : Gtk.Window
         Player2 = new AIPlayerRandom();
         Player2.Init(CardPool);
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
+        TieCards = new Deck();
         StartGame();
     }
 
@@ -193,9 +195,27 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
+    // Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu. 
+    // Bzw bei einem Unentschieden werdem die Karten dem 'TieDeck' hinzugefügt.
     public void RoundDecided(Player winningPlayer, Player losingPlayer)
     {
-        
+        var p1Card = Player1.Deck.GetCurrentCard();
+        var p2Card = Player2.Deck.GetCurrentCard();
+        Player1.Deck.RemoveAt(0);
+        Player2.Deck.RemoveAt(0);
+
+        if (winningPlayer == null)
+        {
+            TieCards.PutCardAtBack(p1Card, p2Card);
+        }
+        else if (winningPlayer == Player1)
+        {
+            Player1.Deck.PutCardAtBack(p1Card, p2Card);
+        }
+        else if (winningPlayer == Player2)
+        {
+            Player2.Deck.PutCardAtBack(p2Card, p1Card);
+        }
 
         CheckWinningState();
         //take the current card form losing player and put it on winningPlayers Deck
@@ -203,6 +223,7 @@ public partial class MainWindow : Gtk.Window
         //check if the active player needs to be changed
     }
 
+    // Überprüft, ob ein Spieler gewonnen hat, anhand der verbleibenden Karten in den Decks.
     public void CheckWinningState()
     {
         var p1Count = Player1.Deck.Count;
@@ -214,11 +235,11 @@ public partial class MainWindow : Gtk.Window
             {
                 
             }
-            if (p1Count == 0)
+            else if (p1Count == 0)
             {
 
             }
-            if (p2Count == 0)
+            else if (p2Count == 0)
             {
 
             }
