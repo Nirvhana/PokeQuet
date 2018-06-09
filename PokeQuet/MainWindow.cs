@@ -173,8 +173,6 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-
-
     public void RoundDecided(Player winningPlayer, Player losingPlayer)
     {
         
