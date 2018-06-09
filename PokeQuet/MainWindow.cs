@@ -45,63 +45,140 @@ public partial class MainWindow : Gtk.Window
 
     }
 
-    //TODO: Vielleicht Enum für Disziplin benutzen
+    // Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt / verliert / unentschieden
     public void CompareDiscipline()
     {
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
 
-        int discipline = 1;
+        // Needs to be changed
+        int selectedDiscipline = 1;
+
         // selected Discipline needs to get implemented
-        switch (discipline) 
+        switch (selectedDiscipline) 
         {
             // Type
             case 1:
-                if (p1Card.type == "Fire") {
-                    label3.Text = "hi fire";
-                    return;
-
-                }
-
-                else if (p1Card.type == "Water")
+                if (p1Card.type == "Fire")
                 {
-                    label3.Text = "hi water";
-
+                    if (p2Card.type == "Fire")
+                    {
+                        RoundDecided(null, null);
+                    }
+                    if (p2Card.type == "Grass")
+                    {
+                        RoundDecided(Player1, Player2);
+                    }
+                    if (p2Card.type == "Water")
+                    {
+                        RoundDecided(Player2, Player1);
+                    }
                 }
-
-                else if (p1Card.type == "Grass")
+                if (p1Card.type == "Water")
                 {
-                    label3.Text = "hi grass";
-
+                    if (p2Card.type == "Fire")
+                    {
+                        RoundDecided(Player1, Player2);
+                    }
+                    if (p2Card.type == "Grass")
+                    {
+                        RoundDecided(Player2, Player1);
+                    }
+                    if (p2Card.type == "Water")
+                    {
+                        RoundDecided(null, null);
+                    }
                 }
 
-
+                if (p1Card.type == "Grass")
+                {
+                    if (p2Card.type == "Fire")
+                    {
+                        RoundDecided(Player2, Player1);
+                    }
+                    if (p2Card.type == "Grass")
+                    {
+                        RoundDecided(null, null);
+                    }
+                    if (p2Card.type == "Water")
+                    {
+                        RoundDecided(Player1, Player2);
+                    }
+                }
                 break;
 
             // HP
             case 2:
-                
+                if (p1Card.hp > p2Card.hp) 
+                {
+                    RoundDecided(Player1, Player2);
+                }
+                if (p1Card.hp < p2Card.hp)
+                {
+                    RoundDecided(Player2, Player1);
+                }
+                if (p1Card.hp == p2Card.hp) 
+                {
+                    RoundDecided(null, null);
+                }
                 break;
 
             // ATK
             case 3:
-                
+                if (p1Card.atk > p2Card.atk)
+                {
+                    RoundDecided(Player1, Player2);
+                }
+                if (p1Card.atk < p2Card.atk)
+                {
+                    RoundDecided(Player2, Player1);
+                }
+                if (p1Card.atk == p2Card.atk) 
+                {
+                    RoundDecided(null, null);
+                }
                 break;
 
             // DEF
             case 4:
-                
+                if (p1Card.def > p2Card.def)
+                {
+                    RoundDecided(Player1, Player2);
+                }
+                if (p1Card.def < p2Card.def)
+                {
+                    RoundDecided(Player2, Player1);
+                }
+                if (p1Card.def == p2Card.def)
+                {
+                    RoundDecided(null, null);
+                }
                 break;
 
             // SPEED
             case 5:
-                
+                if (p1Card.spd > p2Card.spd)
+                {
+                    RoundDecided(Player1, Player2);
+                }
+                if (p1Card.spd < p2Card.spd)
+                {
+                    RoundDecided(Player2, Player1);
+                }
+                if (p1Card.spd == p2Card.spd)
+                {
+                    RoundDecided(null, null);
+                }
                 break;
         }
     }
 
+
+
     public void RoundDecided(Player winningPlayer, Player losingPlayer)
     {
+        
+
         //take the current card form losing player and put it on winningPlayers Deck
         //take the cards from the tie pile and put them on winningPlayers Deck
         //check if the active player needs to be changed
