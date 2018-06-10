@@ -147,6 +147,7 @@
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Select Discipline</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="ATKDisciplineSelected" />
                   </widget>
                   <packing>
                     <property name="TopAttach">2</property>
@@ -171,6 +172,7 @@
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Select Discipline</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="DEFDisciplineSelected" />
                   </widget>
                   <packing>
                     <property name="TopAttach">3</property>
@@ -195,6 +197,7 @@
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Select Discipline</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="HPDisciplineSelected" />
                   </widget>
                   <packing>
                     <property name="TopAttach">1</property>
@@ -219,6 +222,7 @@
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Select Discipline</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="SPDDisciplineSelected" />
                   </widget>
                   <packing>
                     <property name="TopAttach">4</property>
@@ -243,6 +247,7 @@
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Select Discipline</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="TypeDisciplineSelected" />
                   </widget>
                   <packing>
                     <property name="LeftAttach">2</property>

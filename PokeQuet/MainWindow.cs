@@ -14,9 +14,6 @@ public partial class MainWindow : Gtk.Window
     public AIPlayer Player2 { get; set; }
     public Deck TieCards { get; set; }
 
-    //Wether or not it is the player's turn so the player can chose a discipline
-    public bool CanChoseDiscipline { get; set; }
-
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -43,17 +40,12 @@ public partial class MainWindow : Gtk.Window
         CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
     }
 
-    public void RestartGame()
+    public void StartGame()
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
         TieCards.Clear();
-        StartGame();
-    }
-
-    public void StartGame()
-    {
-        DisplayCards();
-        //TODO: Main Game loop
+        ActivePlayer = Player1;
+        NextTurn();
     }
 
     public void NextTurn()
