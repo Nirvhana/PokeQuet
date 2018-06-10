@@ -18,6 +18,7 @@ public partial class MainWindow : Gtk.Window
     public Player Player1 { get; set; }
     public AIPlayer Player2 { get; set; }
     public Deck TieCards { get; set; }
+   // Image image = 
 
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
@@ -362,17 +363,20 @@ public partial class MainWindow : Gtk.Window
 
         if (p1Count == 0 || p2Count == 0)
         {
-
+            int winOrLoose = 3;
             if (p1Count == 0 && p2Count == 0)
             {
+                winOrLoose = 2;
             }
             else if (p1Count == 0)
             {
+                winOrLoose = 2;
             }
             else if (p2Count == 0)
             {
+                winOrLoose = 1;
             }
-            new GameOverDialog().Show();
+            new GameOverDialog(winOrLoose).Show();
         }
         else
         {
