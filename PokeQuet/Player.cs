@@ -21,6 +21,8 @@ namespace PokeQuet
 
     public abstract class AIPlayer : Player
     {
+        public static readonly Discipline[] DISCIPLINES = (Discipline[])Enum.GetValues(typeof(Discipline));
+
         public AIPlayer(string name) : base(name) { }
 
         public void Init(Card[] cardPool) { }
@@ -29,7 +31,6 @@ namespace PokeQuet
 
     public class AIPlayerRandom : AIPlayer
     {
-        public static readonly Discipline[] DISCIPLINES = (Discipline[])Enum.GetValues(typeof(Discipline));
 
         //Name ist immer Bug Catcher!
         public AIPlayerRandom() : base("Bug Catcher") { }
@@ -38,5 +39,16 @@ namespace PokeQuet
         {
             return DISCIPLINES[RNG.Next(DISCIPLINES.Length)];
         }
+    }
+
+    public class AIPlayerSimple : AIPlayer
+	{
+		public AIPlayerSimple() : base("Gym Leader") { }
+
+		public override Discipline MakeTurn(Player opponent, Deck tieCards)
+		{
+			var card = Deck.GetCurrentCard();
+			var values = new List<int>(){ card.hp, card.atk, card.def, card.spd };
+			return DISCIPLINES[values.IndexOf(values.Max())+1];	  	}
     }
 }

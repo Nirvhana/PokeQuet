@@ -9,7 +9,7 @@ namespace PokeQuet
         public static void Main(string[] args)
         {
             Application.Init();
-            MainWindow win = new MainWindow();
+			MainMenu win = new MainMenu();
             win.Show();
             Application.Run();
 

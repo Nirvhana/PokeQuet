@@ -67,6 +67,8 @@
     <Compile Include="Card.cs" />
     <Compile Include="GameOverDialog.cs" />
     <Compile Include="gtk-gui\PokeQuet.GameOverDialog.cs" />
+    <Compile Include="MainMenu.cs" />
+    <Compile Include="gtk-gui\PokeQuet.MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AllCards.json">

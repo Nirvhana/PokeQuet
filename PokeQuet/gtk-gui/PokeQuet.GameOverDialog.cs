@@ -4,8 +4,6 @@ namespace PokeQuet
 {
 	public partial class GameOverDialog
 	{
-		private global::Gtk.Image image5;
-
 		private global::Gtk.Button buttonCancel;
 
 		private global::Gtk.Button buttonOk;
@@ -21,20 +19,12 @@ namespace PokeQuet
 			global::Gtk.VBox w1 = this.VBox;
 			w1.Name = "dialog1_VBox";
 			w1.BorderWidth = ((uint)(2));
-			// Container child dialog1_VBox.Gtk.Box+BoxChild
-			this.image5 = new global::Gtk.Image();
-			this.image5.Name = "image5";
-			w1.Add(this.image5);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(w1[this.image5]));
-			w2.Position = 0;
-			w2.Expand = false;
-			w2.Fill = false;
 			// Internal child PokeQuet.GameOverDialog.ActionArea
-			global::Gtk.HButtonBox w3 = this.ActionArea;
-			w3.Name = "dialog1_ActionArea";
-			w3.Spacing = 10;
-			w3.BorderWidth = ((uint)(5));
-			w3.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w2 = this.ActionArea;
+			w2.Name = "dialog1_ActionArea";
+			w2.Spacing = 10;
+			w2.BorderWidth = ((uint)(5));
+			w2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonCancel = new global::Gtk.Button();
 			this.buttonCancel.CanDefault = true;
@@ -44,9 +34,9 @@ namespace PokeQuet
 			this.buttonCancel.UseUnderline = true;
 			this.buttonCancel.Label = "gtk-cancel";
 			this.AddActionWidget(this.buttonCancel, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonCancel]));
-			w4.Expand = false;
-			w4.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w3 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w2[this.buttonCancel]));
+			w3.Expand = false;
+			w3.Fill = false;
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button();
 			this.buttonOk.CanDefault = true;
@@ -56,16 +46,16 @@ namespace PokeQuet
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget(this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonOk]));
-			w5.Position = 1;
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w2[this.buttonOk]));
+			w4.Position = 1;
+			w4.Expand = false;
+			w4.Fill = false;
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 887;
-			this.DefaultHeight = 567;
+			this.DefaultWidth = 400;
+			this.DefaultHeight = 300;
 			this.Show();
 		}
 	}

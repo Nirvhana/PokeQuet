@@ -3,7 +3,6 @@ using Gtk;
 using PokeQuet;
 using Newtonsoft.Json;
 using System.IO;
-using System.Threading;
 
 
 public partial class MainWindow : Gtk.Window
@@ -11,10 +10,13 @@ public partial class MainWindow : Gtk.Window
     public const string TURN_RESULT_WINNER = "{0} won the turn!";
     public const string TURN_RESULT_TIE = "It's a tie!";
 
+	public static readonly Random RNG = new Random(); 
     public static readonly Gdk.Color RED = new Gdk.Color((byte)255, (byte)20, (byte)20);
     public static readonly Gdk.Color GREEN = new Gdk.Color((byte)0, (byte)215, (byte)0);
     public static readonly Gdk.Color GREY = new Gdk.Color((byte)0, (byte)0, (byte)0);
     public static readonly Gdk.Color BLACK = new Gdk.Color((byte)0, (byte)0, (byte)0);
+
+	private int startingPlayer = 0;
 
     public Card[] CardPool { get; set; }
     public Player ActivePlayer { get; set; }
@@ -22,18 +24,24 @@ public partial class MainWindow : Gtk.Window
     public AIPlayer Player2 { get; set; }
     public Deck TieCards { get; set; }
 
-    public MainWindow() : base(Gtk.WindowType.Toplevel)
+    public MainWindow(string playerName, int aiType, int startingPlayer) : base(Gtk.WindowType.Toplevel)
     {
         Build();
-        InitGame();
+		this.startingPlayer = startingPlayer;
+        InitGame(playerName,aiType);
     }
 
-    public void InitGame()
+	public void InitGame(string playerName, int aiType)
     {
         LoadCards();
-		Player1 = new Player("Red");
-        Player2 = new AIPlayerRandom();
+		Player1 = new Player(playerName);
+
+		if(aiType==1)
+        	Player2 = new AIPlayerRandom();
+		else
+			Player2 = new AIPlayerSimple();
         Player2.Init(CardPool);
+
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
         TieCards = new Deck();
 
@@ -52,7 +60,17 @@ public partial class MainWindow : Gtk.Window
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
         TieCards.Clear();
-        ActivePlayer = Player1;
+		if (startingPlayer == 1 || startingPlayer == 0 && RNG.Next(2) == 0)
+			ActivePlayer = Player1;
+		else
+			ActivePlayer = Player2;
+
+		buttonSelectType.Sensitive = false;
+        buttonSelectHP.Sensitive = false;
+        buttonSelectATK.Sensitive = false;
+        buttonSelectDEF.Sensitive = false;
+        buttonSelectSPD.Sensitive = false;
+
         NextTurn();
     }
 
@@ -400,15 +418,5 @@ public partial class MainWindow : Gtk.Window
         //        no? game continues!
     }
 
-
-    #region Autogeneriert
-
-    protected void OnDeleteEvent(object sender, DeleteEventArgs a)
-    {
-        Application.Quit();
-        a.RetVal = true;
-    }
-
-    #endregion
 
 }
