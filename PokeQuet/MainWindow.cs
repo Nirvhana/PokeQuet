@@ -346,6 +346,11 @@ public partial class MainWindow : Gtk.Window
             Player2.Deck.PutCardsAtBack(p2Card, p1Card);
             ActivePlayer = Player2;
         }
+        if (winningPlayer != null)
+        {
+            winningPlayer.Deck.PutCardsAtBack(TieCards);
+            TieCards.Clear();
+        }
         CheckWinningState();
     }
 
