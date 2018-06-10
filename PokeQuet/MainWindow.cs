@@ -247,8 +247,12 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-    // Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu. 
-    // Bzw bei einem Unentschieden werdem die Karten dem 'TieDeck' hinzugefügt.
+    // 1. Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu. 
+    //    Bzw bei einem Unentschieden werdem die Karten dem 'TieDeck' hinzugefügt.
+    //
+    // 2. Gibt dem Gewinner der aktuellen Runde den Status: 'ActivePlayer'.
+    //
+    // 3. Am Ende wird die 'CheckWinningState' Funktion aufgerufen.
     public void RoundDecided(Player winningPlayer, Player losingPlayer)
     {
         var p1Card = Player1.Deck.GetCurrentCard();
@@ -263,16 +267,14 @@ public partial class MainWindow : Gtk.Window
         else if (winningPlayer == Player1)
         {
             Player1.Deck.PutCardsAtBack(p1Card, p2Card);
+            ActivePlayer = Player1;
         }
         else if (winningPlayer == Player2)
         {
             Player2.Deck.PutCardsAtBack(p2Card, p1Card);
+            ActivePlayer = Player2;
         }
-
         CheckWinningState();
-        //take the current card form losing player and put it on winningPlayers Deck
-        //take the cards from the tie pile and put them on winningPlayers Deck
-        //check if the active player needs to be changed
     }
 
     // Überprüft, ob ein Spieler gewonnen hat, anhand der verbleibenden Karten in den Decks.
@@ -283,20 +285,19 @@ public partial class MainWindow : Gtk.Window
 
         if (p1Count == 0 || p2Count == 0)
         {
+
             if (p1Count == 0 && p2Count == 0)
             {
-
             }
             else if (p1Count == 0)
             {
-
             }
             else if (p2Count == 0)
             {
-
             }
+            new GameOverDialog().Show();
         }
-
+        NextTurn();
 
         //check if player1 has no cards
         //  yes? check if player2 has no cards

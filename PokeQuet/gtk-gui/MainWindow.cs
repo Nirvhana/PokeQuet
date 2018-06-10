@@ -113,7 +113,6 @@ public partial class MainWindow
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labelSpacer1 = new global::Gtk.Label();
 		this.labelSpacer1.Name = "labelSpacer1";
-		this.labelSpacer1.LabelProp = "";
 		this.hbox2.Add(this.labelSpacer1);
 		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.labelSpacer1]));
 		w2.Position = 1;
@@ -253,6 +252,7 @@ public partial class MainWindow
 		w13.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table2.Gtk.Table+TableChild
 		this.label1 = new global::Gtk.Label();
+		this.label1.Name = "label1";
 		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Type");
 		this.table2.Add(this.label1);
 		global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table2[this.label1]));
@@ -477,7 +477,6 @@ public partial class MainWindow
 		// Container child table2.Gtk.Table+TableChild
 		this.labelSpacer = new global::Gtk.Label();
 		this.labelSpacer.Name = "labelSpacer";
-		this.labelSpacer.LabelProp = "";
 		this.table2.Add(this.labelSpacer);
 		global::Gtk.Table.TableChild w34 = ((global::Gtk.Table.TableChild)(this.table2[this.labelSpacer]));
 		w34.LeftAttach = ((uint)(3));
