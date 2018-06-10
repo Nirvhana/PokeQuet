@@ -323,7 +323,6 @@ public partial class MainWindow : Gtk.Window
     // 2. Gibt dem Gewinner der aktuellen Runde den Status: 'ActivePlayer'.
     //
     // 3. Am Ende wird die 'CheckWinningState' Funktion aufgerufen.
-    public void RoundDecided(Player winningPlayer, Player losingPlayer)
     public void RoundDecided(Player winningPlayer, Player losingPlayer, Discipline discipline)
     {
         MarkDiscipline(discipline, winningPlayer);
@@ -370,12 +369,11 @@ public partial class MainWindow : Gtk.Window
             }
             new GameOverDialog().Show();
         }
-        NextTurn();
         else
         {
             buttonNextCard.Sensitive = true;
         }
-
+    
         //check if player1 has no cards
         //  yes? check if player2 has no cards
         //        yes? game draw!
