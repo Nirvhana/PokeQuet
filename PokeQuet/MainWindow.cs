@@ -8,6 +8,11 @@ using System.Threading;
 
 public partial class MainWindow : Gtk.Window
 {
+    public static readonly Gdk.Color RED = new Gdk.Color((byte)255, (byte)20, (byte)20);
+    public static readonly Gdk.Color GREEN = new Gdk.Color((byte)0, (byte)215, (byte)0);
+    public static readonly Gdk.Color GREY = new Gdk.Color((byte)0, (byte)0, (byte)0);
+    public static readonly Gdk.Color BLACK = new Gdk.Color((byte)0, (byte)0, (byte)0);
+
     public Card[] CardPool { get; set; }
     public Player ActivePlayer { get; set; }
     public Player Player1 { get; set; }
@@ -48,9 +53,13 @@ public partial class MainWindow : Gtk.Window
         NextTurn();
     }
 
+    protected void NextCardClicked(object sender, EventArgs e) => NextTurn();
+
     public void NextTurn()
     {
         DisplayCards();
+        buttonNextCard.Sensitive = false;
+
         if (ActivePlayer is AIPlayer)
             MakeCPUMove();
         else
@@ -74,15 +83,31 @@ public partial class MainWindow : Gtk.Window
         labelP1ATK.Text = p1card.atk.ToString();
         labelP1DEF.Text = p1card.def.ToString();
         labelP1SPD.Text = p1card.spd.ToString();
+
         var p2card = Player2.Deck.GetCurrentCard();
         imageP2.File = p2card.texture;
-        labelP2CardName.Text = p2card.name;
-        labelP2FlavourText.Text = p2card.flavorText;
-        labelP2Type.Text = p2card.type;
-        labelP2HP.Text = p2card.hp.ToString();
-        labelP2ATK.Text = p2card.atk.ToString();
-        labelP2DEF.Text = p2card.def.ToString();
-        labelP2SPD.Text = p2card.spd.ToString();
+        labelP2CardName.Text = "???";
+        labelP2FlavourText.Text = "???";
+        labelP2Type.Text = "?";
+        labelP2HP.Text = "?";
+        labelP2ATK.Text = "?";
+        labelP2DEF.Text = "?";
+        labelP2SPD.Text = "?";
+
+        labelP1Type.ModifyFg(StateType.Normal, BLACK);
+        labelP2Type.ModifyFg(StateType.Normal, BLACK);
+        labelP1HP.ModifyFg(StateType.Normal, BLACK);
+        labelP2HP.ModifyFg(StateType.Normal, BLACK);
+        labelP1ATK.ModifyFg(StateType.Normal, BLACK);
+        labelP2ATK.ModifyFg(StateType.Normal, BLACK);
+        labelP1DEF.ModifyFg(StateType.Normal, BLACK);
+        labelP2DEF.ModifyFg(StateType.Normal, BLACK);
+        labelP1SPD.ModifyFg(StateType.Normal, BLACK);
+        labelP2SPD.ModifyFg(StateType.Normal, BLACK);
+
+        labelP1CardCount.Text = Player1.Deck.Count.ToString();
+        labelP2CardCount.Text = Player2.Deck.Count.ToString();
+        labelTieCardCount.Text = TieCards.Count.ToString();
     }
 
     protected void TypeDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.TYPE);
@@ -106,13 +131,73 @@ public partial class MainWindow : Gtk.Window
         CompareDiscipline(Player2.MakeTurn(Player1, TieCards));
     }
 
+    public void ShowOpponentCard()
+    {
+        var p2card = Player2.Deck.GetCurrentCard();
+        imageP2.File = p2card.texture;
+        labelP2CardName.Text = p2card.name;
+        labelP2FlavourText.Text = p2card.flavorText;
+        labelP2Type.Text = p2card.type;
+        labelP2HP.Text = p2card.hp.ToString();
+        labelP2ATK.Text = p2card.atk.ToString();
+        labelP2DEF.Text = p2card.def.ToString();
+        labelP2SPD.Text = p2card.spd.ToString();
+    }
+
+    public void MarkDiscipline(Discipline discipline, Player winningPlayer)
+    {
+        Gdk.Color p1color, p2color;
+
+        if (winningPlayer == null)
+        {
+            p1color = GREY;
+            p2color = GREY;
+        }
+        else if (winningPlayer == Player1)
+        {
+            p1color = GREEN;
+            p2color = RED;
+        }
+        else
+        {
+            p1color = RED;
+            p2color = GREEN;
+        }
+
+        switch (discipline)
+        {
+            case Discipline.TYPE:
+                labelP1Type.ModifyFg(StateType.Normal, p1color);
+                labelP2Type.ModifyFg(StateType.Normal, p2color);
+                break;
+            case Discipline.HP:
+                labelP1HP.ModifyFg(StateType.Normal, p1color);
+                labelP2HP.ModifyFg(StateType.Normal, p2color);
+                break;
+            case Discipline.ATK:
+                labelP1ATK.ModifyFg(StateType.Normal, p1color);
+                labelP2ATK.ModifyFg(StateType.Normal, p2color);
+                break;
+            case Discipline.DEF:
+                labelP1DEF.ModifyFg(StateType.Normal, p1color);
+                labelP2DEF.ModifyFg(StateType.Normal, p2color);
+                break;
+            case Discipline.SPD:
+                labelP1SPD.ModifyFg(StateType.Normal, p1color);
+                labelP2SPD.ModifyFg(StateType.Normal, p2color);
+                break;
+        }
+    }
+
+
     // Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt / verliert / unentschieden
     public void CompareDiscipline(Discipline discipline)
     {
+        ShowOpponentCard();
+
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
-
-
+        
         // selected Discipline needs to get implemented
         switch (discipline)
         {
@@ -122,34 +207,30 @@ public partial class MainWindow : Gtk.Window
                 {
                     if (p2Card.type == "Fire")
                     {
-                        RoundDecided(null, null);
-                        return;
+                        RoundDecided(null, null, discipline);
                     }
-                    if (p2Card.type == "Grass")
+                    else if (p2Card.type == "Grass")
                     {
-                        RoundDecided(Player1, Player2);
-                        return;
+                        RoundDecided(Player1, Player2, discipline);
                     }
-                    if (p2Card.type == "Water")
+                    else if (p2Card.type == "Water")
                     {
-                        RoundDecided(Player2, Player1);
+                        RoundDecided(Player2, Player1, discipline);
                     }
                 }
                 if (p1Card.type == "Water")
                 {
                     if (p2Card.type == "Fire")
                     {
-                        RoundDecided(Player1, Player2);
-                        return;
+                        RoundDecided(Player1, Player2, discipline);
                     }
-                    if (p2Card.type == "Grass")
+                    else if (p2Card.type == "Grass")
                     {
-                        RoundDecided(Player2, Player1);
-                        return;
+                        RoundDecided(Player2, Player1, discipline);
                     }
-                    if (p2Card.type == "Water")
+                    else if (p2Card.type == "Water")
                     {
-                        RoundDecided(null, null);
+                        RoundDecided(null, null, discipline);
                     }
                 }
 
@@ -157,17 +238,15 @@ public partial class MainWindow : Gtk.Window
                 {
                     if (p2Card.type == "Fire")
                     {
-                        RoundDecided(Player2, Player1);
-                        return;
+                        RoundDecided(Player2, Player1, discipline);
                     }
-                    if (p2Card.type == "Grass")
+                    else if (p2Card.type == "Grass")
                     {
-                        RoundDecided(null, null);
-                        return;
+                        RoundDecided(null, null, discipline);
                     }
-                    if (p2Card.type == "Water")
+                    else if (p2Card.type == "Water")
                     {
-                        RoundDecided(Player1, Player2);
+                        RoundDecided(Player1, Player2, discipline);
                     }
                 }
                 break;
@@ -176,18 +255,15 @@ public partial class MainWindow : Gtk.Window
             case Discipline.HP:
                 if (p1Card.hp > p2Card.hp)
                 {
-                    RoundDecided(Player1, Player2);
-                    return;
+                    RoundDecided(Player1, Player2, discipline);
                 }
-                if (p1Card.hp < p2Card.hp)
+                else if (p1Card.hp < p2Card.hp)
                 {
-                    RoundDecided(Player2, Player1);
-                    return;
-
+                    RoundDecided(Player2, Player1, discipline);
                 }
-                if (p1Card.hp == p2Card.hp)
+                else if (p1Card.hp == p2Card.hp)
                 {
-                    RoundDecided(null, null);
+                    RoundDecided(null, null, discipline);
                 }
                 break;
 
@@ -195,17 +271,15 @@ public partial class MainWindow : Gtk.Window
             case Discipline.ATK:
                 if (p1Card.atk > p2Card.atk)
                 {
-                    RoundDecided(Player1, Player2);
-                    return;
+                    RoundDecided(Player1, Player2, discipline);
                 }
-                if (p1Card.atk < p2Card.atk)
+                else if (p1Card.atk < p2Card.atk)
                 {
-                    RoundDecided(Player2, Player1);
-                    return;
+                    RoundDecided(Player2, Player1, discipline);
                 }
-                if (p1Card.atk == p2Card.atk)
+                else if (p1Card.atk == p2Card.atk)
                 {
-                    RoundDecided(null, null);
+                    RoundDecided(null, null, discipline);
                 }
                 break;
 
@@ -213,17 +287,15 @@ public partial class MainWindow : Gtk.Window
             case Discipline.DEF:
                 if (p1Card.def > p2Card.def)
                 {
-                    RoundDecided(Player1, Player2);
-                    return;
+                    RoundDecided(Player1, Player2, discipline);
                 }
-                if (p1Card.def < p2Card.def)
+                else if (p1Card.def < p2Card.def)
                 {
-                    RoundDecided(Player2, Player1);
-                    return;
+                    RoundDecided(Player2, Player1, discipline);
                 }
-                if (p1Card.def == p2Card.def)
+                else if (p1Card.def == p2Card.def)
                 {
-                    RoundDecided(null, null);
+                    RoundDecided(null, null, discipline);
                 }
                 break;
 
@@ -231,17 +303,15 @@ public partial class MainWindow : Gtk.Window
             case Discipline.SPD:
                 if (p1Card.spd > p2Card.spd)
                 {
-                    RoundDecided(Player1, Player2);
-                    return;
+                    RoundDecided(Player1, Player2, discipline);
                 }
-                if (p1Card.spd < p2Card.spd)
+                else if (p1Card.spd < p2Card.spd)
                 {
-                    RoundDecided(Player2, Player1);
-                    return;
+                    RoundDecided(Player2, Player1, discipline);
                 }
-                if (p1Card.spd == p2Card.spd)
+                else if (p1Card.spd == p2Card.spd)
                 {
-                    RoundDecided(null, null);
+                    RoundDecided(null, null, discipline);
                 }
                 break;
         }
@@ -254,7 +324,10 @@ public partial class MainWindow : Gtk.Window
     //
     // 3. Am Ende wird die 'CheckWinningState' Funktion aufgerufen.
     public void RoundDecided(Player winningPlayer, Player losingPlayer)
+    public void RoundDecided(Player winningPlayer, Player losingPlayer, Discipline discipline)
     {
+        MarkDiscipline(discipline, winningPlayer);
+
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
         Player1.Deck.RemoveAt(0);
@@ -298,6 +371,10 @@ public partial class MainWindow : Gtk.Window
             new GameOverDialog().Show();
         }
         NextTurn();
+        else
+        {
+            buttonNextCard.Sensitive = true;
+        }
 
         //check if player1 has no cards
         //  yes? check if player2 has no cards

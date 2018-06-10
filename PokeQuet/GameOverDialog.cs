@@ -7,6 +7,7 @@ namespace PokeQuet
 		{
 			this.Build();
             this.Modal = true;
+
 		}
 	}
 }
