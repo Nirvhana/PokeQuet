@@ -19,9 +19,14 @@ namespace PokeQuet
             return this.First();
         }
 
-        public void PutCardAtBack(Card card1, Card card2)
+		public void PutCardsAtBack(IEnumerable<Card> cards)
         {
+			this.AddRange(cards);
+        }
 
+		public void PutCardsAtBack(params Card[] cards)
+		{
+			this.AddRange(cards);
         }
 
         public static void FillDecksFromCardPool(Card[] pool, Deck deck1, Deck deck2)
@@ -44,35 +49,11 @@ namespace PokeQuet
         }
     }
 
-    public class Player
-    {
-        public Deck Deck { get; } = new Deck();
-        public string Name { get; set; }
-
-        public Player(string name)
-        {
-            this.Name = name;
-        }
-    }
-
-    public abstract class AIPlayer : Player
-    {
-        public AIPlayer(string name) : base(name){}
-
-        public abstract void Init(Card[] cardPool);
-        public abstract int MakeTurn(Player opponent, Deck tieCards);
-    }
-
-    public class AIPlayerRandom : AIPlayer
-    {
-        //Name ist immer Bug Catcher Toby!
-        public AIPlayerRandom() : base("Bug Catcher Toby") { }
-
-        public override void Init(Card[] cardPool){}
-
-        public override int MakeTurn(Player opponent, Deck tieCards)
-        {
-            return Deck.RNG.Next(5);
-        }
-    }
+	public enum Discipline
+	{
+		TYPE,
+		HP,
+		ATK,
+		DEF,
+		SPD	}
 }

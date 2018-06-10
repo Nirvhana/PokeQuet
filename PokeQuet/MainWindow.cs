@@ -14,6 +14,9 @@ public partial class MainWindow : Gtk.Window
     public AIPlayer Player2 { get; set; }
     public Deck TieCards { get; set; }
 
+    //Wether or not it is the player's turn so the player can chose a discipline
+    public bool CanChoseDiscipline { get; set; }
+
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -28,6 +31,10 @@ public partial class MainWindow : Gtk.Window
         Player2.Init(CardPool);
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
         TieCards = new Deck();
+
+        labelP1Name.Text = Player1.Name;
+        labelP2Name.Text = Player2.Name;
+
         StartGame();
     }
 
@@ -36,36 +43,89 @@ public partial class MainWindow : Gtk.Window
         CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
     }
 
-    public void StartGame()
-    {
-        //TODO: Main Game loop
-    }
-
     public void RestartGame()
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
         TieCards.Clear();
+        StartGame();
     }
 
-    //TODO: Auswahl der Disziplin durch Event-Callback bei Klick
+    public void StartGame()
+    {
+        DisplayCards();
+        //TODO: Main Game loop
+    }
+
+    public void NextTurn()
+    {
+        DisplayCards();
+        if (ActivePlayer is AIPlayer)
+            MakeCPUMove();
+        else
+        {
+            buttonSelectType.Sensitive = true;
+            buttonSelectHP.Sensitive = true;
+            buttonSelectATK.Sensitive = true;
+            buttonSelectDEF.Sensitive = true;
+            buttonSelectSPD.Sensitive = true;
+        }
+    }
+
+    public void DisplayCards()
+    {
+        var p1card = Player1.Deck.GetCurrentCard();
+        imageP1.File = p1card.texture;
+        labelP1CardName.Text = p1card.name;
+        labelP1FlavourText.Text = p1card.flavorText;
+        labelP1Type.Text = p1card.type;
+        labelP1HP.Text = p1card.hp.ToString();
+        labelP1ATK.Text = p1card.atk.ToString();
+        labelP1DEF.Text = p1card.def.ToString();
+        labelP1SPD.Text = p1card.spd.ToString();
+        var p2card = Player2.Deck.GetCurrentCard();
+        imageP2.File = p2card.texture;
+        labelP2CardName.Text = p2card.name;
+        labelP2FlavourText.Text = p2card.flavorText;
+        labelP2Type.Text = p2card.type;
+        labelP2HP.Text = p2card.hp.ToString();
+        labelP2ATK.Text = p2card.atk.ToString();
+        labelP2DEF.Text = p2card.def.ToString();
+        labelP2SPD.Text = p2card.spd.ToString();
+    }
+
+    protected void TypeDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.TYPE);
+    protected void HPDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.HP);
+    protected void ATKDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.ATK);
+    protected void DEFDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.DEF);
+    protected void SPDDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.SPD);
+
+    public void ChooseDiscipline(Discipline discipline)
+    {
+        buttonSelectType.Sensitive = false;
+        buttonSelectHP.Sensitive = false;
+        buttonSelectATK.Sensitive = false;
+        buttonSelectDEF.Sensitive = false;
+        buttonSelectSPD.Sensitive = false;
+        CompareDiscipline(discipline);
+    }
 
     public void MakeCPUMove()
     {
-        CompareDiscipline(Player2.MakeTurn(Player1,TieCards));
+        CompareDiscipline(Player2.MakeTurn(Player1, TieCards));
     }
 
     // Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt / verliert / unentschieden
-    public void CompareDiscipline(int selectedDiscipline)
+    public void CompareDiscipline(Discipline discipline)
     {
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
-        
+
 
         // selected Discipline needs to get implemented
-        switch (selectedDiscipline) 
+        switch (discipline)
         {
             // Type
-            case 1:
+            case Discipline.TYPE:
                 if (p1Card.type == "Fire")
                 {
                     if (p2Card.type == "Fire")
@@ -121,8 +181,8 @@ public partial class MainWindow : Gtk.Window
                 break;
 
             // HP
-            case 2:
-                if (p1Card.hp > p2Card.hp) 
+            case Discipline.HP:
+                if (p1Card.hp > p2Card.hp)
                 {
                     RoundDecided(Player1, Player2);
                     return;
@@ -133,14 +193,14 @@ public partial class MainWindow : Gtk.Window
                     return;
 
                 }
-                if (p1Card.hp == p2Card.hp) 
+                if (p1Card.hp == p2Card.hp)
                 {
                     RoundDecided(null, null);
                 }
                 break;
 
             // ATK
-            case 3:
+            case Discipline.ATK:
                 if (p1Card.atk > p2Card.atk)
                 {
                     RoundDecided(Player1, Player2);
@@ -151,14 +211,14 @@ public partial class MainWindow : Gtk.Window
                     RoundDecided(Player2, Player1);
                     return;
                 }
-                if (p1Card.atk == p2Card.atk) 
+                if (p1Card.atk == p2Card.atk)
                 {
                     RoundDecided(null, null);
                 }
                 break;
 
             // DEF
-            case 4:
+            case Discipline.DEF:
                 if (p1Card.def > p2Card.def)
                 {
                     RoundDecided(Player1, Player2);
@@ -176,7 +236,7 @@ public partial class MainWindow : Gtk.Window
                 break;
 
             // SPEED
-            case 5:
+            case Discipline.SPD:
                 if (p1Card.spd > p2Card.spd)
                 {
                     RoundDecided(Player1, Player2);
@@ -206,15 +266,15 @@ public partial class MainWindow : Gtk.Window
 
         if (winningPlayer == null)
         {
-            TieCards.PutCardAtBack(p1Card, p2Card);
+            TieCards.PutCardsAtBack(p1Card, p2Card);
         }
         else if (winningPlayer == Player1)
         {
-            Player1.Deck.PutCardAtBack(p1Card, p2Card);
+            Player1.Deck.PutCardsAtBack(p1Card, p2Card);
         }
         else if (winningPlayer == Player2)
         {
-            Player2.Deck.PutCardAtBack(p2Card, p1Card);
+            Player2.Deck.PutCardsAtBack(p2Card, p1Card);
         }
 
         CheckWinningState();
@@ -233,7 +293,7 @@ public partial class MainWindow : Gtk.Window
         {
             if (p1Count == 0 && p2Count == 0)
             {
-                
+
             }
             else if (p1Count == 0)
             {
@@ -265,4 +325,5 @@ public partial class MainWindow : Gtk.Window
     }
 
     #endregion
+
 }
