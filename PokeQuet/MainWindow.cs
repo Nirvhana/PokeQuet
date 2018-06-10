@@ -8,6 +8,9 @@ using System.Threading;
 
 public partial class MainWindow : Gtk.Window
 {
+    public const string TURN_RESULT_WINNER = "{0} won the turn!";
+    public const string TURN_RESULT_TIE = "It's a tie!";
+
     public static readonly Gdk.Color RED = new Gdk.Color((byte)255, (byte)20, (byte)20);
     public static readonly Gdk.Color GREEN = new Gdk.Color((byte)0, (byte)215, (byte)0);
     public static readonly Gdk.Color GREY = new Gdk.Color((byte)0, (byte)0, (byte)0);
@@ -28,7 +31,7 @@ public partial class MainWindow : Gtk.Window
     public void InitGame()
     {
         LoadCards();
-        Player1 = new Player("Red");
+		Player1 = new Player("Red");
         Player2 = new AIPlayerRandom();
         Player2.Init(CardPool);
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
@@ -108,6 +111,8 @@ public partial class MainWindow : Gtk.Window
         labelP1CardCount.Text = Player1.Deck.Count.ToString();
         labelP2CardCount.Text = Player2.Deck.Count.ToString();
         labelTieCardCount.Text = TieCards.Count.ToString();
+
+        labelTurnResult.Text = "";
     }
 
     protected void TypeDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.TYPE);
@@ -144,7 +149,7 @@ public partial class MainWindow : Gtk.Window
         labelP2SPD.Text = p2card.spd.ToString();
     }
 
-    public void MarkDiscipline(Discipline discipline, Player winningPlayer)
+    public void ShowTurnWinner(Discipline discipline, Player winningPlayer)
     {
         Gdk.Color p1color, p2color;
 
@@ -152,16 +157,23 @@ public partial class MainWindow : Gtk.Window
         {
             p1color = GREY;
             p2color = GREY;
-        }
-        else if (winningPlayer == Player1)
-        {
-            p1color = GREEN;
-            p2color = RED;
+
+            labelTurnResult.Text = TURN_RESULT_TIE;
         }
         else
         {
-            p1color = RED;
-            p2color = GREEN;
+            if (winningPlayer == Player1)
+            {
+                p1color = GREEN;
+                p2color = RED;
+            }
+            else
+            {
+                p1color = RED;
+                p2color = GREEN;
+            }
+
+            labelTurnResult.Text = String.Format(TURN_RESULT_WINNER, winningPlayer.Name);
         }
 
         switch (discipline)
@@ -197,7 +209,7 @@ public partial class MainWindow : Gtk.Window
 
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
-        
+
         // selected Discipline needs to get implemented
         switch (discipline)
         {
@@ -325,7 +337,7 @@ public partial class MainWindow : Gtk.Window
     // 3. Am Ende wird die 'CheckWinningState' Funktion aufgerufen.
     public void RoundDecided(Player winningPlayer, Player losingPlayer, Discipline discipline)
     {
-        MarkDiscipline(discipline, winningPlayer);
+        ShowTurnWinner(discipline, winningPlayer);
 
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
@@ -378,7 +390,7 @@ public partial class MainWindow : Gtk.Window
         {
             buttonNextCard.Sensitive = true;
         }
-    
+
         //check if player1 has no cards
         //  yes? check if player2 has no cards
         //        yes? game draw!
