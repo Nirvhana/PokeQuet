@@ -85,6 +85,36 @@ public partial class MainWindow
 
 	private global::Gtk.Label labelP2FlavourText;
 
+	private global::Gtk.VBox vbox6;
+
+	private global::Gtk.Label labelTurnResult;
+
+	private global::Gtk.Label labelNextCard;
+
+	private global::Gtk.HSeparator hseparator1;
+
+	private global::Gtk.HBox hbox4;
+
+	private global::Gtk.VBox vbox4;
+
+	private global::Gtk.Label label11;
+
+	private global::Gtk.Label labelP1CardCount;
+
+	private global::Gtk.Button buttonNextCard;
+
+	private global::Gtk.VBox vbox7;
+
+	private global::Gtk.Label label13;
+
+	private global::Gtk.Label labelTieCardCount;
+
+	private global::Gtk.VBox vbox5;
+
+	private global::Gtk.Label label12;
+
+	private global::Gtk.Label labelP2CardCount;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -113,7 +143,6 @@ public partial class MainWindow
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labelSpacer1 = new global::Gtk.Label();
 		this.labelSpacer1.Name = "labelSpacer1";
-		this.labelSpacer1.LabelProp = "";
 		this.hbox2.Add(this.labelSpacer1);
 		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.labelSpacer1]));
 		w2.Position = 1;
@@ -168,11 +197,10 @@ public partial class MainWindow
 		this.labelP1FlavourText.LabelProp = global::Mono.Unix.Catalog.GetString("Lorem ipsum dolor sit amet, inermis nominavi patrioque eos ut, ei putent volutpat" +
 				" ocurreret sit.");
 		this.labelP1FlavourText.Wrap = true;
+		this.labelP1FlavourText.Justify = ((global::Gtk.Justification)(2));
 		this.vbox1.Add(this.labelP1FlavourText);
 		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.labelP1FlavourText]));
 		w7.Position = 2;
-		w7.Expand = false;
-		w7.Fill = false;
 		this.hbox1.Add(this.vbox1);
 		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.vbox1]));
 		w8.Position = 0;
@@ -253,6 +281,7 @@ public partial class MainWindow
 		w13.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child table2.Gtk.Table+TableChild
 		this.label1 = new global::Gtk.Label();
+		this.label1.Name = "label1";
 		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Type");
 		this.table2.Add(this.label1);
 		global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table2[this.label1]));
@@ -477,7 +506,6 @@ public partial class MainWindow
 		// Container child table2.Gtk.Table+TableChild
 		this.labelSpacer = new global::Gtk.Label();
 		this.labelSpacer.Name = "labelSpacer";
-		this.labelSpacer.LabelProp = "";
 		this.table2.Add(this.labelSpacer);
 		global::Gtk.Table.TableChild w34 = ((global::Gtk.Table.TableChild)(this.table2[this.labelSpacer]));
 		w34.LeftAttach = ((uint)(3));
@@ -517,11 +545,10 @@ public partial class MainWindow
 		this.labelP2FlavourText.LabelProp = global::Mono.Unix.Catalog.GetString("Lorem ipsum dolor sit amet, inermis nominavi patrioque eos ut, ei putent volutpat" +
 				" ocurreret sit.");
 		this.labelP2FlavourText.Wrap = true;
+		this.labelP2FlavourText.Justify = ((global::Gtk.Justification)(2));
 		this.vbox2.Add(this.labelP2FlavourText);
 		global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.labelP2FlavourText]));
 		w38.Position = 2;
-		w38.Expand = false;
-		w38.Fill = false;
 		this.hbox1.Add(this.vbox2);
 		global::Gtk.Box.BoxChild w39 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.vbox2]));
 		w39.Position = 2;
@@ -532,6 +559,141 @@ public partial class MainWindow
 		w40.Position = 1;
 		w40.Expand = false;
 		w40.Fill = false;
+		// Container child vbox3.Gtk.Box+BoxChild
+		this.vbox6 = new global::Gtk.VBox();
+		this.vbox6.Name = "vbox6";
+		this.vbox6.Spacing = 6;
+		// Container child vbox6.Gtk.Box+BoxChild
+		this.labelTurnResult = new global::Gtk.Label();
+		this.labelTurnResult.Name = "labelTurnResult";
+		this.labelTurnResult.LabelProp = global::Mono.Unix.Catalog.GetString("<Player 1> wins the turn.");
+		this.vbox6.Add(this.labelTurnResult);
+		global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.labelTurnResult]));
+		w41.Position = 0;
+		w41.Expand = false;
+		w41.Fill = false;
+		// Container child vbox6.Gtk.Box+BoxChild
+		this.labelNextCard = new global::Gtk.Label();
+		this.labelNextCard.Name = "labelNextCard";
+		this.labelNextCard.LabelProp = global::Mono.Unix.Catalog.GetString("Click Next Card to continue!");
+		this.vbox6.Add(this.labelNextCard);
+		global::Gtk.Box.BoxChild w42 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.labelNextCard]));
+		w42.Position = 1;
+		w42.Expand = false;
+		w42.Fill = false;
+		this.vbox3.Add(this.vbox6);
+		global::Gtk.Box.BoxChild w43 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.vbox6]));
+		w43.Position = 2;
+		w43.Expand = false;
+		w43.Fill = false;
+		// Container child vbox3.Gtk.Box+BoxChild
+		this.hseparator1 = new global::Gtk.HSeparator();
+		this.hseparator1.Name = "hseparator1";
+		this.vbox3.Add(this.hseparator1);
+		global::Gtk.Box.BoxChild w44 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hseparator1]));
+		w44.Position = 3;
+		w44.Expand = false;
+		w44.Fill = false;
+		// Container child vbox3.Gtk.Box+BoxChild
+		this.hbox4 = new global::Gtk.HBox();
+		this.hbox4.Name = "hbox4";
+		this.hbox4.Spacing = 6;
+		// Container child hbox4.Gtk.Box+BoxChild
+		this.vbox4 = new global::Gtk.VBox();
+		this.vbox4.Name = "vbox4";
+		this.vbox4.Spacing = 6;
+		// Container child vbox4.Gtk.Box+BoxChild
+		this.label11 = new global::Gtk.Label();
+		this.label11.Name = "label11";
+		this.label11.LabelProp = global::Mono.Unix.Catalog.GetString("Deck");
+		this.vbox4.Add(this.label11);
+		global::Gtk.Box.BoxChild w45 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.label11]));
+		w45.Position = 0;
+		w45.Expand = false;
+		w45.Fill = false;
+		// Container child vbox4.Gtk.Box+BoxChild
+		this.labelP1CardCount = new global::Gtk.Label();
+		this.labelP1CardCount.Name = "labelP1CardCount";
+		this.labelP1CardCount.LabelProp = global::Mono.Unix.Catalog.GetString("0");
+		this.vbox4.Add(this.labelP1CardCount);
+		global::Gtk.Box.BoxChild w46 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.labelP1CardCount]));
+		w46.Position = 1;
+		w46.Expand = false;
+		w46.Fill = false;
+		// Container child vbox4.Gtk.Box+BoxChild
+		this.buttonNextCard = new global::Gtk.Button();
+		this.buttonNextCard.CanFocus = true;
+		this.buttonNextCard.Name = "buttonNextCard";
+		this.buttonNextCard.UseUnderline = true;
+		this.buttonNextCard.Label = global::Mono.Unix.Catalog.GetString("Next Card");
+		this.vbox4.Add(this.buttonNextCard);
+		global::Gtk.Box.BoxChild w47 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.buttonNextCard]));
+		w47.Position = 2;
+		w47.Expand = false;
+		w47.Fill = false;
+		this.hbox4.Add(this.vbox4);
+		global::Gtk.Box.BoxChild w48 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox4]));
+		w48.Position = 0;
+		w48.Expand = false;
+		w48.Fill = false;
+		// Container child hbox4.Gtk.Box+BoxChild
+		this.vbox7 = new global::Gtk.VBox();
+		this.vbox7.Name = "vbox7";
+		this.vbox7.Spacing = 6;
+		// Container child vbox7.Gtk.Box+BoxChild
+		this.label13 = new global::Gtk.Label();
+		this.label13.Name = "label13";
+		this.label13.LabelProp = global::Mono.Unix.Catalog.GetString("Tie Cards");
+		this.vbox7.Add(this.label13);
+		global::Gtk.Box.BoxChild w49 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.label13]));
+		w49.Position = 0;
+		w49.Expand = false;
+		w49.Fill = false;
+		// Container child vbox7.Gtk.Box+BoxChild
+		this.labelTieCardCount = new global::Gtk.Label();
+		this.labelTieCardCount.Name = "labelTieCardCount";
+		this.labelTieCardCount.LabelProp = global::Mono.Unix.Catalog.GetString("0");
+		this.vbox7.Add(this.labelTieCardCount);
+		global::Gtk.Box.BoxChild w50 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.labelTieCardCount]));
+		w50.Position = 1;
+		w50.Expand = false;
+		w50.Fill = false;
+		this.hbox4.Add(this.vbox7);
+		global::Gtk.Box.BoxChild w51 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox7]));
+		w51.Position = 1;
+		w51.Fill = false;
+		// Container child hbox4.Gtk.Box+BoxChild
+		this.vbox5 = new global::Gtk.VBox();
+		this.vbox5.Name = "vbox5";
+		this.vbox5.Spacing = 6;
+		// Container child vbox5.Gtk.Box+BoxChild
+		this.label12 = new global::Gtk.Label();
+		this.label12.Name = "label12";
+		this.label12.LabelProp = global::Mono.Unix.Catalog.GetString("Deck");
+		this.vbox5.Add(this.label12);
+		global::Gtk.Box.BoxChild w52 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.label12]));
+		w52.Position = 0;
+		w52.Expand = false;
+		w52.Fill = false;
+		// Container child vbox5.Gtk.Box+BoxChild
+		this.labelP2CardCount = new global::Gtk.Label();
+		this.labelP2CardCount.Name = "labelP2CardCount";
+		this.labelP2CardCount.LabelProp = global::Mono.Unix.Catalog.GetString("0");
+		this.vbox5.Add(this.labelP2CardCount);
+		global::Gtk.Box.BoxChild w53 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.labelP2CardCount]));
+		w53.Position = 1;
+		w53.Expand = false;
+		w53.Fill = false;
+		this.hbox4.Add(this.vbox5);
+		global::Gtk.Box.BoxChild w54 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox5]));
+		w54.Position = 2;
+		w54.Expand = false;
+		w54.Fill = false;
+		this.vbox3.Add(this.hbox4);
+		global::Gtk.Box.BoxChild w55 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hbox4]));
+		w55.Position = 4;
+		w55.Expand = false;
+		w55.Fill = false;
 		this.Add(this.vbox3);
 		if ((this.Child != null))
 		{
@@ -546,5 +708,6 @@ public partial class MainWindow
 		this.buttonSelectHP.Clicked += new global::System.EventHandler(this.HPDisciplineSelected);
 		this.buttonSelectDEF.Clicked += new global::System.EventHandler(this.DEFDisciplineSelected);
 		this.buttonSelectATK.Clicked += new global::System.EventHandler(this.ATKDisciplineSelected);
+		this.buttonNextCard.Clicked += new global::System.EventHandler(this.NextCardClicked);
 	}
 }

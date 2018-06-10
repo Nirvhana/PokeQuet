@@ -6,6 +6,7 @@ namespace PokeQuet
 		public GameOverDialog()
 		{
 			this.Build();
+			this.Modal = true;
 		}
 	}
 }
