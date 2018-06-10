@@ -4,58 +4,75 @@ namespace PokeQuet
 {
 	public partial class GameOverDialog
 	{
-		private global::Gtk.Button buttonCancel;
+		private global::Gtk.Alignment alignment1;
 
-		private global::Gtk.Button buttonOk;
+		private global::Gtk.Image imageGameResult;
+
+		private global::Gtk.Button buttonRestart;
+
+		private global::Gtk.Button buttonQuit;
 
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
 			// Widget PokeQuet.GameOverDialog
 			this.Name = "PokeQuet.GameOverDialog";
-			this.Title = global::Mono.Unix.Catalog.GetString("dialog1");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.BorderWidth = ((uint)(3));
+			this.AllowShrink = true;
+			this.Gravity = ((global::Gdk.Gravity)(5));
 			// Internal child PokeQuet.GameOverDialog.VBox
 			global::Gtk.VBox w1 = this.VBox;
 			w1.Name = "dialog1_VBox";
 			w1.BorderWidth = ((uint)(2));
-			// Internal child PokeQuet.GameOverDialog.ActionArea
-			global::Gtk.HButtonBox w2 = this.ActionArea;
-			w2.Name = "dialog1_ActionArea";
-			w2.Spacing = 10;
-			w2.BorderWidth = ((uint)(5));
-			w2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
-			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
-			this.buttonCancel = new global::Gtk.Button();
-			this.buttonCancel.CanDefault = true;
-			this.buttonCancel.CanFocus = true;
-			this.buttonCancel.Name = "buttonCancel";
-			this.buttonCancel.UseStock = true;
-			this.buttonCancel.UseUnderline = true;
-			this.buttonCancel.Label = "gtk-cancel";
-			this.AddActionWidget(this.buttonCancel, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w3 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w2[this.buttonCancel]));
+			// Container child dialog1_VBox.Gtk.Box+BoxChild
+			this.alignment1 = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
+			this.alignment1.Name = "alignment1";
+			// Container child alignment1.Gtk.Container+ContainerChild
+			this.imageGameResult = new global::Gtk.Image();
+			this.imageGameResult.CanFocus = true;
+			this.imageGameResult.Name = "imageGameResult";
+			this.alignment1.Add(this.imageGameResult);
+			w1.Add(this.alignment1);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(w1[this.alignment1]));
+			w3.Position = 0;
 			w3.Expand = false;
 			w3.Fill = false;
+			// Internal child PokeQuet.GameOverDialog.ActionArea
+			global::Gtk.HButtonBox w4 = this.ActionArea;
+			w4.Name = "dialog1_ActionArea";
+			w4.Spacing = 10;
+			w4.BorderWidth = ((uint)(5));
+			w4.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
-			this.buttonOk = new global::Gtk.Button();
-			this.buttonOk.CanDefault = true;
-			this.buttonOk.CanFocus = true;
-			this.buttonOk.Name = "buttonOk";
-			this.buttonOk.UseStock = true;
-			this.buttonOk.UseUnderline = true;
-			this.buttonOk.Label = "gtk-ok";
-			this.AddActionWidget(this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w2[this.buttonOk]));
-			w4.Position = 1;
-			w4.Expand = false;
-			w4.Fill = false;
+			this.buttonRestart = new global::Gtk.Button();
+			this.buttonRestart.CanDefault = true;
+			this.buttonRestart.CanFocus = true;
+			this.buttonRestart.Name = "buttonRestart";
+			this.buttonRestart.UseUnderline = true;
+			this.buttonRestart.Label = global::Mono.Unix.Catalog.GetString("_Restart Game");
+			this.AddActionWidget(this.buttonRestart, -5);
+			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonRestart]));
+			w5.Expand = false;
+			w5.Fill = false;
+			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
+			this.buttonQuit = new global::Gtk.Button();
+			this.buttonQuit.CanDefault = true;
+			this.buttonQuit.CanFocus = true;
+			this.buttonQuit.Name = "buttonQuit";
+			this.buttonQuit.UseUnderline = true;
+			this.buttonQuit.Label = "_Quit Game";
+			this.AddActionWidget(this.buttonQuit, -6);
+			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonQuit]));
+			w6.Position = 1;
+			w6.Expand = false;
+			w6.Fill = false;
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 1009;
+			this.DefaultHeight = 1048;
 			this.Show();
 		}
 	}

@@ -923,8 +923,10 @@
   </widget>
   <widget class="Gtk.Dialog" id="PokeQuet.GameOverDialog" design-size="400 300">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">dialog1</property>
     <property name="WindowPosition">CenterOnParent</property>
+    <property name="BorderWidth">3</property>
+    <property name="AllowShrink">True</property>
+    <property name="Gravity">Center</property>
     <property name="Buttons">2</property>
     <property name="HelpButton">False</property>
     <child internal-child="VBox">
@@ -932,6 +934,21 @@
         <property name="MemberName" />
         <property name="BorderWidth">2</property>
         <child>
+          <widget class="Gtk.Alignment" id="alignment1">
+            <property name="MemberName" />
+            <child>
+              <widget class="Gtk.Image" id="imageGameResult">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
           <placeholder />
         </child>
       </widget>
@@ -944,15 +961,14 @@
         <property name="Size">2</property>
         <property name="LayoutStyle">End</property>
         <child>
-          <widget class="Gtk.Button" id="buttonCancel">
+          <widget class="Gtk.Button" id="buttonRestart">
             <property name="MemberName" />
             <property name="CanDefault">True</property>
             <property name="CanFocus">True</property>
-            <property name="UseStock">True</property>
-            <property name="Type">StockItem</property>
-            <property name="StockId">gtk-cancel</property>
-            <property name="ResponseId">-6</property>
-            <property name="label">gtk-cancel</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">_Restart Game</property>
+            <property name="UseUnderline">True</property>
+            <property name="ResponseId">-5</property>
           </widget>
           <packing>
             <property name="Expand">False</property>
@@ -960,15 +976,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="buttonOk">
+          <widget class="Gtk.Button" id="buttonQuit">
             <property name="MemberName" />
             <property name="CanDefault">True</property>
             <property name="CanFocus">True</property>
-            <property name="UseStock">True</property>
-            <property name="Type">StockItem</property>
-            <property name="StockId">gtk-ok</property>
-            <property name="ResponseId">-5</property>
-            <property name="label">gtk-ok</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label">_Quit Game</property>
+            <property name="UseUnderline">True</property>
+            <property name="ResponseId">-6</property>
           </widget>
           <packing>
             <property name="Position">1</property>
