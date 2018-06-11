@@ -27,11 +27,10 @@ namespace PokeQuet
 			this.labelResult = new global::Gtk.Label();
 			this.labelResult.Name = "labelResult";
 			this.labelResult.LabelProp = global::Mono.Unix.Catalog.GetString("<Result>");
+			this.labelResult.Justify = ((global::Gtk.Justification)(2));
 			w1.Add(this.labelResult);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(w1[this.labelResult]));
 			w2.Position = 0;
-			w2.Expand = false;
-			w2.Fill = false;
 			// Internal child PokeQuet.GameOverDialog.ActionArea
 			global::Gtk.HButtonBox w3 = this.ActionArea;
 			w3.Name = "dialog1_ActionArea";
@@ -65,8 +64,8 @@ namespace PokeQuet
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 257;
+			this.DefaultHeight = 155;
 			this.Show();
 			this.buttonRestart.Clicked += new global::System.EventHandler(this.RestartClicked);
 			this.buttonQuit.Clicked += new global::System.EventHandler(this.QuitClicked);

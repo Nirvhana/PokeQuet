@@ -3,7 +3,7 @@
   {
     "name": "Bulbasaur",
     "flavorText": "Bulbasaur uses its bulb to store extra energy. This makes it possible for Bulbasaur to survive for days without eating.",
-    "texture": "",
+    "texture": "Bulbasaur",
     "type": "Grass",
     "hp": 45,
     "atk": 70,
@@ -13,7 +13,7 @@
   {
     "name": "Charmander",
     "flavorText": "Physically, Charmander has a slender body, a short nose, and a long tail, as well as other lizard-like characteristics.",
-    "texture": "",
+    "texture": "Charmander",
     "type": "Fire",
     "hp": 40,
     "atk": 60,
@@ -33,7 +33,7 @@
   {
     "name": "Butterfree",
     "flavorText": "Its design appears to be based on the Black-veined White butterfly.",
-    "texture": "",
+    "texture": "Butterfree",
     "type": "Grass",
     "hp": 50,
     "atk": 45,
@@ -43,7 +43,7 @@
   {
     "name": "Beedrill",
     "flavorText": "Bzzz Bzzz, run!",
-    "texture": "",
+    "texture": "Beedrill",
     "type": "Grass",
     "hp": 50,
     "atk": 60,
@@ -53,7 +53,7 @@
   {
     "name": "Pidgeotto",
     "flavorText": "Pidgeotto is a raptor-like avian Pokémon.",
-    "texture": "",
+    "texture": "Pidgeotto",
     "type": "Fire",
     "hp": 65,
     "atk": 60,
@@ -63,7 +63,7 @@
   {
     "name": "Rattata",
     "flavorText": "Rattata is a small, quadruped rodent Pokémon. Its most notable feature is its large teeth.",
-    "texture": "",
+    "texture": "Rattata",
     "type": "Fire",
     "hp": 30,
     "atk": 50,
@@ -73,7 +73,7 @@
   {
     "name": "Arbok",
     "flavorText": "Arbok is a serpent like Pokémon with purple scales all over its body.",
-    "texture": "",
+    "texture": "Arbok",
     "type": "Fire",
     "hp": 50,
     "atk": 71,
@@ -83,7 +83,7 @@
   {
     "name": "Eevee",
     "flavorText": "This is the favorite Pokémon of Mr. Kramp, one of the game developers!",
-    "texture": "",
+    "texture": "Eevee",
     "type": "Grass",
     "hp": 55,
     "atk": 55,
@@ -93,7 +93,7 @@
   {
     "name": "Vaporeon",
     "flavorText": "Vaporeon is mostly found in urban settings and is rarely seen in the wild.",
-    "texture": "",
+    "texture": "Vaporeon",
     "type": "Water",
     "hp": 90,
     "atk": 50,
@@ -103,7 +103,7 @@
   {
     "name": "Flareon",
     "flavorText": "Flareon stores and heats inhaled air in this sac, and then exhales it as fire.",
-    "texture": "",
+    "texture": "Flareon",
     "type": "Fire",
     "hp": 50,
     "atk": 90,
@@ -113,7 +113,7 @@
   {
     "name": "Lickitung",
     "flavorText": "At over 2m, Lickitung's tongue is twice as long as its body.",
-    "texture": "",
+    "texture": "Lickitung",
     "type": "Grass",
     "hp": 90,
     "atk": 55,
@@ -123,7 +123,7 @@
   {
     "name": "Exeggutor",
     "flavorText": "Exeggutor is a tall, bipedal Pokémon that strongly resembles a coconut palm or other palm tree.",
-    "texture": "",
+    "texture": "Exeggutor",
     "type": "Grass",
     "hp": 70,
     "atk": 75,
@@ -133,7 +133,7 @@
   {
     "name": "Exeggcute",
     "flavorText": "Exeggcute gathers in swarms of six.",
-    "texture": "",
+    "texture": "Exeggcute",
     "type": "Grass",
     "hp": 60,
     "atk": 40,
@@ -143,7 +143,7 @@
   {
     "name": "Shellder",
     "flavorText": "Shellder can develop a symbiotic relationship with Slowpoke.",
-    "texture": "",
+    "texture": "Shellder",
     "type": "Water",
     "hp": 30,
     "atk": 50,
@@ -153,7 +153,7 @@
   {
     "name": "Grimer",
     "flavorText": "Grimer is a slimy, amorphous blob-like Pokémon, made of living purple sludge.",
-    "texture": "",
+    "texture": "Grimer",
     "type": "Grass",
     "hp": 80,
     "atk": 80,
@@ -163,7 +163,7 @@
   {
     "name": "Seel",
     "flavorText": "Seel lives on icebergs in frigid ocean waters.",
-    "texture": "",
+    "texture": "Seel",
     "type": "Water",
     "hp": 70,
     "atk": 45,
@@ -173,7 +173,7 @@
   {
     "name": "Slowbro",
     "flavorText": "Slowbro has lost the capability to feel pain due to the Shellder's poison.",
-    "texture": "",
+    "texture": "Slowbro",
     "type": "Water",
     "hp": 80,
     "atk": 70,
@@ -183,7 +183,7 @@
   {
     "name": "Slowpoke",
     "flavorText": "Slowpoke has notoriously dim intellect, and often forgets what it was doing.",
-    "texture": "",
+    "texture": "Slowpoke",
     "type": "Water",
     "hp": 90,
     "atk": 65,
@@ -193,7 +193,7 @@
   {
     "name": "Ponyta",
     "flavorText": "Ponyta can control its flames so that its rider is not burned by them.",
-    "texture": "",
+    "texture": "Ponyta",
     "type": "Fire",
     "hp": 50,
     "atk": 85,
@@ -203,7 +203,7 @@
   {
     "name": "Tentacool",
     "flavorText": "Tentacool absorbs sunlight and refracts it using water inside its body to convert it into beam energy.",
-    "texture": "",
+    "texture": "Tentacool",
     "type": "Water",
     "hp": 40,
     "atk": 40,
@@ -213,7 +213,7 @@
   {
     "name": "Weepinbell",
     "flavorText": "Weepinbell camouflages itself as a plant in the forest whilst awaiting an unwary victim.",
-    "texture": "",
+    "texture": "Weepinbell",
     "type": "Grass",
     "hp": 62,
     "atk": 81,
@@ -223,7 +223,7 @@
   {
     "name": "Bellsprout",
     "flavorText": "Bellsprout is a plant-based Pokémon with a stem-like brown body.",
-    "texture": "",
+    "texture": "Bellsprout",
     "type": "Grass",
     "hp": 50,
     "atk": 75,
@@ -233,7 +233,7 @@
   {
     "name": "Poliwhirl",
     "flavorText": "While Poliwhirl is capable of moving on land, it prefers to stay in the water",
-    "texture": "",
+    "texture": "Poliwhirl",
     "type": "Water",
     "hp": 72,
     "atk": 65,
@@ -243,7 +243,7 @@
   {
     "name": "Poliwag",
     "flavorText": "Poliwag resembles a blue, spherical tadpole. It has large eyes and pink lips.",
-    "texture": "",
+    "texture": "Poliwag",
     "type": "Water",
     "hp": 40,
     "atk": 50,
@@ -253,7 +253,7 @@
   {
     "name": "Growlithe",
     "flavorText": "Growlithe is a friendly and loyal Pokémon that will fearlessly defend its Trainer and territory from harm.",
-    "texture": "",
+    "texture": "Growlithe",
     "type": "Fire",
     "hp": 55,
     "atk": 70,
@@ -263,7 +263,7 @@
   {
     "name": "Golduck",
     "flavorText": "Golduck is a fast swimmer, out-swimming even the most athletic of humans.",
-    "texture": "",
+    "texture": "Golduck",
     "type": "Water",
     "hp": 67,
     "atk": 82,
@@ -273,7 +273,7 @@
   {
     "name": "Psyduck",
     "flavorText": "Psyduck is a yellow Pokémon that resembles a duck or bipedal platypus.",
-    "texture": "",
+    "texture": "Psyduck",
     "type": "Water",
     "hp": 70,
     "atk": 52,
@@ -283,7 +283,7 @@
   {
     "name": "Venonat",
     "flavorText": "Venonat has a round body covered in purple fur.",
-    "texture": "",
+    "texture": "Venonat",
     "type": "Grass",
     "hp": 60,
     "atk": 55,
@@ -293,7 +293,7 @@
   {
     "name": "Paras",
     "flavorText": "Red-and-yellow mushrooms known as tochukaso grow on this Pokémon's back.",
-    "texture": "",
+    "texture": "Paras",
     "type": "Grass",
     "hp": 35,
     "atk": 70,
@@ -303,7 +303,7 @@
   {
     "name": "Gloom",
     "flavorText": "Gloom is a blue, bipedal Pokémon with rudimentary hands and feet.",
-    "texture": "",
+    "texture": "Gloom",
     "type": "Water",
     "hp": 60,
     "atk": 65,
@@ -313,7 +313,7 @@
   {
     "name": "Vulpix",
     "flavorText": "Vulpix is a small, quadruped, fox-like Pokémon.",
-    "texture": "",
+    "texture": "Vulpix",
     "type": "Fire",
     "hp": 38,
     "atk": 55,

@@ -55,5 +55,6 @@ namespace PokeQuet
 		HP,
 		ATK,
 		DEF,
-		SPD	}
+		SPD
+	}
 }

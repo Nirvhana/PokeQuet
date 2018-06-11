@@ -12,10 +12,6 @@ namespace PokeQuet
 			MainMenu win = new MainMenu();
             win.Show();
             Application.Run();
-
-
-
-
         }
     }
 }
