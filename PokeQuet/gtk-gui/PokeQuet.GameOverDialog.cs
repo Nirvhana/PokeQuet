@@ -4,9 +4,7 @@ namespace PokeQuet
 {
 	public partial class GameOverDialog
 	{
-		private global::Gtk.Alignment alignment1;
-
-		private global::Gtk.Image imageGameResult;
+		private global::Gtk.Label labelResult;
 
 		private global::Gtk.Button buttonRestart;
 
@@ -26,24 +24,20 @@ namespace PokeQuet
 			w1.Name = "dialog1_VBox";
 			w1.BorderWidth = ((uint)(2));
 			// Container child dialog1_VBox.Gtk.Box+BoxChild
-			this.alignment1 = new global::Gtk.Alignment(0.5F, 0.5F, 1F, 1F);
-			this.alignment1.Name = "alignment1";
-			// Container child alignment1.Gtk.Container+ContainerChild
-			this.imageGameResult = new global::Gtk.Image();
-			this.imageGameResult.CanFocus = true;
-			this.imageGameResult.Name = "imageGameResult";
-			this.alignment1.Add(this.imageGameResult);
-			w1.Add(this.alignment1);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(w1[this.alignment1]));
-			w3.Position = 0;
-			w3.Expand = false;
-			w3.Fill = false;
+			this.labelResult = new global::Gtk.Label();
+			this.labelResult.Name = "labelResult";
+			this.labelResult.LabelProp = global::Mono.Unix.Catalog.GetString("<Result>");
+			w1.Add(this.labelResult);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(w1[this.labelResult]));
+			w2.Position = 0;
+			w2.Expand = false;
+			w2.Fill = false;
 			// Internal child PokeQuet.GameOverDialog.ActionArea
-			global::Gtk.HButtonBox w4 = this.ActionArea;
-			w4.Name = "dialog1_ActionArea";
-			w4.Spacing = 10;
-			w4.BorderWidth = ((uint)(5));
-			w4.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w3 = this.ActionArea;
+			w3.Name = "dialog1_ActionArea";
+			w3.Spacing = 10;
+			w3.BorderWidth = ((uint)(5));
+			w3.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonRestart = new global::Gtk.Button();
 			this.buttonRestart.CanDefault = true;
@@ -52,9 +46,9 @@ namespace PokeQuet
 			this.buttonRestart.UseUnderline = true;
 			this.buttonRestart.Label = global::Mono.Unix.Catalog.GetString("_Restart Game");
 			this.AddActionWidget(this.buttonRestart, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonRestart]));
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonRestart]));
+			w4.Expand = false;
+			w4.Fill = false;
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonQuit = new global::Gtk.Button();
 			this.buttonQuit.CanDefault = true;
@@ -63,17 +57,19 @@ namespace PokeQuet
 			this.buttonQuit.UseUnderline = true;
 			this.buttonQuit.Label = "_Quit Game";
 			this.AddActionWidget(this.buttonQuit, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonQuit]));
-			w6.Position = 1;
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonQuit]));
+			w5.Position = 1;
+			w5.Expand = false;
+			w5.Fill = false;
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 1009;
-			this.DefaultHeight = 1048;
+			this.DefaultWidth = 400;
+			this.DefaultHeight = 300;
 			this.Show();
+			this.buttonRestart.Clicked += new global::System.EventHandler(this.RestartClicked);
+			this.buttonQuit.Clicked += new global::System.EventHandler(this.QuitClicked);
 		}
 	}
 }

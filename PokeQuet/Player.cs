@@ -49,6 +49,7 @@ namespace PokeQuet
 		{
 			var card = Deck.GetCurrentCard();
 			var values = new List<int>(){ card.hp, card.atk, card.def, card.spd };
-			return DISCIPLINES[values.IndexOf(values.Max())+1];	  	}
+			return DISCIPLINES[values.IndexOf(values.Max())+1];
+	  	}
     }
 }

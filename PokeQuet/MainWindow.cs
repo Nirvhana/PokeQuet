@@ -393,20 +393,18 @@ public partial class MainWindow : Gtk.Window
 
         if (p1Count == 0 || p2Count == 0)
         {
-            int winOrLoose = 3;
             if (p1Count == 0 && p2Count == 0)
             {
-                winOrLoose = 2;
+				new GameOverDialog(this,null,0).Show();
             }
             else if (p1Count == 0)
             {
-                winOrLoose = 2;
+				new GameOverDialog(this,Player2,0).Show();
             }
             else if (p2Count == 0)
             {
-                winOrLoose = 1;
+				new GameOverDialog(this,Player1,0).Show();
             }
-            new GameOverDialog(winOrLoose).Show();
         }
         else
         {
