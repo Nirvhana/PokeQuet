@@ -29,6 +29,7 @@ namespace PokeQuet
 			this.AddRange(cards);
         }
 
+        // Generiert gleichgroße Decks aus allen Karten für beide Spieler.
         public static void FillDecksFromCardPool(Card[] pool, Deck deck1, Deck deck2)
         {
             deck1.Clear();

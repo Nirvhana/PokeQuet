@@ -1,6 +1,7 @@
 ﻿using System;
 namespace PokeQuet
 {
+    // Fenster das nach jedem Spiel erscheint.
 	public partial class GameOverDialog : Gtk.Dialog
 	{
 		public const string PLAYER_WON = "{0}(P{1}) WON!";
@@ -14,18 +15,21 @@ namespace PokeQuet
 
 			_main = window;
 
+            // Anzeige welcher Spieler gewonnen hat, oder das Spielergebnis unentschieden ist.
 			if (winningPlayer != null)
 				this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum);
 			else
 				this.labelResult.Text = DRAW;
 		}
 
+        // Restart Game - Button: Anklicken -> Startet das Spiel erneut.
 		protected void RestartClicked(object sender, EventArgs e)
 		{
 			this._main.StartGame();
 			this.Destroy();
 		}
 
+        // Quit Game - Button: Anklicken -> Beendet das Programm, schließt GameOverDialog- & Main- Fenster.
 		protected void QuitClicked(object sender, EventArgs e)
 		{
 			this._main.Destroy();

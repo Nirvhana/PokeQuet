@@ -25,6 +25,7 @@ public partial class MainWindow : Gtk.Window
     public Deck TieCards { get; set; }
    // Image image = 
 
+    // Aufruf des Hauptmenüs.
     public MainWindow(string playerName, int aiType, int startingPlayer) : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -32,6 +33,7 @@ public partial class MainWindow : Gtk.Window
         InitGame(playerName,aiType);
     }
 
+    // Pre-initialisierung des Spiels
 	public void InitGame(string playerName, int aiType)
     {
         LoadCards();
@@ -52,11 +54,13 @@ public partial class MainWindow : Gtk.Window
         StartGame();
     }
 
+    // Laden aller Karten aus der .Json.
     public void LoadCards()
     {
         CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
     }
 
+    // Initialisierung des Spiels
     public void StartGame()
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
@@ -77,6 +81,7 @@ public partial class MainWindow : Gtk.Window
 
     protected void NextCardClicked(object sender, EventArgs e) => NextTurn();
 
+    // Spielrunde
     public void NextTurn()
     {
         DisplayCards();
@@ -84,6 +89,8 @@ public partial class MainWindow : Gtk.Window
 
         if (ActivePlayer is AIPlayer)
             MakeCPUMove();
+
+        // Wenn Spieler am Zug ist -> Diciplines Buttons = klickbar
         else
         {
             buttonSelectType.Sensitive = true;
@@ -94,6 +101,7 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
+    // Anzeigen der Karten
     public void DisplayCards()
     {
         var p1card = Player1.Deck.GetCurrentCard();
@@ -140,6 +148,7 @@ public partial class MainWindow : Gtk.Window
     protected void DEFDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.DEF);
     protected void SPDDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.SPD);
 
+    // Diciplines Buttons
     public void ChooseDiscipline(Discipline discipline)
     {
         buttonSelectType.Sensitive = false;
@@ -155,6 +164,8 @@ public partial class MainWindow : Gtk.Window
         CompareDiscipline(Player2.MakeTurn(Player1, TieCards));
     }
 
+    // Aufdecken der verdeckte Karte & Werte von Spieler 2
+    // Wird bei CompareDiscipline() aufgerufen (nach Auswahl der Discipline)
     public void ShowOpponentCard()
     {
         var p2card = Player2.Deck.GetCurrentCard();
@@ -168,6 +179,7 @@ public partial class MainWindow : Gtk.Window
         labelP2SPD.Text = p2card.spd.ToString();
     }
 
+    // Anzeige welcher Spieler die aktuelle Runde gewonnen hat
     public void ShowTurnWinner(Discipline discipline, Player winningPlayer)
     {
         Gdk.Color p1color, p2color;
@@ -220,19 +232,17 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-
+    // * Kampflogik *
     // Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt / verliert / unentschieden
     public void CompareDiscipline(Discipline discipline)
     {
         ShowOpponentCard();
-
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
 
-        // selected Discipline needs to get implemented
         switch (discipline)
         {
-            // Type
+            // Type - Schere, Stein, Papier Prinzip
             case Discipline.TYPE:
                 if (p1Card.type == "Fire")
                 {
@@ -353,7 +363,7 @@ public partial class MainWindow : Gtk.Window
     //
     // 2. Gibt dem Gewinner der aktuellen Runde den Status: 'ActivePlayer'.
     //
-    // 3. Am Ende wird die 'CheckWinningState' Funktion aufgerufen.
+    // 3. Am Ende wird immer die 'CheckWinningState' Funktion aufgerufen.
     public void RoundDecided(Player winningPlayer, Player losingPlayer, Discipline discipline)
     {
         ShowTurnWinner(discipline, winningPlayer);
@@ -385,7 +395,7 @@ public partial class MainWindow : Gtk.Window
         CheckWinningState();
     }
 
-    // Überprüft, ob ein Spieler gewonnen hat, anhand der verbleibenden Karten in den Decks.
+    // Überprüft anhand der verbleibenden Karten in den Decks, ob ein Spieler das Spiel gewonnen hat.
     public void CheckWinningState()
     {
         var p1Count = Player1.Deck.Count;
@@ -410,15 +420,5 @@ public partial class MainWindow : Gtk.Window
         {
             buttonNextCard.Sensitive = true;
         }
-
-        //check if player1 has no cards
-        //  yes? check if player2 has no cards
-        //        yes? game draw!
-        //        no? player 2 wins!
-        //    no? check if player2 has no cards
-        //        yes? player 1 wins!
-        //        no? game continues!
     }
-
-
 }

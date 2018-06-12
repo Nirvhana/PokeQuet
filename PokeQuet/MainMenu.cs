@@ -3,6 +3,7 @@ using Gtk;
 
 namespace PokeQuet
 {
+    // Hauptmenü, das vor dem eigentlichen Spiel erscheint. Bietet diverse Spieloptionen.
 	public partial class MainMenu : Gtk.Window
 	{
 		public MainMenu() :

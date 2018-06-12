@@ -29,10 +29,11 @@ namespace PokeQuet
         public abstract Discipline MakeTurn(Player opponent, Deck tieCards);
     }
 
+    // KI für leichten Computergegner. 
+    // Trifft zufällige Entscheidungen(random).
+    // Name = "Bug Catcher"
     public class AIPlayerRandom : AIPlayer
     {
-
-        //Name ist immer Bug Catcher!
         public AIPlayerRandom() : base("Bug Catcher") { }
 
         public override Discipline MakeTurn(Player opponent, Deck tieCards)
@@ -41,6 +42,9 @@ namespace PokeQuet
         }
     }
 
+    // KI für schweren Computergegner. 
+    // Trifft logische Entscheidungen, wählt immer den höchsten Wert. Ignoriert Discipline: 'Type'. 
+    // Name = "Gym Leader"
     public class AIPlayerSimple : AIPlayer
 	{
 		public AIPlayerSimple() : base("Gym Leader") { }
