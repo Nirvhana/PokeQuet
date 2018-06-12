@@ -30,7 +30,6 @@ namespace PokeQuet
 				radiobuttonAIType1.Active ? 1 : 2,
 				radiobuttonStarting1.Active ? 1 : radiobuttonStarting2.Active ? 2 : 0,
                 radiobuttonDeckSize16.Active ? 1 : radiobuttonDeckSize8.Active ? 2 : radiobuttonDeckSize4.Active ? 3 : 0).Show();
-                this.Destroy();
 		}
 
         // Quit Game - Button: Anklicken -> Beendet das Programm.

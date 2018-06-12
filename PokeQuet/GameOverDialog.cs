@@ -44,13 +44,12 @@ namespace PokeQuet
             Application.Quit();
 		}
 
-    /*    // Main Menu - Button: not working yet
+        // Main Menu - Button: Anklicken -> Schließt MainWindow & GameOverDialog (MainMenu bleibt geöffnet).
         protected void OnButtonMainMenuClicked(object sender, EventArgs e)
         {
             this._main.Destroy();
             this.Destroy();
-            Process.Start(@"./MainMenu.cs");
         }
-        */
+
 	}
 }
