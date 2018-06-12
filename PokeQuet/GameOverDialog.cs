@@ -1,4 +1,10 @@
 ﻿using System;
+using Gtk;
+using PokeQuet;
+using Newtonsoft.Json;
+using System.IO;
+using System.Diagnostics;
+
 namespace PokeQuet
 {
     // Fenster das nach jedem Spiel erscheint.
@@ -32,8 +38,19 @@ namespace PokeQuet
         // Quit Game - Button: Anklicken -> Beendet das Programm, schließt GameOverDialog- & Main- Fenster.
 		protected void QuitClicked(object sender, EventArgs e)
 		{
+            
 			this._main.Destroy();
 			this.Destroy();
+            Application.Quit();
 		}
+
+    /*    // Main Menu - Button: not working yet
+        protected void OnButtonMainMenuClicked(object sender, EventArgs e)
+        {
+            this._main.Destroy();
+            this.Destroy();
+            Process.Start(@"./MainMenu.cs");
+        }
+        */
 	}
 }

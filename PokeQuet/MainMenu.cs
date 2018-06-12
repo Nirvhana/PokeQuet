@@ -22,6 +22,7 @@ namespace PokeQuet
 			a.RetVal = true;
 		}
 
+        // Start Game - Button: Anklicken -> Öffnet das Spielfenster und startet das Spiel.
 		protected void StartGameClicked(object sender, EventArgs e)
 		{
 			new MainWindow(
@@ -29,7 +30,15 @@ namespace PokeQuet
 				radiobuttonAIType1.Active ? 1 : 2,
 				radiobuttonStarting1.Active ? 1 : radiobuttonStarting2.Active ? 2 : 0,
                 radiobuttonDeckSize16.Active ? 1 : radiobuttonDeckSize8.Active ? 2 : radiobuttonDeckSize4.Active ? 3 : 0).Show();
+                this.Destroy();
 		}
+
+        // Quit Game - Button: Anklicken -> Beendet das Programm.
+        protected void QuitClicked(object sender, EventArgs e)
+        {
+            this.Destroy();
+            Application.Quit();
+        }
 
 		#endregion
 	}

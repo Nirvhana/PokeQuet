@@ -35,7 +35,7 @@ public partial class MainWindow : Gtk.Window
         InitGame(playerName,aiType);
     }
 
-    // Pre-initialisierung des Spiels
+    // Initialisierung des Spiels
 	public void InitGame(string playerName, int aiType)
     {
         LoadCards();
@@ -62,7 +62,7 @@ public partial class MainWindow : Gtk.Window
         CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
     }
 
-    // Initialisierung des Spiels
+    // Start des Spiels
     public void StartGame()
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck, deckSize);

@@ -215,8 +215,8 @@
     "flavorText": "Weepinbell camouflages itself as a plant in the forest whilst awaiting an unwary victim.",
     "texture": "Weepinbell",
     "type": "Grass",
-    "hp": 62,
-    "atk": 81,
+    "hp": 65,
+    "atk": 85,
     "def": 35,
     "spd": 45
   },
@@ -235,10 +235,10 @@
     "flavorText": "While Poliwhirl is capable of moving on land, it prefers to stay in the water",
     "texture": "Poliwhirl",
     "type": "Water",
-    "hp": 72,
+    "hp": 80,
     "atk": 65,
     "def": 65,
-    "spd": 62
+    "spd": 60
   },
   {
     "name": "Poliwag",
@@ -265,9 +265,9 @@
     "flavorText": "Golduck is a fast swimmer, out-swimming even the most athletic of humans.",
     "texture": "Golduck",
     "type": "Water",
-    "hp": 67,
-    "atk": 82,
-    "def": 68,
+    "hp": 65,
+    "atk": 80,
+    "def": 70,
     "spd": 50
   },
   {
@@ -276,9 +276,9 @@
     "texture": "Psyduck",
     "type": "Water",
     "hp": 70,
-    "atk": 52,
-    "def": 48,
-    "spd": 44
+    "atk": 50,
+    "def": 50,
+    "spd": 50
   },
   {
     "name": "Venonat",
@@ -297,7 +297,7 @@
     "type": "Grass",
     "hp": 35,
     "atk": 70,
-    "def": 61,
+    "def": 60,
     "spd": 25
   },
   {
@@ -315,7 +315,7 @@
     "flavorText": "Vulpix is a small, quadruped, fox-like Pokémon.",
     "texture": "Vulpix",
     "type": "Fire",
-    "hp": 38,
+    "hp": 45,
     "atk": 55,
     "def": 40,
     "spd": 65

@@ -6,6 +6,8 @@ namespace PokeQuet
 	{
 		private global::Gtk.Label labelResult;
 
+		private global::Gtk.Button buttonMainMenu;
+
 		private global::Gtk.Button buttonRestart;
 
 		private global::Gtk.Button buttonQuit;
@@ -38,6 +40,17 @@ namespace PokeQuet
 			w3.BorderWidth = ((uint)(5));
 			w3.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
+			this.buttonMainMenu = new global::Gtk.Button();
+			this.buttonMainMenu.CanDefault = true;
+			this.buttonMainMenu.CanFocus = true;
+			this.buttonMainMenu.Name = "buttonMainMenu";
+			this.buttonMainMenu.UseUnderline = true;
+			this.buttonMainMenu.Label = global::Mono.Unix.Catalog.GetString("_Main Menu");
+			this.AddActionWidget(this.buttonMainMenu, 0);
+			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonMainMenu]));
+			w4.Expand = false;
+			w4.Fill = false;
+			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonRestart = new global::Gtk.Button();
 			this.buttonRestart.CanDefault = true;
 			this.buttonRestart.CanFocus = true;
@@ -45,9 +58,10 @@ namespace PokeQuet
 			this.buttonRestart.UseUnderline = true;
 			this.buttonRestart.Label = global::Mono.Unix.Catalog.GetString("_Restart Game");
 			this.AddActionWidget(this.buttonRestart, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonRestart]));
-			w4.Expand = false;
-			w4.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonRestart]));
+			w5.Position = 1;
+			w5.Expand = false;
+			w5.Fill = false;
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonQuit = new global::Gtk.Button();
 			this.buttonQuit.CanDefault = true;
@@ -56,17 +70,18 @@ namespace PokeQuet
 			this.buttonQuit.UseUnderline = true;
 			this.buttonQuit.Label = "_Quit Game";
 			this.AddActionWidget(this.buttonQuit, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonQuit]));
-			w5.Position = 1;
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonQuit]));
+			w6.Position = 2;
+			w6.Expand = false;
+			w6.Fill = false;
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 257;
-			this.DefaultHeight = 155;
+			this.DefaultWidth = 565;
+			this.DefaultHeight = 209;
 			this.Show();
+			this.buttonMainMenu.Clicked += new global::System.EventHandler(this.OnButtonMainMenuClicked);
 			this.buttonRestart.Clicked += new global::System.EventHandler(this.RestartClicked);
 			this.buttonQuit.Clicked += new global::System.EventHandler(this.QuitClicked);
 		}
