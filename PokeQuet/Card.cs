@@ -14,16 +14,19 @@ namespace PokeQuet
     {
         public static readonly Random RNG = new Random();
 
+        // Gibt dem Spieler die oberste Karte seines Decks ([0]) in seine Hand.
         public Card GetCurrentCard()
         {
             return this.First();
         }
 
+        // Funktion um Karten dem Deck des Gewinners einer Runde hinzuzufügen.
 		public void PutCardsAtBack(IEnumerable<Card> cards)
         {
 			this.AddRange(cards);
         }
 
+        // Funktion um Karten dem Deck des Gewinners einer Runde hinzuzufügen.
 		public void PutCardsAtBack(params Card[] cards)
 		{
 			this.AddRange(cards);
