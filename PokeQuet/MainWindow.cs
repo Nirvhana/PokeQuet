@@ -17,6 +17,7 @@ public partial class MainWindow : Gtk.Window
     public static readonly Gdk.Color BLACK = new Gdk.Color((byte)0, (byte)0, (byte)0);
 
 	private int startingPlayer = 0;
+    private int deckSize = 0;
 
     public Card[] CardPool { get; set; }
     public Player ActivePlayer { get; set; }
@@ -26,10 +27,11 @@ public partial class MainWindow : Gtk.Window
    // Image image = 
 
     // Aufruf des Hauptmenüs.
-    public MainWindow(string playerName, int aiType, int startingPlayer) : base(Gtk.WindowType.Toplevel)
+    public MainWindow(string playerName, int aiType, int startingPlayer, int deckSize) : base(Gtk.WindowType.Toplevel)
     {
         Build();
 		this.startingPlayer = startingPlayer;
+        this.deckSize = deckSize;
         InitGame(playerName,aiType);
     }
 
@@ -45,7 +47,7 @@ public partial class MainWindow : Gtk.Window
 			Player2 = new AIPlayerSimple();
         Player2.Init(CardPool);
 
-        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
+        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck, deckSize);
         TieCards = new Deck();
 
         labelP1Name.Text = Player1.Name;
@@ -63,7 +65,7 @@ public partial class MainWindow : Gtk.Window
     // Initialisierung des Spiels
     public void StartGame()
     {
-        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck);
+        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck, deckSize);
         TieCards.Clear();
 		if (startingPlayer == 1 || startingPlayer == 0 && RNG.Next(2) == 0)
 			ActivePlayer = Player1;

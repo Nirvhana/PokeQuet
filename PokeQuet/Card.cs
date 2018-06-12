@@ -33,7 +33,7 @@ namespace PokeQuet
         }
 
         // Generiert gleichgroße Decks aus allen Karten für beide Spieler.
-        public static void FillDecksFromCardPool(Card[] pool, Deck deck1, Deck deck2)
+        public static void FillDecksFromCardPool(Card[] pool, Deck deck1, Deck deck2, int deckSize)
         {
             deck1.Clear();
             deck2.Clear();
@@ -49,7 +49,25 @@ namespace PokeQuet
 
             // Verteilung der gemischten Karten in die Spielerdecks
             deck1.AddRange(pool.Take(pool.Length / 2));
-            deck2.AddRange(pool.Skip(pool.Length / 2));
+            deck2.AddRange(pool.Skip(pool.Length / 2));  
+
+            int removeRandomCards = RNG.Next(0, 32);
+
+            switch (deckSize)
+            {
+                case 2:
+                    {
+                        deck1.RemoveRange(1, 8);
+                        deck2.RemoveRange(1, 8);
+                    }
+                    break;
+                case 3:
+                    {
+                        deck1.RemoveRange(1, 12);
+                        deck2.RemoveRange(1, 12);
+                    }
+                    break;
+            }
         }
     }
 

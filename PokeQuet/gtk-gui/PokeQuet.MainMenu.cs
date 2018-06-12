@@ -24,15 +24,15 @@ namespace PokeQuet
 
 		private global::Gtk.Label label5;
 
-		private global::Gtk.RadioButton radiobutton3;
-
-		private global::Gtk.RadioButton radiobutton5;
-
-		private global::Gtk.RadioButton radiobutton7;
-
 		private global::Gtk.RadioButton radiobuttonAIType1;
 
 		private global::Gtk.RadioButton radiobuttonAIType2;
+
+		private global::Gtk.RadioButton radiobuttonDeckSize16;
+
+		private global::Gtk.RadioButton radiobuttonDeckSize4;
+
+		private global::Gtk.RadioButton radiobuttonDeckSize8;
 
 		private global::Gtk.RadioButton radiobuttonStarting1;
 
@@ -149,76 +149,76 @@ namespace PokeQuet
 			w9.XOptions = ((global::Gtk.AttachOptions)(4));
 			w9.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
-			this.radiobutton3 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("16"));
-			this.radiobutton3.CanFocus = true;
-			this.radiobutton3.Name = "radiobutton3";
-			this.radiobutton3.DrawIndicator = true;
-			this.radiobutton3.UseUnderline = true;
-			this.radiobutton3.Group = new global::GLib.SList(global::System.IntPtr.Zero);
-			this.table1.Add(this.radiobutton3);
-			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobutton3]));
-			w10.TopAttach = ((uint)(6));
-			w10.BottomAttach = ((uint)(7));
-			w10.LeftAttach = ((uint)(1));
-			w10.RightAttach = ((uint)(2));
-			w10.XOptions = ((global::Gtk.AttachOptions)(4));
-			w10.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
-			this.radiobutton5 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("8"));
-			this.radiobutton5.CanFocus = true;
-			this.radiobutton5.Name = "radiobutton5";
-			this.radiobutton5.DrawIndicator = true;
-			this.radiobutton5.UseUnderline = true;
-			this.radiobutton5.Group = this.radiobutton3.Group;
-			this.table1.Add(this.radiobutton5);
-			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobutton5]));
-			w11.TopAttach = ((uint)(7));
-			w11.BottomAttach = ((uint)(8));
-			w11.LeftAttach = ((uint)(1));
-			w11.RightAttach = ((uint)(2));
-			w11.XOptions = ((global::Gtk.AttachOptions)(4));
-			w11.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
-			this.radiobutton7 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("4"));
-			this.radiobutton7.CanFocus = true;
-			this.radiobutton7.Name = "radiobutton7";
-			this.radiobutton7.DrawIndicator = true;
-			this.radiobutton7.UseUnderline = true;
-			this.radiobutton7.Group = this.radiobutton3.Group;
-			this.table1.Add(this.radiobutton7);
-			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobutton7]));
-			w12.TopAttach = ((uint)(8));
-			w12.BottomAttach = ((uint)(9));
-			w12.LeftAttach = ((uint)(1));
-			w12.RightAttach = ((uint)(2));
-			w12.XOptions = ((global::Gtk.AttachOptions)(4));
-			w12.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child table1.Gtk.Table+TableChild
 			this.radiobuttonAIType1 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("Bug Catcher"));
 			this.radiobuttonAIType1.CanFocus = true;
 			this.radiobuttonAIType1.Name = "radiobuttonAIType1";
 			this.radiobuttonAIType1.DrawIndicator = true;
 			this.radiobuttonAIType1.UseUnderline = true;
-			this.radiobuttonAIType1.Group = this.radiobutton3.Group;
+			this.radiobuttonAIType1.Group = new global::GLib.SList(global::System.IntPtr.Zero);
 			this.table1.Add(this.radiobuttonAIType1);
-			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonAIType1]));
-			w13.TopAttach = ((uint)(1));
-			w13.BottomAttach = ((uint)(2));
-			w13.LeftAttach = ((uint)(1));
-			w13.RightAttach = ((uint)(2));
-			w13.XOptions = ((global::Gtk.AttachOptions)(4));
-			w13.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonAIType1]));
+			w10.TopAttach = ((uint)(1));
+			w10.BottomAttach = ((uint)(2));
+			w10.LeftAttach = ((uint)(1));
+			w10.RightAttach = ((uint)(2));
+			w10.XOptions = ((global::Gtk.AttachOptions)(4));
+			w10.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.radiobuttonAIType2 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("Gym Leader"));
 			this.radiobuttonAIType2.CanFocus = true;
 			this.radiobuttonAIType2.Name = "radiobuttonAIType2";
 			this.radiobuttonAIType2.DrawIndicator = true;
 			this.radiobuttonAIType2.UseUnderline = true;
-			this.radiobuttonAIType2.Group = this.radiobutton3.Group;
+			this.radiobuttonAIType2.Group = this.radiobuttonAIType1.Group;
 			this.table1.Add(this.radiobuttonAIType2);
-			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonAIType2]));
-			w14.TopAttach = ((uint)(2));
-			w14.BottomAttach = ((uint)(3));
+			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonAIType2]));
+			w11.TopAttach = ((uint)(2));
+			w11.BottomAttach = ((uint)(3));
+			w11.LeftAttach = ((uint)(1));
+			w11.RightAttach = ((uint)(2));
+			w11.XOptions = ((global::Gtk.AttachOptions)(4));
+			w11.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table1.Gtk.Table+TableChild
+			this.radiobuttonDeckSize16 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("16"));
+			this.radiobuttonDeckSize16.CanFocus = true;
+			this.radiobuttonDeckSize16.Name = "radiobuttonDeckSize16";
+			this.radiobuttonDeckSize16.DrawIndicator = true;
+			this.radiobuttonDeckSize16.UseUnderline = true;
+			this.radiobuttonDeckSize16.Group = new global::GLib.SList(global::System.IntPtr.Zero);
+			this.table1.Add(this.radiobuttonDeckSize16);
+			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonDeckSize16]));
+			w12.TopAttach = ((uint)(6));
+			w12.BottomAttach = ((uint)(7));
+			w12.LeftAttach = ((uint)(1));
+			w12.RightAttach = ((uint)(2));
+			w12.XOptions = ((global::Gtk.AttachOptions)(4));
+			w12.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table1.Gtk.Table+TableChild
+			this.radiobuttonDeckSize4 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("4"));
+			this.radiobuttonDeckSize4.CanFocus = true;
+			this.radiobuttonDeckSize4.Name = "radiobuttonDeckSize4";
+			this.radiobuttonDeckSize4.DrawIndicator = true;
+			this.radiobuttonDeckSize4.UseUnderline = true;
+			this.radiobuttonDeckSize4.Group = this.radiobuttonDeckSize16.Group;
+			this.table1.Add(this.radiobuttonDeckSize4);
+			global::Gtk.Table.TableChild w13 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonDeckSize4]));
+			w13.TopAttach = ((uint)(8));
+			w13.BottomAttach = ((uint)(9));
+			w13.LeftAttach = ((uint)(1));
+			w13.RightAttach = ((uint)(2));
+			w13.XOptions = ((global::Gtk.AttachOptions)(4));
+			w13.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table1.Gtk.Table+TableChild
+			this.radiobuttonDeckSize8 = new global::Gtk.RadioButton(global::Mono.Unix.Catalog.GetString("8"));
+			this.radiobuttonDeckSize8.CanFocus = true;
+			this.radiobuttonDeckSize8.Name = "radiobuttonDeckSize8";
+			this.radiobuttonDeckSize8.DrawIndicator = true;
+			this.radiobuttonDeckSize8.UseUnderline = true;
+			this.radiobuttonDeckSize8.Group = this.radiobuttonDeckSize16.Group;
+			this.table1.Add(this.radiobuttonDeckSize8);
+			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table1[this.radiobuttonDeckSize8]));
+			w14.TopAttach = ((uint)(7));
+			w14.BottomAttach = ((uint)(8));
 			w14.LeftAttach = ((uint)(1));
 			w14.RightAttach = ((uint)(2));
 			w14.XOptions = ((global::Gtk.AttachOptions)(4));
