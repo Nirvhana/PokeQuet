@@ -989,7 +989,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="PokeQuet.MainMenu" design-size="670 552">
+  <widget class="Gtk.Window" id="PokeQuet.MainMenu" design-size="905 671">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainMenu</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -998,11 +998,100 @@
     <child>
       <widget class="Gtk.Table" id="table1">
         <property name="MemberName" />
-        <property name="NRows">11</property>
-        <property name="NColumns">3</property>
-        <property name="Homogeneous">True</property>
+        <property name="NRows">15</property>
+        <property name="NColumns">5</property>
         <property name="RowSpacing">4</property>
         <property name="BorderWidth">1</property>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
         <child>
           <placeholder />
         </child>
@@ -1061,8 +1150,8 @@
             <signal name="Clicked" handler="StartGameClicked" />
           </widget>
           <packing>
-            <property name="TopAttach">10</property>
-            <property name="BottomAttach">11</property>
+            <property name="TopAttach">13</property>
+            <property name="BottomAttach">14</property>
             <property name="LeftAttach">2</property>
             <property name="RightAttach">3</property>
             <property name="AutoSize">True</property>
@@ -1085,6 +1174,8 @@
             <property name="InvisibleChar">●</property>
           </widget>
           <packing>
+            <property name="TopAttach">1</property>
+            <property name="BottomAttach">2</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1103,8 +1194,8 @@
             <property name="MemberName" />
           </widget>
           <packing>
-            <property name="TopAttach">9</property>
-            <property name="BottomAttach">10</property>
+            <property name="TopAttach">12</property>
+            <property name="BottomAttach">13</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">False</property>
@@ -1119,12 +1210,30 @@
           </packing>
         </child>
         <child>
+          <widget class="Gtk.HSeparator" id="hseparator21">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="TopAttach">2</property>
+            <property name="BottomAttach">3</property>
+            <property name="RightAttach">5</property>
+            <property name="AutoSize">True</property>
+            <property name="YOptions">Fill</property>
+            <property name="XExpand">True</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">False</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.HSeparator" id="hseparator3">
             <property name="MemberName" />
           </widget>
           <packing>
-            <property name="TopAttach">9</property>
-            <property name="BottomAttach">10</property>
+            <property name="TopAttach">12</property>
+            <property name="BottomAttach">13</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
@@ -1141,8 +1250,8 @@
             <property name="MemberName" />
           </widget>
           <packing>
-            <property name="TopAttach">9</property>
-            <property name="BottomAttach">10</property>
+            <property name="TopAttach">12</property>
+            <property name="BottomAttach">13</property>
             <property name="LeftAttach">2</property>
             <property name="RightAttach">3</property>
             <property name="AutoSize">False</property>
@@ -1157,13 +1266,71 @@
           </packing>
         </child>
         <child>
+          <widget class="Gtk.HSeparator" id="hseparator7">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="TopAttach">12</property>
+            <property name="BottomAttach">13</property>
+            <property name="LeftAttach">3</property>
+            <property name="RightAttach">4</property>
+            <property name="AutoSize">True</property>
+            <property name="XOptions">Fill</property>
+            <property name="YOptions">Fill</property>
+            <property name="XExpand">False</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">False</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HSeparator" id="hseparator9">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="TopAttach">12</property>
+            <property name="BottomAttach">13</property>
+            <property name="LeftAttach">4</property>
+            <property name="RightAttach">5</property>
+            <property name="AutoSize">True</property>
+            <property name="XOptions">Fill</property>
+            <property name="YOptions">Fill</property>
+            <property name="XExpand">False</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">False</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="imageMainMenu">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+          </widget>
+          <packing>
+            <property name="RightAttach">5</property>
+            <property name="AutoSize">False</property>
+            <property name="XOptions">Expand, Shrink, Fill</property>
+            <property name="YOptions">Expand, Shrink, Fill</property>
+            <property name="XExpand">True</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">True</property>
+            <property name="YExpand">True</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">True</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.Label" id="label1">
             <property name="MemberName" />
             <property name="LabelProp" translatable="yes">Cards per Deck:</property>
           </widget>
           <packing>
-            <property name="TopAttach">6</property>
-            <property name="BottomAttach">7</property>
+            <property name="TopAttach">9</property>
+            <property name="BottomAttach">10</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
@@ -1181,8 +1348,8 @@
             <property name="LabelProp" translatable="yes">AI Type:</property>
           </widget>
           <packing>
-            <property name="TopAttach">1</property>
-            <property name="BottomAttach">2</property>
+            <property name="TopAttach">4</property>
+            <property name="BottomAttach">5</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
@@ -1200,6 +1367,8 @@
             <property name="LabelProp" translatable="yes">Player Name:</property>
           </widget>
           <packing>
+            <property name="TopAttach">1</property>
+            <property name="BottomAttach">2</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
@@ -1217,8 +1386,8 @@
             <property name="LabelProp" translatable="yes">Starting Player:</property>
           </widget>
           <packing>
-            <property name="TopAttach">3</property>
-            <property name="BottomAttach">4</property>
+            <property name="TopAttach">6</property>
+            <property name="BottomAttach">7</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
@@ -1242,8 +1411,8 @@
             <property name="Group">groupAIType</property>
           </widget>
           <packing>
-            <property name="TopAttach">1</property>
-            <property name="BottomAttach">2</property>
+            <property name="TopAttach">4</property>
+            <property name="BottomAttach">5</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1268,8 +1437,8 @@
             <property name="Group">groupAIType</property>
           </widget>
           <packing>
-            <property name="TopAttach">2</property>
-            <property name="BottomAttach">3</property>
+            <property name="TopAttach">5</property>
+            <property name="BottomAttach">6</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1295,8 +1464,8 @@
             <property name="Group">deckSize</property>
           </widget>
           <packing>
-            <property name="TopAttach">6</property>
-            <property name="BottomAttach">7</property>
+            <property name="TopAttach">9</property>
+            <property name="BottomAttach">10</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1321,8 +1490,8 @@
             <property name="Group">deckSize</property>
           </widget>
           <packing>
-            <property name="TopAttach">8</property>
-            <property name="BottomAttach">9</property>
+            <property name="TopAttach">11</property>
+            <property name="BottomAttach">12</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1347,8 +1516,8 @@
             <property name="Group">deckSize</property>
           </widget>
           <packing>
-            <property name="TopAttach">7</property>
-            <property name="BottomAttach">8</property>
+            <property name="TopAttach">10</property>
+            <property name="BottomAttach">11</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1374,8 +1543,8 @@
             <property name="Group">groupStartingPlayer</property>
           </widget>
           <packing>
-            <property name="TopAttach">3</property>
-            <property name="BottomAttach">4</property>
+            <property name="TopAttach">6</property>
+            <property name="BottomAttach">7</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1400,8 +1569,8 @@
             <property name="Group">groupStartingPlayer</property>
           </widget>
           <packing>
-            <property name="TopAttach">4</property>
-            <property name="BottomAttach">5</property>
+            <property name="TopAttach">7</property>
+            <property name="BottomAttach">8</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>
@@ -1426,8 +1595,8 @@
             <property name="Group">groupStartingPlayer</property>
           </widget>
           <packing>
-            <property name="TopAttach">5</property>
-            <property name="BottomAttach">6</property>
+            <property name="TopAttach">8</property>
+            <property name="BottomAttach">9</property>
             <property name="LeftAttach">1</property>
             <property name="RightAttach">2</property>
             <property name="AutoSize">True</property>

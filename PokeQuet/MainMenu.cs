@@ -6,10 +6,11 @@ namespace PokeQuet
     // Hauptmenü, das vor dem eigentlichen Spiel erscheint. Bietet diverse Spieloptionen.
 	public partial class MainMenu : Gtk.Window
 	{
-		public MainMenu() :
-				base(Gtk.WindowType.Toplevel)
+		public MainMenu() : base(Gtk.WindowType.Toplevel)
 		{
 			this.Build();
+            var logo = new Gdk.Pixbuf(@"./images/PokemonQuartettLogo.png");
+            imageMainMenu.Pixbuf = logo;
 		}
 
 

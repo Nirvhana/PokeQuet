@@ -51,8 +51,6 @@ namespace PokeQuet
             deck1.AddRange(pool.Take(pool.Length / 2));
             deck2.AddRange(pool.Skip(pool.Length / 2));  
 
-            int removeRandomCards = RNG.Next(0, 32);
-
             switch (deckSize)
             {
                 case 2:
