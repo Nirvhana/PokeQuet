@@ -90,38 +90,105 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="card_textures\Arbok.png" />
-    <Content Include="card_textures\Beedrill.png" />
-    <Content Include="card_textures\Bellsprout.png" />
-    <Content Include="card_textures\Bulbasaur.png" />
-    <Content Include="card_textures\Butterfree.png" />
-    <Content Include="card_textures\Charmander.png" />
-    <Content Include="card_textures\Eevee.png" />
-    <Content Include="card_textures\Exeggcute.png" />
-    <Content Include="card_textures\Exeggutor.png" />
-    <Content Include="card_textures\Flareon.png" />
-    <Content Include="card_textures\Gloom.png" />
-    <Content Include="card_textures\Golduck.png" />
-    <Content Include="card_textures\Grimer.png" />
-    <Content Include="card_textures\Growlithe.png" />
-    <Content Include="card_textures\Lickitung.png" />
-    <Content Include="card_textures\Paras.png" />
-    <Content Include="card_textures\Pidgeotto.png" />
-    <Content Include="card_textures\Poliwag.png" />
-    <Content Include="card_textures\Poliwhirl.png" />
-    <Content Include="card_textures\Ponyta.png" />
-    <Content Include="card_textures\Psyduck.png" />
-    <Content Include="card_textures\Rattata.png" />
-    <Content Include="card_textures\Seel.png" />
-    <Content Include="card_textures\Shellder.png" />
-    <Content Include="card_textures\Slowbro.png" />
-    <Content Include="card_textures\Slowpoke.png" />
-    <Content Include="card_textures\Squirtle.png" />
-    <Content Include="card_textures\Tentacool.png" />
-    <Content Include="card_textures\Vaporeon.png" />
-    <Content Include="card_textures\Venonat.png" />
-    <Content Include="card_textures\Vulpix.png" />
-    <Content Include="card_textures\Weepinbell.png" />
+    <Content Include="card_textures\Arbok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Beedrill.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Bellsprout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Bulbasaur.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Butterfree.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Charmander.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Eevee.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Exeggcute.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Exeggutor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Flareon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Gloom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Golduck.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Grimer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Growlithe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Lickitung.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Paras.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Pidgeotto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Poliwag.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Poliwhirl.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Ponyta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Psyduck.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Rattata.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Seel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Shellder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Slowbro.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Slowpoke.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Squirtle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Tentacool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Unown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Vaporeon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Venonat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Vulpix.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="card_textures\Weepinbell.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

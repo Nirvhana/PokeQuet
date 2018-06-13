@@ -118,6 +118,7 @@ public partial class MainWindow : Gtk.Window
 
         var p2card = Player2.Deck.GetCurrentCard();
         imageP2.File = p2card.texture;
+        imageP2.File = "./card_textures/Unown.png";
         labelP2CardName.Text = "???";
         labelP2FlavourText.Text = "???";
         labelP2Type.Text = "?";
@@ -411,11 +412,11 @@ public partial class MainWindow : Gtk.Window
             }
             else if (p1Count == 0)
             {
-				new GameOverDialog(this,Player2,0).Show();
+				new GameOverDialog(this,Player2,1).Show();
             }
             else if (p2Count == 0)
             {
-				new GameOverDialog(this,Player1,0).Show();
+				new GameOverDialog(this,Player1,2).Show();
             }
         }
         else
