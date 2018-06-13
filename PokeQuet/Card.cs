@@ -42,7 +42,7 @@ namespace PokeQuet
             for (int i = 1; pool.Length > i; i++)
             {
                 int j = Deck.RNG.Next(i + 1);
-                var card1 = pool[i];
+                Card card1 = pool[i];
                 pool[i] = pool[j];
                 pool[j] = card1;
             }

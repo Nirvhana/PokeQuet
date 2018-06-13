@@ -11,8 +11,7 @@ namespace PokeQuet
         public MainMenu() : base(Gtk.WindowType.Toplevel)
         {
             this.Build();
-            var logo = new Gdk.Pixbuf(@"./images/PokemonQuartettLogo.png");
-            imageMainMenu.Pixbuf = logo;
+            imageMainMenu.Pixbuf = new Gdk.Pixbuf(@"./images/PokemonQuartettLogo.png");
         }
 
         #region Autogeneriert
