@@ -22,7 +22,7 @@ namespace PokeQuet
         /// <param name="window">Das Hauptspielfenster(benötigt für Neustart/Beendigung)</param>
         /// <param name="winningPlayer">Der Sieger des Spiels oder null falls Unentschieden</param>
         /// <param name="playerNum">Die Zahl des Spielers der gewonnen hat(1 oder 2)</param>
-        /// <remarks>Code ausschließlich Tim und André</remarks>
+        /// <remarks>Code von Tim und André</remarks>
         public GameOverDialog(MainWindow window, Player winningPlayer, int playerNum)
 		{
             this.Build();
