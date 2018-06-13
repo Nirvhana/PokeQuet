@@ -7,7 +7,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/PokeQuet.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="960 522">
+  <widget class="Gtk.Window" id="MainWindow" design-size="960 536">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -17,6 +17,31 @@
         <property name="Spacing">10</property>
         <property name="BorderWidth">30</property>
         <child>
+          <widget class="Gtk.VBox" id="vbox6">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="labelTurnResult">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;Player 1&gt; wins the turn.</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.HBox" id="hbox2">
             <property name="MemberName" />
             <property name="Spacing">6</property>
@@ -25,13 +50,15 @@
                 <property name="MemberName" />
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">Player 1</property>
+                <property name="UseMarkup">True</property>
+                <property name="UseUnderline">True</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
-                <property name="Padding">44</property>
+                <property name="Padding">30</property>
               </packing>
             </child>
             <child>
@@ -48,19 +75,22 @@
                 <property name="MemberName" />
                 <property name="Xalign">1</property>
                 <property name="LabelProp" translatable="yes">Player 2</property>
+                <property name="UseMarkup">True</property>
+                <property name="UseUnderline">True</property>
                 <property name="Justify">Right</property>
+                <property name="Selectable">True</property>
               </widget>
               <packing>
                 <property name="Position">2</property>
-                <property name="AutoSize">False</property>
+                <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
-                <property name="Padding">42</property>
+                <property name="Padding">30</property>
               </packing>
             </child>
           </widget>
           <packing>
-            <property name="Position">0</property>
+            <property name="Position">1</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -127,10 +157,46 @@
             <child>
               <widget class="Gtk.Table" id="table2">
                 <property name="MemberName" />
-                <property name="NRows">5</property>
+                <property name="NRows">7</property>
                 <property name="NColumns">6</property>
                 <property name="RowSpacing">6</property>
                 <property name="ColumnSpacing">6</property>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
                 <child>
                   <placeholder />
                 </child>
@@ -153,8 +219,8 @@
                     <signal name="Clicked" handler="ATKDisciplineSelected" />
                   </widget>
                   <packing>
-                    <property name="TopAttach">2</property>
-                    <property name="BottomAttach">3</property>
+                    <property name="TopAttach">3</property>
+                    <property name="BottomAttach">4</property>
                     <property name="LeftAttach">2</property>
                     <property name="RightAttach">3</property>
                     <property name="AutoSize">True</property>
@@ -178,8 +244,8 @@
                     <signal name="Clicked" handler="DEFDisciplineSelected" />
                   </widget>
                   <packing>
-                    <property name="TopAttach">3</property>
-                    <property name="BottomAttach">4</property>
+                    <property name="TopAttach">4</property>
+                    <property name="BottomAttach">5</property>
                     <property name="LeftAttach">2</property>
                     <property name="RightAttach">3</property>
                     <property name="AutoSize">True</property>
@@ -203,8 +269,8 @@
                     <signal name="Clicked" handler="HPDisciplineSelected" />
                   </widget>
                   <packing>
-                    <property name="TopAttach">1</property>
-                    <property name="BottomAttach">2</property>
+                    <property name="TopAttach">2</property>
+                    <property name="BottomAttach">3</property>
                     <property name="LeftAttach">2</property>
                     <property name="RightAttach">3</property>
                     <property name="AutoSize">True</property>
@@ -228,8 +294,8 @@
                     <signal name="Clicked" handler="SPDDisciplineSelected" />
                   </widget>
                   <packing>
-                    <property name="TopAttach">4</property>
-                    <property name="BottomAttach">5</property>
+                    <property name="TopAttach">5</property>
+                    <property name="BottomAttach">6</property>
                     <property name="LeftAttach">2</property>
                     <property name="RightAttach">3</property>
                     <property name="AutoSize">True</property>
@@ -253,6 +319,8 @@
                     <signal name="Clicked" handler="TypeDisciplineSelected" />
                   </widget>
                   <packing>
+                    <property name="TopAttach">1</property>
+                    <property name="BottomAttach">2</property>
                     <property name="LeftAttach">2</property>
                     <property name="RightAttach">3</property>
                     <property name="AutoSize">True</property>
@@ -272,6 +340,8 @@
                     <property name="LabelProp" translatable="yes">Type</property>
                   </widget>
                   <packing>
+                    <property name="TopAttach">1</property>
+                    <property name="BottomAttach">2</property>
                     <property name="AutoSize">True</property>
                     <property name="XOptions">Fill</property>
                     <property name="YOptions">Fill</property>
@@ -289,8 +359,8 @@
                     <property name="LabelProp" translatable="yes">SPD</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">4</property>
-                    <property name="BottomAttach">5</property>
+                    <property name="TopAttach">5</property>
+                    <property name="BottomAttach">6</property>
                     <property name="LeftAttach">4</property>
                     <property name="RightAttach">5</property>
                     <property name="AutoSize">True</property>
@@ -310,8 +380,8 @@
                     <property name="LabelProp" translatable="yes">HP</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">1</property>
-                    <property name="BottomAttach">2</property>
+                    <property name="TopAttach">2</property>
+                    <property name="BottomAttach">3</property>
                     <property name="AutoSize">True</property>
                     <property name="XOptions">Fill</property>
                     <property name="YOptions">Fill</property>
@@ -329,8 +399,8 @@
                     <property name="LabelProp" translatable="yes">ATK</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">2</property>
-                    <property name="BottomAttach">3</property>
+                    <property name="TopAttach">3</property>
+                    <property name="BottomAttach">4</property>
                     <property name="AutoSize">True</property>
                     <property name="XOptions">Fill</property>
                     <property name="YOptions">Fill</property>
@@ -348,8 +418,8 @@
                     <property name="LabelProp" translatable="yes">DEF</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">3</property>
-                    <property name="BottomAttach">4</property>
+                    <property name="TopAttach">4</property>
+                    <property name="BottomAttach">5</property>
                     <property name="AutoSize">True</property>
                     <property name="XOptions">Fill</property>
                     <property name="YOptions">Fill</property>
@@ -367,8 +437,8 @@
                     <property name="LabelProp" translatable="yes">SPD</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">4</property>
-                    <property name="BottomAttach">5</property>
+                    <property name="TopAttach">5</property>
+                    <property name="BottomAttach">6</property>
                     <property name="AutoSize">True</property>
                     <property name="XOptions">Fill</property>
                     <property name="YOptions">Fill</property>
@@ -386,6 +456,8 @@
                     <property name="LabelProp" translatable="yes">Type</property>
                   </widget>
                   <packing>
+                    <property name="TopAttach">1</property>
+                    <property name="BottomAttach">2</property>
                     <property name="LeftAttach">4</property>
                     <property name="RightAttach">5</property>
                     <property name="AutoSize">True</property>
@@ -405,8 +477,8 @@
                     <property name="LabelProp" translatable="yes">HP</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">1</property>
-                    <property name="BottomAttach">2</property>
+                    <property name="TopAttach">2</property>
+                    <property name="BottomAttach">3</property>
                     <property name="LeftAttach">4</property>
                     <property name="RightAttach">5</property>
                     <property name="AutoSize">True</property>
@@ -426,8 +498,8 @@
                     <property name="LabelProp" translatable="yes">ATK</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">2</property>
-                    <property name="BottomAttach">3</property>
+                    <property name="TopAttach">3</property>
+                    <property name="BottomAttach">4</property>
                     <property name="LeftAttach">4</property>
                     <property name="RightAttach">5</property>
                     <property name="AutoSize">True</property>
@@ -447,8 +519,8 @@
                     <property name="LabelProp" translatable="yes">DEF</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">3</property>
-                    <property name="BottomAttach">4</property>
+                    <property name="TopAttach">4</property>
+                    <property name="BottomAttach">5</property>
                     <property name="LeftAttach">4</property>
                     <property name="RightAttach">5</property>
                     <property name="AutoSize">True</property>
@@ -464,6 +536,48 @@
                 </child>
                 <child>
                   <widget class="Gtk.Label" id="labelP1ATK">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">0</property>
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">3</property>
+                    <property name="BottomAttach">4</property>
+                    <property name="LeftAttach">1</property>
+                    <property name="RightAttach">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="labelP1DEF">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">0</property>
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">4</property>
+                    <property name="BottomAttach">5</property>
+                    <property name="LeftAttach">1</property>
+                    <property name="RightAttach">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="labelP1HP">
                     <property name="MemberName" />
                     <property name="LabelProp" translatable="yes">0</property>
                   </widget>
@@ -484,55 +598,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Label" id="labelP1DEF">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">0</property>
-                  </widget>
-                  <packing>
-                    <property name="TopAttach">3</property>
-                    <property name="BottomAttach">4</property>
-                    <property name="LeftAttach">1</property>
-                    <property name="RightAttach">2</property>
-                    <property name="AutoSize">True</property>
-                    <property name="XOptions">Fill</property>
-                    <property name="YOptions">Fill</property>
-                    <property name="XExpand">False</property>
-                    <property name="XFill">True</property>
-                    <property name="XShrink">False</property>
-                    <property name="YExpand">False</property>
-                    <property name="YFill">True</property>
-                    <property name="YShrink">False</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="labelP1HP">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">0</property>
-                  </widget>
-                  <packing>
-                    <property name="TopAttach">1</property>
-                    <property name="BottomAttach">2</property>
-                    <property name="LeftAttach">1</property>
-                    <property name="RightAttach">2</property>
-                    <property name="AutoSize">True</property>
-                    <property name="XOptions">Fill</property>
-                    <property name="YOptions">Fill</property>
-                    <property name="XExpand">False</property>
-                    <property name="XFill">True</property>
-                    <property name="XShrink">False</property>
-                    <property name="YExpand">False</property>
-                    <property name="YFill">True</property>
-                    <property name="YShrink">False</property>
-                  </packing>
-                </child>
-                <child>
                   <widget class="Gtk.Label" id="labelP1SPD">
                     <property name="MemberName" />
                     <property name="LabelProp" translatable="yes">0</property>
                   </widget>
                   <packing>
-                    <property name="TopAttach">4</property>
-                    <property name="BottomAttach">5</property>
+                    <property name="TopAttach">5</property>
+                    <property name="BottomAttach">6</property>
                     <property name="LeftAttach">1</property>
                     <property name="RightAttach">2</property>
                     <property name="AutoSize">True</property>
@@ -553,6 +625,8 @@
                     <property name="LabelProp" translatable="yes">0</property>
                   </widget>
                   <packing>
+                    <property name="TopAttach">1</property>
+                    <property name="BottomAttach">2</property>
                     <property name="LeftAttach">1</property>
                     <property name="RightAttach">2</property>
                     <property name="AutoSize">True</property>
@@ -568,27 +642,6 @@
                 </child>
                 <child>
                   <widget class="Gtk.Label" id="labelP2ATK">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">0</property>
-                  </widget>
-                  <packing>
-                    <property name="TopAttach">2</property>
-                    <property name="BottomAttach">3</property>
-                    <property name="LeftAttach">5</property>
-                    <property name="RightAttach">6</property>
-                    <property name="AutoSize">True</property>
-                    <property name="XOptions">Fill</property>
-                    <property name="YOptions">Fill</property>
-                    <property name="XExpand">False</property>
-                    <property name="XFill">True</property>
-                    <property name="XShrink">False</property>
-                    <property name="YExpand">False</property>
-                    <property name="YFill">True</property>
-                    <property name="YShrink">False</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="labelP2DEF">
                     <property name="MemberName" />
                     <property name="LabelProp" translatable="yes">0</property>
                   </widget>
@@ -609,28 +662,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Label" id="labelP2HP">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">0</property>
-                  </widget>
-                  <packing>
-                    <property name="TopAttach">1</property>
-                    <property name="BottomAttach">2</property>
-                    <property name="LeftAttach">5</property>
-                    <property name="RightAttach">6</property>
-                    <property name="AutoSize">True</property>
-                    <property name="XOptions">Fill</property>
-                    <property name="YOptions">Fill</property>
-                    <property name="XExpand">False</property>
-                    <property name="XFill">True</property>
-                    <property name="XShrink">False</property>
-                    <property name="YExpand">False</property>
-                    <property name="YFill">True</property>
-                    <property name="YShrink">False</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="labelP2SPD">
+                  <widget class="Gtk.Label" id="labelP2DEF">
                     <property name="MemberName" />
                     <property name="LabelProp" translatable="yes">0</property>
                   </widget>
@@ -651,12 +683,56 @@
                   </packing>
                 </child>
                 <child>
+                  <widget class="Gtk.Label" id="labelP2HP">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">0</property>
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">2</property>
+                    <property name="BottomAttach">3</property>
+                    <property name="LeftAttach">5</property>
+                    <property name="RightAttach">6</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="labelP2SPD">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">0</property>
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">5</property>
+                    <property name="BottomAttach">6</property>
+                    <property name="LeftAttach">5</property>
+                    <property name="RightAttach">6</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+                <child>
                   <widget class="Gtk.Label" id="labelP2Type">
                     <property name="MemberName" />
                     <property name="WidthRequest">78</property>
                     <property name="LabelProp" translatable="yes">0</property>
                   </widget>
                   <packing>
+                    <property name="TopAttach">1</property>
+                    <property name="BottomAttach">2</property>
                     <property name="LeftAttach">5</property>
                     <property name="RightAttach">6</property>
                     <property name="AutoSize">True</property>
@@ -691,6 +767,7 @@
               <packing>
                 <property name="Position">1</property>
                 <property name="AutoSize">False</property>
+                <property name="Padding">15</property>
               </packing>
             </child>
             <child>
@@ -749,48 +826,26 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">1</property>
+            <property name="Position">2</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.VBox" id="vbox6">
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="buttonNextCard">
             <property name="MemberName" />
-            <property name="Spacing">6</property>
-            <child>
-              <widget class="Gtk.Label" id="labelTurnResult">
-                <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">&lt;Player 1&gt; wins the turn.</property>
-                <property name="UseMarkup">True</property>
-              </widget>
-              <packing>
-                <property name="Position">0</property>
-                <property name="AutoSize">False</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Button" id="buttonNextCard">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Next Card</property>
-                <property name="UseUnderline">True</property>
-                <signal name="Clicked" handler="NextCardClicked" />
-              </widget>
-              <packing>
-                <property name="Position">1</property>
-                <property name="AutoSize">False</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Next Card</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="NextCardClicked" />
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">4</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -801,7 +856,7 @@
             <property name="MemberName" />
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">5</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -839,6 +894,17 @@
                     <property name="Fill">False</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.Image" id="imageDeck1">
+                    <property name="MemberName" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -846,6 +912,9 @@
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
               </packing>
+            </child>
+            <child>
+              <placeholder />
             </child>
             <child>
               <widget class="Gtk.VBox" id="vbox7">
@@ -877,10 +946,13 @@
                 </child>
               </widget>
               <packing>
-                <property name="Position">1</property>
+                <property name="Position">2</property>
                 <property name="AutoSize">False</property>
                 <property name="Fill">False</property>
               </packing>
+            </child>
+            <child>
+              <placeholder />
             </child>
             <child>
               <widget class="Gtk.VBox" id="vbox5">
@@ -910,9 +982,20 @@
                     <property name="Fill">False</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.Image" id="imageDeck2">
+                    <property name="MemberName" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
               </widget>
               <packing>
-                <property name="Position">2</property>
+                <property name="Position">4</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -920,7 +1003,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">4</property>
+            <property name="Position">6</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>

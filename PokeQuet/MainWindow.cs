@@ -46,6 +46,8 @@ public partial class MainWindow : Gtk.Window
     public MainWindow(string playerName, int aiType, int startingPlayer, int deckSize) : base(Gtk.WindowType.Toplevel)
     {
         Build();
+        imageDeck1.File = "./images/pokemonCardBack3.png";
+        imageDeck2.File = "./images/pokemonCardBack3.png";
 		this.startingPlayer = startingPlayer;
         this.deckSize = deckSize;
         InitGame(playerName,aiType);
@@ -541,7 +543,5 @@ public partial class MainWindow : Gtk.Window
             //Aktiviere den "Next Card"-Knopf der die nächste Runde startet
             buttonNextCard.Sensitive = true;
         }
-        PangoFontDescription* fontDesc =
-                        pango_font_description_from_string("monospace 10");
     }
 }

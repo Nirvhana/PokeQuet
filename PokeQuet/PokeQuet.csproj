@@ -96,6 +96,10 @@
       <IncludeInPackage>true</IncludeInPackage>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="images\pokemonCardBack3.png">
+      <IncludeInPackage>true</IncludeInPackage>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="card_textures\Arbok.png">
