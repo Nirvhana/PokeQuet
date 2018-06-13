@@ -79,11 +79,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="images\.DS_Store" />
-    <None Include="images\PokemonBackground1.jpg" />
-    <None Include="images\draw.jpg" />
-    <None Include="images\game-over.png" />
-    <None Include="images\vitory.jpg" />
     <None Include="images\PokemonQuartettLogo.png">
       <IncludeInPackage>true</IncludeInPackage>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

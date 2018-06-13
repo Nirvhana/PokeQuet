@@ -389,7 +389,7 @@ public partial class MainWindow : Gtk.Window
                 }
                 break;
 
-            // HP
+            // HP: Der größere Wert gewinnt
             case Discipline.HP:
                 if (p1Card.hp > p2Card.hp)
                 {
@@ -405,7 +405,7 @@ public partial class MainWindow : Gtk.Window
                 }
                 break;
 
-            // ATK
+            // ATK: Der größere Wert gewinnt
             case Discipline.ATK:
                 if (p1Card.atk > p2Card.atk)
                 {
@@ -421,7 +421,7 @@ public partial class MainWindow : Gtk.Window
                 }
                 break;
 
-            // DEF
+            // DEF: Der größere Wert gewinnt
             case Discipline.DEF:
                 if (p1Card.def > p2Card.def)
                 {
@@ -437,7 +437,7 @@ public partial class MainWindow : Gtk.Window
                 }
                 break;
 
-            // SPEED
+            // SPEED: Der größere Wert gewinnt
             case Discipline.SPD:
                 if (p1Card.spd > p2Card.spd)
                 {

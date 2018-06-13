@@ -7,36 +7,52 @@ using System.Diagnostics;
 
 namespace PokeQuet
 {
-    // Fenster das nach jedem Spiel erscheint.
+    /// <summary>
+    /// Fenster das nach Ende des Spiels erscheint und den Sieger bzw. Unentschieden anzeigt und die Option für Neustart oder Ende des aktuellen Spiels gibt
+    /// </summary>
 	public partial class GameOverDialog : Gtk.Dialog
 	{
 		public const string PLAYER_WON = "{0}(P{1}) WON!";
 		public const string DRAW = "DRAW!";
 		private MainWindow _main;
 
-		public GameOverDialog(MainWindow window,Player winningPlayer,int playerNum)
+        /// <summary>
+        /// Konstukter des Gameover-Dialogs welcher den Sieger bzw. Unentschieden anzeigt und die Option für Neustart oder Ende des aktuellen Spiels gibt
+        /// </summary>
+        /// <param name="window">Das Hauptspielfenster(benötigt für Neustart/Beendigung)</param>
+        /// <param name="winningPlayer">Der Sieger des Spiels oder null falls Unentschieden</param>
+        /// <param name="playerNum">Die Zahl des Spielers der gewonnen hat(1 oder 2)</param>
+        /// <remarks>Code ausschließlich von André</remarks>
+        public GameOverDialog(MainWindow window,Player winningPlayer,int playerNum)
 		{
             this.Build();
+            //Das Fenster ist Modal und verhindert die Interaktion mit anderen Fenstern.
             this.Modal = true;
 
 			_main = window;
 
             // Anzeige welcher Spieler gewonnen hat, oder das Spielergebnis unentschieden ist.
 			if (winningPlayer != null)
-				this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum);
+				this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum); //Spielername und -zahl werden in die Vorlage eingefügt
 			else
 				this.labelResult.Text = DRAW;
 		}
 
-        // Restart Game - Button: Anklicken -> Startet das Spiel erneut.
-		protected void RestartClicked(object sender, EventArgs e)
+        /// <summary>
+        /// Wenn Restart-Knopf gedrückt wird: Startet das Spiel neu und schließt den Dialog
+        /// </summary>
+        /// <remarks>Code ausschließlich von André</remarks>
+        protected void RestartClicked(object sender, EventArgs e)
 		{
-			this._main.StartGame();
-			this.Destroy();
+			this._main.StartGame(); //Starte Spiel neu
+			this.Destroy(); //Schließe Dialog
 		}
-
-        // Quit Game - Button: Anklicken -> Beendet das Programm, schließt GameOverDialog- & Main- Fenster.
-		protected void QuitClicked(object sender, EventArgs e)
+        
+        /// <summary>
+        /// Wenn "Quit Game"-Knopf gedrückt wird: Schließt Fenster und beendet das Programm komplett 
+        /// </summary>
+        /// <remarks>Code ausschließlich von Tim</remarks>
+        protected void QuitClicked(object sender, EventArgs e)
 		{
             
 			this._main.Destroy();
@@ -44,7 +60,11 @@ namespace PokeQuet
             Application.Quit();
 		}
 
-        // Main Menu - Button: Anklicken -> Schließt MainWindow & GameOverDialog (MainMenu bleibt geöffnet).
+        /// <summary>
+        /// Wenn "Quit Game"-Knopf gedrückt wird: Schließt das Spiel Fenster und den Dialog,
+        /// Das Hauptmenü bleibt offen
+        /// </summary>
+        /// <remarks>Code ausschließlich von Tim</remarks>
         protected void OnButtonMainMenuClicked(object sender, EventArgs e)
         {
             this._main.Destroy();
