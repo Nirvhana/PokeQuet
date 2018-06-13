@@ -23,7 +23,7 @@
   {
     "name": "Squirtle",
     "flavorText": "Squirtle appears to be based on turtles.",
-    "texture": "",
+    "texture": "./card_textures/Squirtle.png",
     "type": "Water",
     "hp": 75,
     "atk": 50,
