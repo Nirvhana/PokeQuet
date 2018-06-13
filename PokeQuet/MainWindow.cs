@@ -177,7 +177,6 @@ public partial class MainWindow : Gtk.Window
         labelP1SPD.Text = p1card.spd.ToString();
 
         Card p2card = Player2.Deck.GetCurrentCard();
-        imageP2.File = p2card.texture;
         imageP2.File = "./card_textures/Unown.png";
         labelP2CardName.Text = "???";
         labelP2FlavourText.Text = "???";
@@ -542,5 +541,7 @@ public partial class MainWindow : Gtk.Window
             //Aktiviere den "Next Card"-Knopf der die nächste Runde startet
             buttonNextCard.Sensitive = true;
         }
+        PangoFontDescription* fontDesc =
+                        pango_font_description_from_string("monospace 10");
     }
 }

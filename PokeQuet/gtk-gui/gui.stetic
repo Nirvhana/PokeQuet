@@ -14,7 +14,8 @@
     <child>
       <widget class="Gtk.VBox" id="vbox3">
         <property name="MemberName" />
-        <property name="Spacing">6</property>
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">30</property>
         <child>
           <widget class="Gtk.HBox" id="hbox2">
             <property name="MemberName" />
@@ -30,6 +31,7 @@
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
+                <property name="Padding">44</property>
               </packing>
             </child>
             <child>
@@ -53,6 +55,7 @@
                 <property name="AutoSize">False</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
+                <property name="Padding">42</property>
               </packing>
             </child>
           </widget>
@@ -83,6 +86,7 @@
                     <property name="AutoSize">True</property>
                     <property name="Expand">False</property>
                     <property name="Fill">False</property>
+                    <property name="Padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -103,6 +107,7 @@
                     <property name="MemberName" />
                     <property name="WidthRequest">128</property>
                     <property name="LabelProp" translatable="yes">Lorem ipsum dolor sit amet, inermis nominavi patrioque eos ut, ei putent volutpat ocurreret sit.</property>
+                    <property name="UseMarkup">True</property>
                     <property name="Wrap">True</property>
                     <property name="Justify">Center</property>
                   </widget>
@@ -704,6 +709,7 @@
                     <property name="AutoSize">True</property>
                     <property name="Expand">False</property>
                     <property name="Fill">False</property>
+                    <property name="Padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -724,6 +730,7 @@
                     <property name="MemberName" />
                     <property name="WidthRequest">128</property>
                     <property name="LabelProp" translatable="yes">Lorem ipsum dolor sit amet, inermis nominavi patrioque eos ut, ei putent volutpat ocurreret sit.</property>
+                    <property name="UseMarkup">True</property>
                     <property name="Wrap">True</property>
                     <property name="Justify">Center</property>
                   </widget>
@@ -756,6 +763,7 @@
               <widget class="Gtk.Label" id="labelTurnResult">
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">&lt;Player 1&gt; wins the turn.</property>
+                <property name="UseMarkup">True</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -1453,7 +1461,6 @@
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Label" translatable="yes">Bug Catcher</property>
-            <property name="Active">True</property>
             <property name="DrawIndicator">True</property>
             <property name="HasLabel">True</property>
             <property name="UseUnderline">True</property>
@@ -1506,7 +1513,6 @@
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Label" translatable="yes">16</property>
-            <property name="Active">True</property>
             <property name="DrawIndicator">True</property>
             <property name="HasLabel">True</property>
             <property name="UseUnderline">True</property>
@@ -1585,7 +1591,6 @@
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Label" translatable="yes">Player 1 (Human)</property>
-            <property name="Active">True</property>
             <property name="DrawIndicator">True</property>
             <property name="HasLabel">True</property>
             <property name="UseUnderline">True</property>

@@ -76,9 +76,9 @@
     "texture": "./card_textures/Arbok.png",
     "type": "Fire",
     "hp": 50,
-    "atk": 71,
-    "def": 61,
-    "spd": 71
+    "atk": 80,
+    "def": 60,
+    "spd": 70
   },
   {
     "name": "Eevee",

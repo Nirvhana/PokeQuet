@@ -123,7 +123,8 @@ public partial class MainWindow
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox3 = new global::Gtk.VBox();
 		this.vbox3.Name = "vbox3";
-		this.vbox3.Spacing = 6;
+		this.vbox3.Spacing = 10;
+		this.vbox3.BorderWidth = ((uint)(30));
 		// Container child vbox3.Gtk.Box+BoxChild
 		this.hbox2 = new global::Gtk.HBox();
 		this.hbox2.Name = "hbox2";
@@ -138,6 +139,7 @@ public partial class MainWindow
 		w1.Position = 0;
 		w1.Expand = false;
 		w1.Fill = false;
+		w1.Padding = ((uint)(44));
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.labelSpacer1 = new global::Gtk.Label();
 		this.labelSpacer1.Name = "labelSpacer1";
@@ -155,6 +157,7 @@ public partial class MainWindow
 		w3.Position = 2;
 		w3.Expand = false;
 		w3.Fill = false;
+		w3.Padding = ((uint)(42));
 		this.vbox3.Add(this.hbox2);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hbox2]));
 		w4.Position = 0;
@@ -179,6 +182,7 @@ public partial class MainWindow
 		w5.Position = 0;
 		w5.Expand = false;
 		w5.Fill = false;
+		w5.Padding = ((uint)(5));
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.imageP1 = new global::Gtk.Image();
 		this.imageP1.WidthRequest = 128;
@@ -195,6 +199,7 @@ public partial class MainWindow
 		this.labelP1FlavourText.Name = "labelP1FlavourText";
 		this.labelP1FlavourText.LabelProp = global::Mono.Unix.Catalog.GetString("Lorem ipsum dolor sit amet, inermis nominavi patrioque eos ut, ei putent volutpat" +
 				" ocurreret sit.");
+		this.labelP1FlavourText.UseMarkup = true;
 		this.labelP1FlavourText.Wrap = true;
 		this.labelP1FlavourText.Justify = ((global::Gtk.Justification)(2));
 		this.vbox1.Add(this.labelP1FlavourText);
@@ -528,6 +533,7 @@ public partial class MainWindow
 		w36.Position = 0;
 		w36.Expand = false;
 		w36.Fill = false;
+		w36.Padding = ((uint)(5));
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.imageP2 = new global::Gtk.Image();
 		this.imageP2.WidthRequest = 128;
@@ -544,6 +550,7 @@ public partial class MainWindow
 		this.labelP2FlavourText.Name = "labelP2FlavourText";
 		this.labelP2FlavourText.LabelProp = global::Mono.Unix.Catalog.GetString("Lorem ipsum dolor sit amet, inermis nominavi patrioque eos ut, ei putent volutpat" +
 				" ocurreret sit.");
+		this.labelP2FlavourText.UseMarkup = true;
 		this.labelP2FlavourText.Wrap = true;
 		this.labelP2FlavourText.Justify = ((global::Gtk.Justification)(2));
 		this.vbox2.Add(this.labelP2FlavourText);
@@ -567,6 +574,7 @@ public partial class MainWindow
 		this.labelTurnResult = new global::Gtk.Label();
 		this.labelTurnResult.Name = "labelTurnResult";
 		this.labelTurnResult.LabelProp = global::Mono.Unix.Catalog.GetString("<Player 1> wins the turn.");
+		this.labelTurnResult.UseMarkup = true;
 		this.vbox6.Add(this.labelTurnResult);
 		global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.labelTurnResult]));
 		w41.Position = 0;
