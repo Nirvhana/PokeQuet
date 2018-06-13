@@ -921,8 +921,10 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="PokeQuet.GameOverDialog" design-size="565 209">
+  <widget class="Gtk.Dialog" id="PokeQuet.GameOverDialog" design-size="840 600">
     <property name="MemberName" />
+    <property name="WidthRequest">840</property>
+    <property name="HeightRequest">600</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="BorderWidth">3</property>
     <property name="AllowShrink">True</property>
@@ -944,6 +946,16 @@
             <property name="AutoSize">False</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.Image" id="imageWinner">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">False</property>
+            <property name="Padding">10</property>
+          </packing>
+        </child>
       </widget>
     </child>
     <child internal-child="ActionArea">
@@ -953,6 +965,22 @@
         <property name="BorderWidth">5</property>
         <property name="Size">3</property>
         <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="buttonQuit">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label">_Quit Game</property>
+            <property name="UseUnderline">True</property>
+            <property name="ResponseId">-6</property>
+            <signal name="Clicked" handler="QuitClicked" />
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
         <child>
           <widget class="Gtk.Button" id="buttonMainMenu">
             <property name="MemberName" />
@@ -965,6 +993,7 @@
             <signal name="Clicked" handler="OnButtonMainMenuClicked" />
           </widget>
           <packing>
+            <property name="Position">1</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>
@@ -979,23 +1008,6 @@
             <property name="UseUnderline">True</property>
             <property name="ResponseId">-5</property>
             <signal name="Clicked" handler="RestartClicked" />
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="buttonQuit">
-            <property name="MemberName" />
-            <property name="CanDefault">True</property>
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label">_Quit Game</property>
-            <property name="UseUnderline">True</property>
-            <property name="ResponseId">-6</property>
-            <signal name="Clicked" handler="QuitClicked" />
           </widget>
           <packing>
             <property name="Position">2</property>
@@ -1166,6 +1178,8 @@
           <packing>
             <property name="TopAttach">13</property>
             <property name="BottomAttach">14</property>
+            <property name="LeftAttach">4</property>
+            <property name="RightAttach">5</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
@@ -1189,8 +1203,6 @@
           <packing>
             <property name="TopAttach">13</property>
             <property name="BottomAttach">14</property>
-            <property name="LeftAttach">4</property>
-            <property name="RightAttach">5</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>

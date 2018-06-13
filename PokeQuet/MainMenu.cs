@@ -1,5 +1,7 @@
 ﻿using System;
 using Gtk;
+using System.Media;
+using System.Diagnostics;
 
 namespace PokeQuet
 {

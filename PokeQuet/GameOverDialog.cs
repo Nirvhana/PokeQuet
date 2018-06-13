@@ -22,8 +22,8 @@ namespace PokeQuet
         /// <param name="window">Das Hauptspielfenster(benötigt für Neustart/Beendigung)</param>
         /// <param name="winningPlayer">Der Sieger des Spiels oder null falls Unentschieden</param>
         /// <param name="playerNum">Die Zahl des Spielers der gewonnen hat(1 oder 2)</param>
-        /// <remarks>Code ausschließlich von André</remarks>
-        public GameOverDialog(MainWindow window,Player winningPlayer,int playerNum)
+        /// <remarks>Code ausschließlich Tim und André</remarks>
+        public GameOverDialog(MainWindow window, Player winningPlayer, int playerNum)
 		{
             this.Build();
             //Das Fenster ist Modal und verhindert die Interaktion mit anderen Fenstern.
@@ -32,11 +32,25 @@ namespace PokeQuet
 			_main = window;
 
             // Anzeige welcher Spieler gewonnen hat, oder das Spielergebnis unentschieden ist.
-			if (winningPlayer != null)
-				this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum); //Spielername und -zahl werden in die Vorlage eingefügt
-			else
-				this.labelResult.Text = DRAW;
-		}
+            if (winningPlayer != null)
+            {
+                this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum);
+
+                if (winningPlayer is AIPlayer)
+                {
+                    imageWinner.Pixbuf = new Gdk.Pixbuf(@"./images/game-over.png");
+                } 
+                else 
+                {
+                    imageWinner.Pixbuf = new Gdk.Pixbuf(@"./images/vitory.jpg");
+                }
+            }
+            else
+            {
+                this.labelResult.Text = DRAW;
+                imageWinner.Pixbuf = new Gdk.Pixbuf(@"./images/draw.jpg");
+            }
+        }
 
         /// <summary>
         /// Wenn Restart-Knopf gedrückt wird: Startet das Spiel neu und schließt den Dialog

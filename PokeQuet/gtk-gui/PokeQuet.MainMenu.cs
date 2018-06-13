@@ -73,6 +73,8 @@ namespace PokeQuet
 			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table1[this.button59]));
 			w1.TopAttach = ((uint)(13));
 			w1.BottomAttach = ((uint)(14));
+			w1.LeftAttach = ((uint)(4));
+			w1.RightAttach = ((uint)(5));
 			w1.XOptions = ((global::Gtk.AttachOptions)(4));
 			w1.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
@@ -85,8 +87,6 @@ namespace PokeQuet
 			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.table1[this.buttonQuit]));
 			w2.TopAttach = ((uint)(13));
 			w2.BottomAttach = ((uint)(14));
-			w2.LeftAttach = ((uint)(4));
-			w2.RightAttach = ((uint)(5));
 			w2.XOptions = ((global::Gtk.AttachOptions)(4));
 			w2.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild

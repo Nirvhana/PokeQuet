@@ -6,16 +6,20 @@ namespace PokeQuet
 	{
 		private global::Gtk.Label labelResult;
 
+		private global::Gtk.Image imageWinner;
+
+		private global::Gtk.Button buttonQuit;
+
 		private global::Gtk.Button buttonMainMenu;
 
 		private global::Gtk.Button buttonRestart;
-
-		private global::Gtk.Button buttonQuit;
 
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
 			// Widget PokeQuet.GameOverDialog
+			this.WidthRequest = 840;
+			this.HeightRequest = 600;
 			this.Name = "PokeQuet.GameOverDialog";
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			this.BorderWidth = ((uint)(3));
@@ -33,35 +37,19 @@ namespace PokeQuet
 			w1.Add(this.labelResult);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(w1[this.labelResult]));
 			w2.Position = 0;
+			// Container child dialog1_VBox.Gtk.Box+BoxChild
+			this.imageWinner = new global::Gtk.Image();
+			this.imageWinner.Name = "imageWinner";
+			w1.Add(this.imageWinner);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(w1[this.imageWinner]));
+			w3.Position = 1;
+			w3.Padding = ((uint)(10));
 			// Internal child PokeQuet.GameOverDialog.ActionArea
-			global::Gtk.HButtonBox w3 = this.ActionArea;
-			w3.Name = "dialog1_ActionArea";
-			w3.Spacing = 10;
-			w3.BorderWidth = ((uint)(5));
-			w3.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
-			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
-			this.buttonMainMenu = new global::Gtk.Button();
-			this.buttonMainMenu.CanDefault = true;
-			this.buttonMainMenu.CanFocus = true;
-			this.buttonMainMenu.Name = "buttonMainMenu";
-			this.buttonMainMenu.UseUnderline = true;
-			this.buttonMainMenu.Label = global::Mono.Unix.Catalog.GetString("_Main Menu");
-			this.AddActionWidget(this.buttonMainMenu, 0);
-			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonMainMenu]));
-			w4.Expand = false;
-			w4.Fill = false;
-			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
-			this.buttonRestart = new global::Gtk.Button();
-			this.buttonRestart.CanDefault = true;
-			this.buttonRestart.CanFocus = true;
-			this.buttonRestart.Name = "buttonRestart";
-			this.buttonRestart.UseUnderline = true;
-			this.buttonRestart.Label = global::Mono.Unix.Catalog.GetString("_Restart Game");
-			this.AddActionWidget(this.buttonRestart, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonRestart]));
-			w5.Position = 1;
-			w5.Expand = false;
-			w5.Fill = false;
+			global::Gtk.HButtonBox w4 = this.ActionArea;
+			w4.Name = "dialog1_ActionArea";
+			w4.Spacing = 10;
+			w4.BorderWidth = ((uint)(5));
+			w4.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonQuit = new global::Gtk.Button();
 			this.buttonQuit.CanDefault = true;
@@ -70,20 +58,43 @@ namespace PokeQuet
 			this.buttonQuit.UseUnderline = true;
 			this.buttonQuit.Label = "_Quit Game";
 			this.AddActionWidget(this.buttonQuit, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w3[this.buttonQuit]));
-			w6.Position = 2;
+			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonQuit]));
+			w5.Expand = false;
+			w5.Fill = false;
+			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
+			this.buttonMainMenu = new global::Gtk.Button();
+			this.buttonMainMenu.CanDefault = true;
+			this.buttonMainMenu.CanFocus = true;
+			this.buttonMainMenu.Name = "buttonMainMenu";
+			this.buttonMainMenu.UseUnderline = true;
+			this.buttonMainMenu.Label = global::Mono.Unix.Catalog.GetString("_Main Menu");
+			this.AddActionWidget(this.buttonMainMenu, 0);
+			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonMainMenu]));
+			w6.Position = 1;
 			w6.Expand = false;
 			w6.Fill = false;
+			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
+			this.buttonRestart = new global::Gtk.Button();
+			this.buttonRestart.CanDefault = true;
+			this.buttonRestart.CanFocus = true;
+			this.buttonRestart.Name = "buttonRestart";
+			this.buttonRestart.UseUnderline = true;
+			this.buttonRestart.Label = global::Mono.Unix.Catalog.GetString("_Restart Game");
+			this.AddActionWidget(this.buttonRestart, -5);
+			global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w4[this.buttonRestart]));
+			w7.Position = 2;
+			w7.Expand = false;
+			w7.Fill = false;
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 565;
-			this.DefaultHeight = 209;
+			this.DefaultWidth = 840;
+			this.DefaultHeight = 600;
 			this.Show();
+			this.buttonQuit.Clicked += new global::System.EventHandler(this.QuitClicked);
 			this.buttonMainMenu.Clicked += new global::System.EventHandler(this.OnButtonMainMenuClicked);
 			this.buttonRestart.Clicked += new global::System.EventHandler(this.RestartClicked);
-			this.buttonQuit.Clicked += new global::System.EventHandler(this.QuitClicked);
 		}
 	}
 }

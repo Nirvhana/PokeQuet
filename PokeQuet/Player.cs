@@ -82,11 +82,11 @@ namespace PokeQuet
 
 		public override Discipline MakeTurn(Player opponent, Deck tieCards)
 		{
-			var card = Deck.GetCurrentCard();
+			Card card = Deck.GetCurrentCard();
             //Packe alle Kartenwerte in der richtigen Reihenfolge in eine Liste
             var values = new List<int>(){ card.hp, card.atk, card.def, card.spd };
             //Finde den Index des höchsten Werts
-            var index = values.IndexOf(values.Max());
+            int index = values.IndexOf(values.Max());
             //Gib die Disziplin an der entsprechenden Stelle in DISCIPLINES zurück; +1, weil TYPE in DISCIPLINES an erster Stelle steht
             return DISCIPLINES[index+1];
 	  	}

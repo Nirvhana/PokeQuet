@@ -166,7 +166,7 @@ public partial class MainWindow : Gtk.Window
     /// <remarks>Code ausschließlich von André</remarks>
     public void DisplayCards()
     {
-        var p1card = Player1.Deck.GetCurrentCard();
+        Card p1card = Player1.Deck.GetCurrentCard();
         imageP1.File = p1card.texture;
         labelP1CardName.Text = p1card.name;
         labelP1FlavourText.Text = p1card.flavorText;
@@ -176,7 +176,7 @@ public partial class MainWindow : Gtk.Window
         labelP1DEF.Text = p1card.def.ToString();
         labelP1SPD.Text = p1card.spd.ToString();
 
-        var p2card = Player2.Deck.GetCurrentCard();
+        Card p2card = Player2.Deck.GetCurrentCard();
         imageP2.File = p2card.texture;
         imageP2.File = "./card_textures/Unown.png";
         labelP2CardName.Text = "???";
@@ -213,6 +213,7 @@ public partial class MainWindow : Gtk.Window
     protected void DEFDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.DEF);
     protected void SPDDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.SPD);
 
+
     /// <summary>
     /// Wenn der Spieler eine Disziplin ausgewählt hat: Deaktiviere Disziplin-Knöpfe, Vergleiche Disziplin
     /// </summary>
@@ -246,7 +247,7 @@ public partial class MainWindow : Gtk.Window
     /// <remarks>Code ausschließlich von André</remarks>
     public void ShowOpponentCard()
     {
-        var p2card = Player2.Deck.GetCurrentCard();
+        Card p2card = Player2.Deck.GetCurrentCard();
         imageP2.File = p2card.texture;
         labelP2CardName.Text = p2card.name;
         labelP2FlavourText.Text = p2card.flavorText;
@@ -334,8 +335,8 @@ public partial class MainWindow : Gtk.Window
     public void CompareDiscipline(Discipline discipline)
     {
         ShowOpponentCard();
-        var p1Card = Player1.Deck.GetCurrentCard();
-        var p2Card = Player2.Deck.GetCurrentCard();
+        Card p1Card = Player1.Deck.GetCurrentCard();
+        Card p2Card = Player2.Deck.GetCurrentCard();
 
         switch (discipline)
         {
@@ -471,8 +472,9 @@ public partial class MainWindow : Gtk.Window
         ShowTurnWinner(discipline, winningPlayer);
 
         //Nimm die aktuellen Karten beider Spieler
-        var p1Card = Player1.Deck.GetCurrentCard();
-        var p2Card = Player2.Deck.GetCurrentCard();
+        Card p1Card = Player1.Deck.GetCurrentCard();
+        Card p2Card = Player2.Deck.GetCurrentCard();
+
         Player1.Deck.RemoveAt(0);
         Player2.Deck.RemoveAt(0);
 
@@ -512,8 +514,8 @@ public partial class MainWindow : Gtk.Window
     /// <remarks>Code fast ausschließlich von Tim</remarks>
     public void CheckWinningState()
     {
-        var p1Count = Player1.Deck.Count;
-        var p2Count = Player2.Deck.Count;
+        int p1Count = Player1.Deck.Count;
+        int p2Count = Player2.Deck.Count;
 
         //Falls einer der beiden Spieler keine Karten mehr hat; =Spielende
         if (p1Count == 0 || p2Count == 0)
@@ -522,17 +524,17 @@ public partial class MainWindow : Gtk.Window
             if (p1Count == 0 && p2Count == 0)
             {
                 //Zeige Unentschieden Dialog
-				new GameOverDialog(this,null,0).Show();
+				new GameOverDialog(this, null, 0).Show();
             }
             else if (p1Count == 0) //Falls nur Spieler 1 keine Karten mehr hat; =Spieler 2 gewinnt(Niederlage)
             {
                 //Zeige Spieler 2 gewinnt Dialog
-                new GameOverDialog(this,Player2,2).Show();
+                new GameOverDialog(this, Player2, 2).Show();
             }
             else if (p2Count == 0) //Falls nur Spieler 2 keine Karten mehr hat; =Spieler 1 gewinnt(Sieg)
             {
                 //Zeige Spieler 1 gewinnt Dialog
-                new GameOverDialog(this,Player1,1).Show();
+                new GameOverDialog(this, Player1, 1).Show();
             }
         }
         else //Wenn das Spiel nicht zuende ist
