@@ -4,7 +4,9 @@ using PokeQuet;
 using Newtonsoft.Json;
 using System.IO;
 
-
+/// <summary>
+/// Das Hauptfenster (das Spiel)
+/// </summary>
 public partial class MainWindow : Gtk.Window
 {
     public const string TURN_RESULT_WINNER = "{0} won the turn!";
@@ -19,14 +21,28 @@ public partial class MainWindow : Gtk.Window
 	private int startingPlayer = 0;
     private int deckSize = 0;
 
+    /// <summary>
+    /// Array aller geladenen Karten
+    /// </summary>
     public Card[] CardPool { get; set; }
+    /// <summary>
+    /// Der aktive Spieler(= der Spieler der am Zug ist)
+    /// </summary>
     public Player ActivePlayer { get; set; }
     public Player Player1 { get; set; }
     public AIPlayer Player2 { get; set; }
+    /// <summary>
+    /// Der Stich-Stapel
+    /// </summary>
     public Deck TieCards { get; set; }
-   // Image image = 
 
-    // Aufruf des Hauptmenüs.
+    /// <summary>
+    /// Konstruktor des Hauptfensters. Startet bereitet das Fenster vor und startet das Spiel.
+    /// </summary>
+    /// <param name="playerName">Name für Spieler 1</param>
+    /// <param name="aiType">KI-Level: 1=Bug Catcher(Zufall), 2=Gym Leader(höchster Wert)</param>
+    /// <param name="startingPlayer">Beginnender Spieler: 1|2: Spieler 1|2, 0: Zufall</param>
+    /// <param name="deckSize">Anfängliche Deckgröße der Spieler</param>
     public MainWindow(string playerName, int aiType, int startingPlayer, int deckSize) : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -36,65 +52,103 @@ public partial class MainWindow : Gtk.Window
     }
 
     // Initialisierung des Spiels
+    /// <summary>
+    /// Initialisierung des Spiels:
+    /// Laden der Karten,
+    /// Erzeugung von Spielern auf Grundlage der gewählten KI,
+    /// (Initialisierung der KI; obsolet)
+    /// Erzeugung des Stich-Stapels
+    /// Beginne Spiel
+    /// </summary>
+    /// <param name="playerName">Name für Spieler 1</param>
+    /// <param name="aiType">KI-Level: 1=Bug Catcher(Zufall), 2=Gym Leader(höchster Wert)</param>
+    /// <remarks>Code ausschließlich von André</remarks>
 	public void InitGame(string playerName, int aiType)
     {
+        //Lade Kartendaten
         LoadCards();
+        //Erzeuge und benenne Spieler
 		Player1 = new Player(playerName);
-
-		if(aiType==1)
-        	Player2 = new AIPlayerRandom();
-		else
-			Player2 = new AIPlayerSimple();
+        
+        if (aiType==1) //Falls KI-Level 1 ist
+        	Player2 = new AIPlayerRandom(); //Spieler 2 ist Bug Catcher-KI(Zufall)
+        else //Falls KI-Level 2 ist
+            Player2 = new AIPlayerSimple(); //Spieler 2 ist Gym Leader-KI(höchster Wert)
+        //Initalisiere Spieler 2 KI(obsolet)
         Player2.Init(CardPool);
-
-        Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck, deckSize);
+        
+        //Initialisiere leeren Stich-Stapel
         TieCards = new Deck();
 
+        //Zeige Spielernamen an
         labelP1Name.Text = Player1.Name;
         labelP2Name.Text = Player2.Name;
 
+        //Beginne Spiel
         StartGame();
     }
 
-    // Laden aller Karten aus der .Json.
+    /// <summary>
+    /// Lädt Karten aus der AllCards.json Datei und speicher sie in <see cref="CardPool"/>.
+    /// </summary>
+    /// <remarks>Code von Tim mit Hilfe von André(Generic-Syntax) auf Grundlage eines Beispiels in der JSON.NET Dokumentaion</remarks>
     public void LoadCards()
     {
         CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
     }
 
-    // Start des Spiels
+    /// <summary>
+    /// Startet das Spiel: mischt und verteilt Decks, leert den Stich-Stapel, bestimmt den beginnenden Spieler, startet den ersten Zug
+    /// </summary>
+    /// <remarks>Code fast ausschließlich von André</remarks>
     public void StartGame()
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck, deckSize);
         TieCards.Clear();
+
+        //Falls Spieler 1 anfängt oder ein Zufallspieler und eine zufällige Zahl(0 oder 1) gleich 0 ist(50% Chance)
 		if (startingPlayer == 1 || startingPlayer == 0 && RNG.Next(2) == 0)
-			ActivePlayer = Player1;
-		else
+			ActivePlayer = Player1; //Spieler 1 beginnt
+        else //Falls 2 beginnt oder die zufällige Zahl gleich 1 war(50% Chance)
 			ActivePlayer = Player2;
 
+        //Deaktiviere die Disziplin-Knöpfe für den Fall das Spieler 2(CPU) beginnt. Mit diesen Knöpfen macht Spieler 1 seinen Zug.
 		buttonSelectType.Sensitive = false;
         buttonSelectHP.Sensitive = false;
         buttonSelectATK.Sensitive = false;
         buttonSelectDEF.Sensitive = false;
         buttonSelectSPD.Sensitive = false;
 
+        //Beginne den ersten Zug
         NextTurn();
     }
 
+    /// <summary>
+    /// Wenn der Spieler auf den "Next Card"-Knopf drückt: Beginne den nächsten Zug
+    /// </summary>
+    /// <remarks>Code ausschließlich von André</remarks>
     protected void NextCardClicked(object sender, EventArgs e) => NextTurn();
 
-    // Spielrunde
+    /// <summary>
+    /// Beginne einen neuen Zug:
+    /// aktiviere Knöpfe falls Spieler 1 am Zug ist,
+    /// mache CPU-Zug falls ein nicht-Spieler am Zug ist
+    /// </summary>
+    /// <remarks>Code ausschließlich von André</remarks>
     public void NextTurn()
     {
+        //Zeige eigene Karte an. Verstecke die des Gegners.
         DisplayCards();
+        //Deaktiviere den "Next Card"-Button, welcher einen neuen Zug starten würde.
         buttonNextCard.Sensitive = false;
 
+        //Falls ein KI-Spieler am Zug ist
         if (ActivePlayer is AIPlayer)
+            //Mache den CPU-Zug.
             MakeCPUMove();
-
-        // Wenn Spieler am Zug ist -> Diciplines Buttons = klickbar
-        else
+        else //Ansonsten; falls der menschliche Spieler am Zug ist 
         {
+            //Aktiviere die Disziplin-Knöpfe für den Fall das Spieler 1 am Zug ist. Mit diesen Knöpfen macht Spieler 1 seinen Zug.
             buttonSelectType.Sensitive = true;
             buttonSelectHP.Sensitive = true;
             buttonSelectATK.Sensitive = true;
@@ -103,7 +157,13 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-    // Anzeigen der Karten
+    /// <summary>
+    /// Zeigt alle Informationen zur Karte von Spieler 1(die eigene) an;
+    /// Leert die Informationen zur Karte von Spieler 2;
+    /// Aktualisiert Kartenanzahlen für Decks;
+    /// Stellt die normale Schriftfarbe der Disziplinen wieder her
+    /// </summary>
+    /// <remarks>Code ausschließlich von André</remarks>
     public void DisplayCards()
     {
         var p1card = Player1.Deck.GetCurrentCard();
@@ -145,30 +205,45 @@ public partial class MainWindow : Gtk.Window
         labelTurnResult.Text = "";
     }
 
+    // Falls der Spieler einen Disziplinknopf anklickt: Wähle die entsprechende Disziplin aus 
+    // Code ausschließlich von André
     protected void TypeDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.TYPE);
     protected void HPDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.HP);
     protected void ATKDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.ATK);
     protected void DEFDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.DEF);
     protected void SPDDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.SPD);
 
-    // Diciplines Buttons
+    /// <summary>
+    /// Wenn der Spieler eine Disziplin ausgewählt hat: Deaktiviere Disziplin-Knöpfe, Vergleiche Disziplin
+    /// </summary>
+    /// <param name="discipline">Die gewählte Disziplin</param>
+    /// <remarks>Code ausschließlich von André</remarks>
     public void ChooseDiscipline(Discipline discipline)
     {
+        //Deaktiviere Disziplin-Knöpfe um mehrfachzüge von Spieler 1 zu verhindern.
         buttonSelectType.Sensitive = false;
         buttonSelectHP.Sensitive = false;
         buttonSelectATK.Sensitive = false;
         buttonSelectDEF.Sensitive = false;
         buttonSelectSPD.Sensitive = false;
+        //Vergleiche Diziplin(Gewinnerbestimmung)
         CompareDiscipline(discipline);
     }
 
+    /// <summary>
+    /// Mache den CPU-Zug (Spieler 2 macht seinen Zug)
+    /// </summary>
     public void MakeCPUMove()
     {
+        //Bestimme den Zug von Spieler 2 und führe ihn aus(Vergleiche Disziplin) 
         CompareDiscipline(Player2.MakeTurn(Player1, TieCards));
     }
 
-    // Aufdecken der verdeckte Karte & Werte von Spieler 2
-    // Wird bei CompareDiscipline() aufgerufen (nach Auswahl der Discipline)
+    /// <summary>
+    /// Aufdecken der aktuellen Karte und Werte von Spieler 2.
+    /// Wird durch <see cref="CompareDiscipline(Discipline)"/> aufgerufen, nach Auswahl der Disziplin
+    /// </summary>
+    /// <remarks>Code ausschließlich von André</remarks>
     public void ShowOpponentCard()
     {
         var p2card = Player2.Deck.GetCurrentCard();
@@ -182,34 +257,50 @@ public partial class MainWindow : Gtk.Window
         labelP2SPD.Text = p2card.spd.ToString();
     }
 
-    // Anzeige welcher Spieler die aktuelle Runde gewonnen hat
+    /// <summary>
+    /// Anzeige welcher Spieler die aktuelle Runde gewonnen hat:
+    /// Färbt Kartenwerte der gewählten Disziplin ein,
+    /// Zeigt Gewinner über "Next Card"-Knopf an
+    /// </summary>
+    /// <param name="discipline">Die gewählte Disziplin zum Einfärben</param>
+    /// <param name="winningPlayer">Der Spieler, der gewonnen hat oder null bei Unentschieden</param>
+    /// <remarks>Code ausschließlich von André</remarks>
     public void ShowTurnWinner(Discipline discipline, Player winningPlayer)
     {
+        //Behälter für die Farbe, die die Kartenwerte von Spieler 1 und 2 einnehmen werden; Rot=Niederlage, Grün=Sieg, Grau=Unentschieden
         Gdk.Color p1color, p2color;
 
+        //Falls es keinen Sieger gibt (Unentschieden)
         if (winningPlayer == null)
         {
+            //Setze die Farbe beider Spieler auf Grau
             p1color = GREY;
             p2color = GREY;
 
+            //Zeige Unentschieden-Text
             labelTurnResult.Text = TURN_RESULT_TIE;
         }
         else
         {
+            //Falls es Spieler 1 gewinnt
             if (winningPlayer == Player1)
             {
+                //Setze die Farbe von Spieler 2 auf rot und Spieler 1 auf grün
                 p1color = GREEN;
                 p2color = RED;
             }
-            else
+            else //Falls es Spieler 2 gewinnt
             {
+                //Setze die Farbe von Spieler 1 auf rot und Spieler 2 auf grün
                 p1color = RED;
                 p2color = GREEN;
             }
 
+            //Zeige Unentschieden-Text mit eingefügtem Spielernamen
             labelTurnResult.Text = String.Format(TURN_RESULT_WINNER, winningPlayer.Name);
         }
 
+        //Überprufe die Disziplin und setze die Schriftfarbe der entsprechenden Kartenwertanzeigen auf die Farbe der entsprechenden Spieler
         switch (discipline)
         {
             case Discipline.TYPE:
@@ -235,8 +326,11 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-    // * Kampflogik *
-    // Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt / verliert / unentschieden
+    /// <summary>
+    /// Kampflogik: Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt oder ob es unentschieden endet.
+    /// </summary>
+    /// <param name="discipline"></param>
+    /// <remarks>Code fast ausschließlich von Tim</remarks>
     public void CompareDiscipline(Discipline discipline)
     {
         ShowOpponentCard();
@@ -361,66 +455,89 @@ public partial class MainWindow : Gtk.Window
         }
     }
 
-    // 1. Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu. 
-    //    Bzw bei einem Unentschieden werdem die Karten dem 'TieDeck' hinzugefügt.
-    //
-    // 2. Gibt dem Gewinner der aktuellen Runde den Status: 'ActivePlayer'.
-    //
-    // 3. Am Ende wird immer die 'CheckWinningState' Funktion aufgerufen.
+    /// <summary>
+    /// Nach dem die Runde entschieden wurde:
+    /// Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu, bzw. bei einem Unentschieden werden die Karten den <see cref="TieCards"/> hinzugefügt;
+    /// Weise dem <see cref="ActivePlayer"/> den Gewinner der aktuellen Runde zu (Der Gewinner ist als nächster am Zug.);
+    /// Überprüfe ob das Spiel zuende ist durch einen Aufruf von <see cref="CheckWinningState"/>
+    /// </summary>
+    /// <param name="winningPlayer">Der gewinnende Spieler</param>
+    /// <param name="losingPlayer">Der verlierende Spieler</param>
+    /// <param name="discipline">Die gespielte Disiplin</param>
+    /// <remarks>Code fast ausschließlich von Tim</remarks>
     public void RoundDecided(Player winningPlayer, Player losingPlayer, Discipline discipline)
     {
+        //Zeige Gewinner an
         ShowTurnWinner(discipline, winningPlayer);
 
+        //Nimm die aktuellen Karten beider Spieler
         var p1Card = Player1.Deck.GetCurrentCard();
         var p2Card = Player2.Deck.GetCurrentCard();
         Player1.Deck.RemoveAt(0);
         Player2.Deck.RemoveAt(0);
 
+        //Es keinen Sieger gibt (Stich)
         if (winningPlayer == null)
         {
+            //Packe Karten beider Spieler auf den Stichstapel
             TieCards.PutCardsAtBack(p1Card, p2Card);
         }
-        else if (winningPlayer == Player1)
+        else if (winningPlayer == Player1)//Falls Spieler 1 gewinnt
         {
+            //Packe Karten beider Spieler hinten auf das Deck von Spieler 1
             Player1.Deck.PutCardsAtBack(p1Card, p2Card);
+            //Stelle sicher das Spieler 1 als nächstes am Zug ist
             ActivePlayer = Player1;
         }
-        else if (winningPlayer == Player2)
+        else if (winningPlayer == Player2)//Falls Spieler 2 gewinnt
         {
+            //Packe Karten beider Spieler hinten auf das Deck von Spieler 2
             Player2.Deck.PutCardsAtBack(p2Card, p1Card);
+            //Stelle sicher das Spieler 2 als nächstes am Zug ist
             ActivePlayer = Player2;
         }
-        if (winningPlayer != null)
+        if (winningPlayer != null)//Es einen Sieger gibt (kein Stich)
         {
+            //Packe die Karten von Stich-Stapel hinten auf das Deck des Siegers
             winningPlayer.Deck.PutCardsAtBack(TieCards);
             TieCards.Clear();
         }
+        //Überprüfe ob das Spiel zuende ist
         CheckWinningState();
     }
 
-    // Überprüft anhand der verbleibenden Karten in den Decks, ob ein Spieler das Spiel gewonnen hat.
+    /// <summary>
+    /// Überprüft anhand der verbleibenden Karten in den Decks, ob ein Spieler das Spiel gewonnen hat, oder ob das Spiel unentschieden endet.
+    /// </summary>
+    /// <remarks>Code fast ausschließlich von Tim</remarks>
     public void CheckWinningState()
     {
         var p1Count = Player1.Deck.Count;
         var p2Count = Player2.Deck.Count;
 
+        //Falls einer der beiden Spieler keine Karten mehr hat; =Spielende
         if (p1Count == 0 || p2Count == 0)
         {
+            //Falls beide Spieler keine Karten mehr haben (alle Karten im Stich-Stapel); =Unentschieden
             if (p1Count == 0 && p2Count == 0)
             {
+                //Zeige Unentschieden Dialog
 				new GameOverDialog(this,null,0).Show();
             }
-            else if (p1Count == 0)
+            else if (p1Count == 0) //Falls nur Spieler 1 keine Karten mehr hat; =Spieler 2 gewinnt(Niederlage)
             {
-				new GameOverDialog(this,Player2,1).Show();
+                //Zeige Spieler 2 gewinnt Dialog
+                new GameOverDialog(this,Player2,2).Show();
             }
-            else if (p2Count == 0)
+            else if (p2Count == 0) //Falls nur Spieler 2 keine Karten mehr hat; =Spieler 1 gewinnt(Sieg)
             {
-				new GameOverDialog(this,Player1,2).Show();
+                //Zeige Spieler 1 gewinnt Dialog
+                new GameOverDialog(this,Player1,1).Show();
             }
         }
-        else
+        else //Wenn das Spiel nicht zuende ist
         {
+            //Aktiviere den "Next Card"-Knopf der die nächste Runde startet
             buttonNextCard.Sensitive = true;
         }
     }
