@@ -24,7 +24,6 @@ public partial class MainWindow : Gtk.Window
     public Player Player1 { get; set; }
     public AIPlayer Player2 { get; set; }
     public Deck TieCards { get; set; }
-   // Image image = 
 
     // Aufruf des Hauptmenüs.
     public MainWindow(string playerName, int aiType, int startingPlayer, int deckSize) : base(Gtk.WindowType.Toplevel)
@@ -56,7 +55,7 @@ public partial class MainWindow : Gtk.Window
         StartGame();
     }
 
-    // Laden aller Karten aus der .Json.
+    // Laden aller Karten aus der AllCards.json
     public void LoadCards()
     {
         CardPool = JsonConvert.DeserializeObject<Card[]>(File.ReadAllText(@"./AllCards.json"));
@@ -150,6 +149,7 @@ public partial class MainWindow : Gtk.Window
     protected void ATKDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.ATK);
     protected void DEFDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.DEF);
     protected void SPDDisciplineSelected(object sender, EventArgs e) => ChooseDiscipline(Discipline.SPD);
+
 
     // Diciplines Buttons
     public void ChooseDiscipline(Discipline discipline)
@@ -371,8 +371,8 @@ public partial class MainWindow : Gtk.Window
     {
         ShowTurnWinner(discipline, winningPlayer);
 
-        var p1Card = Player1.Deck.GetCurrentCard();
-        var p2Card = Player2.Deck.GetCurrentCard();
+        Card p1Card = Player1.Deck.GetCurrentCard();
+        Card p2Card = Player2.Deck.GetCurrentCard();
         Player1.Deck.RemoveAt(0);
         Player2.Deck.RemoveAt(0);
 
@@ -401,22 +401,22 @@ public partial class MainWindow : Gtk.Window
     // Überprüft anhand der verbleibenden Karten in den Decks, ob ein Spieler das Spiel gewonnen hat.
     public void CheckWinningState()
     {
-        var p1Count = Player1.Deck.Count;
-        var p2Count = Player2.Deck.Count;
+        int p1Count = Player1.Deck.Count;
+        int p2Count = Player2.Deck.Count;
 
         if (p1Count == 0 || p2Count == 0)
         {
             if (p1Count == 0 && p2Count == 0)
             {
-				new GameOverDialog(this,null,0).Show();
+				new GameOverDialog(this, null, 0).Show();
             }
             else if (p1Count == 0)
             {
-				new GameOverDialog(this,Player2,1).Show();
+				new GameOverDialog(this, Player2, 2).Show();
             }
             else if (p2Count == 0)
             {
-				new GameOverDialog(this,Player1,2).Show();
+				new GameOverDialog(this, Player1, 1).Show();
             }
         }
         else

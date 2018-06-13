@@ -14,7 +14,7 @@ namespace PokeQuet
 		public const string DRAW = "DRAW!";
 		private MainWindow _main;
 
-		public GameOverDialog(MainWindow window,Player winningPlayer,int playerNum)
+		public GameOverDialog(MainWindow window, Player winningPlayer, int playerNum)
 		{
             this.Build();
             this.Modal = true;
@@ -22,10 +22,24 @@ namespace PokeQuet
 			_main = window;
 
             // Anzeige welcher Spieler gewonnen hat, oder das Spielergebnis unentschieden ist.
-			if (winningPlayer != null)
-				this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum);
-			else
-				this.labelResult.Text = DRAW;
+            if (winningPlayer != null)
+            {
+                this.labelResult.Text = String.Format(PLAYER_WON, winningPlayer.Name, playerNum);
+
+                if (winningPlayer is AIPlayer)
+                {
+                    imageWinner.Pixbuf = new Gdk.Pixbuf(@"./images/game-over.png");
+                } 
+                else 
+                {
+                    imageWinner.Pixbuf = new Gdk.Pixbuf(@"./images/vitory.jpg");
+                }
+            }
+            else
+            {
+                this.labelResult.Text = DRAW;
+                imageWinner.Pixbuf = new Gdk.Pixbuf(@"./images/draw.jpg");
+            }
 		}
 
         // Restart Game - Button: Anklicken -> Startet das Spiel erneut.
