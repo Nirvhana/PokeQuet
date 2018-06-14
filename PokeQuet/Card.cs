@@ -87,14 +87,14 @@ namespace PokeQuet
             {
                 case 2:
                     {
-                        deck1.RemoveRange(0, 7);
-                        deck2.RemoveRange(0, 7);
+                        deck1.RemoveRange(0, 8);
+                        deck2.RemoveRange(0, 8);
                     }
                     break;
                 case 3:
                     {
-                        deck1.RemoveRange(0, 11);
-                        deck2.RemoveRange(0, 11);
+                        deck1.RemoveRange(0, 12);
+                        deck2.RemoveRange(0, 12);
                     }
                     break;
             }
