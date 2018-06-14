@@ -48,6 +48,8 @@ public partial class MainWindow : Gtk.Window
         Build();
         imageDeck1.File = "./images/pokemonCardBack3.png";
         imageDeck2.File = "./images/pokemonCardBack3.png";
+        imageDeck3.File = "./images/pokemonCardBack3.png";
+        imageDeck3.Visible = false;
 		this.startingPlayer = startingPlayer;
         this.deckSize = deckSize;
         InitGame(playerName,aiType);
@@ -484,6 +486,9 @@ public partial class MainWindow : Gtk.Window
         {
             //Packe Karten beider Spieler auf den Stichstapel
             TieCards.PutCardsAtBack(p1Card, p2Card);
+
+            //Zeige einen Stich-Stapel an
+            imageDeck3.Visible = true;
         }
         else if (winningPlayer == Player1)//Falls Spieler 1 gewinnt
         {
@@ -502,8 +507,10 @@ public partial class MainWindow : Gtk.Window
         if (winningPlayer != null)//Es einen Sieger gibt (kein Stich)
         {
             //Packe die Karten von Stich-Stapel hinten auf das Deck des Siegers
+            //Entferne die Grafik für den Stich-Stapel
             winningPlayer.Deck.PutCardsAtBack(TieCards);
             TieCards.Clear();
+            imageDeck3.Visible = false;
         }
         //Überprüfe ob das Spiel zuende ist
         CheckWinningState();
@@ -524,16 +531,26 @@ public partial class MainWindow : Gtk.Window
             //Falls beide Spieler keine Karten mehr haben (alle Karten im Stich-Stapel); =Unentschieden
             if (p1Count == 0 && p2Count == 0)
             {
+                //Blendet die Grafiken der Spieler Decks aus
+                imageDeck1.Visible = false;
+                imageDeck2.Visible = false;
+
                 //Zeige Unentschieden Dialog
 				new GameOverDialog(this, null, 0).Show();
             }
             else if (p1Count == 0) //Falls nur Spieler 1 keine Karten mehr hat; =Spieler 2 gewinnt(Niederlage)
             {
+                //Blendet die Grafik des Decks von Spieler 1 aus
+                imageDeck1.Visible = false;
+
                 //Zeige Spieler 2 gewinnt Dialog
                 new GameOverDialog(this, Player2, 2).Show();
             }
             else if (p2Count == 0) //Falls nur Spieler 2 keine Karten mehr hat; =Spieler 1 gewinnt(Sieg)
             {
+                //Blendet die Grafik des Decks von Spieler 2 aus
+                imageDeck2.Visible = false;
+
                 //Zeige Spieler 1 gewinnt Dialog
                 new GameOverDialog(this, Player1, 1).Show();
             }

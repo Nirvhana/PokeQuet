@@ -64,6 +64,7 @@
             <child>
               <widget class="Gtk.Label" id="labelSpacer1">
                 <property name="MemberName" />
+                <property name="Justify">Center</property>
               </widget>
               <packing>
                 <property name="Position">1</property>
@@ -873,7 +874,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label11">
                     <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Deck</property>
+                    <property name="LabelProp" translatable="yes">Cards in Deck:</property>
                   </widget>
                   <packing>
                     <property name="Position">0</property>
@@ -944,6 +945,17 @@
                     <property name="Fill">False</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.Image" id="imageDeck3">
+                    <property name="MemberName" />
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -961,7 +973,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label12">
                     <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Deck</property>
+                    <property name="LabelProp" translatable="yes">Cards in Deck:</property>
                   </widget>
                   <packing>
                     <property name="Position">0</property>
