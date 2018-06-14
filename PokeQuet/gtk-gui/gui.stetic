@@ -7,7 +7,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/PokeQuet.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="960 536">
+  <widget class="Gtk.Window" id="MainWindow" design-size="960 572">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -27,7 +27,7 @@
                 <property name="RowSpacing">6</property>
                 <property name="ColumnSpacing">6</property>
                 <child>
-                  <widget class="Gtk.HSeparator" id="hseparator4">
+                  <widget class="Gtk.HSeparator" id="hseparator10">
                     <property name="MemberName" />
                   </widget>
                   <packing>
@@ -44,10 +44,12 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.HSeparator" id="hseparator6">
+                  <widget class="Gtk.HSeparator" id="hseparator15">
                     <property name="MemberName" />
                   </widget>
                   <packing>
+                    <property name="LeftAttach">1</property>
+                    <property name="RightAttach">2</property>
                     <property name="AutoSize">True</property>
                     <property name="YOptions">Fill</property>
                     <property name="XExpand">True</property>
@@ -59,18 +61,13 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Label" id="labelTurnResult">
+                  <widget class="Gtk.HSeparator" id="hseparator17">
                     <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">&lt;Player 1&gt; wins the turn.</property>
-                    <property name="UseMarkup">True</property>
                   </widget>
                   <packing>
-                    <property name="LeftAttach">1</property>
-                    <property name="RightAttach">2</property>
                     <property name="AutoSize">True</property>
-                    <property name="XOptions">Fill</property>
                     <property name="YOptions">Fill</property>
-                    <property name="XExpand">False</property>
+                    <property name="XExpand">True</property>
                     <property name="XFill">True</property>
                     <property name="XShrink">False</property>
                     <property name="YExpand">False</property>
@@ -887,6 +884,19 @@
           </packing>
         </child>
         <child>
+          <widget class="Gtk.Label" id="labelTurnResult">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">&lt;Player 1&gt; wins the turn.</property>
+            <property name="UseMarkup">True</property>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.Table" id="table3">
             <property name="MemberName" />
             <property name="NColumns">3</property>
@@ -964,7 +974,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">4</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -975,7 +985,7 @@
             <property name="MemberName" />
           </widget>
           <packing>
-            <property name="Position">4</property>
+            <property name="Position">5</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -1133,7 +1143,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">5</property>
+            <property name="Position">6</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -1620,6 +1630,7 @@
           <packing>
             <property name="TopAttach">4</property>
             <property name="BottomAttach">5</property>
+            <property name="XPadding">50</property>
             <property name="AutoSize">True</property>
             <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>

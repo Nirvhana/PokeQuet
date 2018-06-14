@@ -193,6 +193,7 @@ namespace PokeQuet
 			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.table1[this.label3]));
 			w12.TopAttach = ((uint)(4));
 			w12.BottomAttach = ((uint)(5));
+			w12.XPadding = ((uint)(50));
 			w12.XOptions = ((global::Gtk.AttachOptions)(4));
 			w12.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild

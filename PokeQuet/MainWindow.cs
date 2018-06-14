@@ -3,6 +3,7 @@ using Gtk;
 using PokeQuet;
 using Newtonsoft.Json;
 using System.IO;
+using System.Media;
 
 /// <summary>
 /// Das Hauptfenster (das Spiel)
@@ -158,6 +159,9 @@ public partial class MainWindow : Gtk.Window
             buttonSelectATK.Sensitive = true;
             buttonSelectDEF.Sensitive = true;
             buttonSelectSPD.Sensitive = true;
+
+            labelTurnResult.Text = "Choose a Discipline to compare with the opponent";
+            labelTurnResult.ModifyFg(StateType.Normal, BLACK);
         }
     }
 
@@ -292,12 +296,14 @@ public partial class MainWindow : Gtk.Window
                 //Setze die Farbe von Spieler 2 auf rot und Spieler 1 auf grün
                 p1color = GREEN;
                 p2color = RED;
+                labelTurnResult.ModifyFg(StateType.Normal, p1color);
             }
             else //Falls es Spieler 2 gewinnt
             {
                 //Setze die Farbe von Spieler 1 auf rot und Spieler 2 auf grün
                 p1color = RED;
                 p2color = GREEN;
+                labelTurnResult.ModifyFg(StateType.Normal, p1color);
             }
 
             //Zeige Unentschieden-Text mit eingefügtem Spielernamen
