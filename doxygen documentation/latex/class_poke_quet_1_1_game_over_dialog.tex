@@ -1,0 +1,103 @@
+\hypertarget{class_poke_quet_1_1_game_over_dialog}{}\section{Poke\+Quet.\+Game\+Over\+Dialog Class Reference}
+\label{class_poke_quet_1_1_game_over_dialog}\index{Poke\+Quet.\+Game\+Over\+Dialog@{Poke\+Quet.\+Game\+Over\+Dialog}}
+
+
+Fenster das nach Ende des Spiels erscheint und den Sieger bzw. Unentschieden anzeigt und die Option für Neustart oder Ende des aktuellen Spiels gibt  
+
+
+Inheritance diagram for Poke\+Quet.\+Game\+Over\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_poke_quet_1_1_game_over_dialog}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_poke_quet_1_1_game_over_dialog_a8c93fc8093ac6012aa11d16bac7be605}{Game\+Over\+Dialog}} (\mbox{\hyperlink{class_main_window}{Main\+Window}} window, \mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} winning\+Player, int player\+Num)
+\begin{DoxyCompactList}\small\item\em Konstukter des Gameover-\/\+Dialogs welcher den Sieger bzw. Unentschieden anzeigt und die Option für Neustart oder Ende des aktuellen Spiels gibt \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poke_quet_1_1_game_over_dialog_a3da51964f7f1a7de547eae90f781429b}\label{class_poke_quet_1_1_game_over_dialog_a3da51964f7f1a7de547eae90f781429b}} 
+const string {\bfseries P\+L\+A\+Y\+E\+R\+\_\+\+W\+ON} = \char`\"{}\{0\}(P\{1\}) W\+O\+N!\char`\"{}
+\item 
+\mbox{\Hypertarget{class_poke_quet_1_1_game_over_dialog_aa4ac065867974d1cabdf0b0fd8137a0a}\label{class_poke_quet_1_1_game_over_dialog_aa4ac065867974d1cabdf0b0fd8137a0a}} 
+const string {\bfseries D\+R\+AW} = \char`\"{}D\+R\+A\+W!\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_poke_quet_1_1_game_over_dialog_aa12eeeb856f3efec7e3bfff392a59af5}{Restart\+Clicked}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Wenn Restart-\/\+Knopf gedrückt wird\+: Startet das Spiel neu und schließt den Dialog \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_poke_quet_1_1_game_over_dialog_a1f55fe2f8582123f180ceee6d4ea9150}{Quit\+Clicked}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Wenn \char`\"{}\+Quit Game\char`\"{}-\/\+Knopf gedrückt wird\+: Schließt Fenster und beendet das Programm komplett \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_poke_quet_1_1_game_over_dialog_a17735956b84e755b1412e6a10ac92ed0}{On\+Button\+Main\+Menu\+Clicked}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Wenn \char`\"{}\+Quit Game\char`\"{}-\/\+Knopf gedrückt wird\+: Schließt das Spiel Fenster und den Dialog, Das Hauptmenü bleibt offen \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fenster das nach Ende des Spiels erscheint und den Sieger bzw. Unentschieden anzeigt und die Option für Neustart oder Ende des aktuellen Spiels gibt 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poke_quet_1_1_game_over_dialog_a8c93fc8093ac6012aa11d16bac7be605}\label{class_poke_quet_1_1_game_over_dialog_a8c93fc8093ac6012aa11d16bac7be605}} 
+\index{Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}!Game\+Over\+Dialog@{Game\+Over\+Dialog}}
+\index{Game\+Over\+Dialog@{Game\+Over\+Dialog}!Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}}
+\subsubsection{\texorpdfstring{Game\+Over\+Dialog()}{GameOverDialog()}}
+{\footnotesize\ttfamily Poke\+Quet.\+Game\+Over\+Dialog.\+Game\+Over\+Dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_window}{Main\+Window}}}]{window,  }\item[{\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}}}]{winning\+Player,  }\item[{int}]{player\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstukter des Gameover-\/\+Dialogs welcher den Sieger bzw. Unentschieden anzeigt und die Option für Neustart oder Ende des aktuellen Spiels gibt 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Das Hauptspielfenster(benötigt für Neustart/\+Beendigung)\\
+\hline
+{\em winning\+Player} & Der Sieger des Spiels oder null falls Unentschieden\\
+\hline
+{\em player\+Num} & Die Zahl des Spielers der gewonnen hat(1 oder 2)\\
+\hline
+\end{DoxyParams}
+
+
+Code von Tim und André
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poke_quet_1_1_game_over_dialog_a17735956b84e755b1412e6a10ac92ed0}\label{class_poke_quet_1_1_game_over_dialog_a17735956b84e755b1412e6a10ac92ed0}} 
+\index{Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}!On\+Button\+Main\+Menu\+Clicked@{On\+Button\+Main\+Menu\+Clicked}}
+\index{On\+Button\+Main\+Menu\+Clicked@{On\+Button\+Main\+Menu\+Clicked}!Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}}
+\subsubsection{\texorpdfstring{On\+Button\+Main\+Menu\+Clicked()}{OnButtonMainMenuClicked()}}
+{\footnotesize\ttfamily void Poke\+Quet.\+Game\+Over\+Dialog.\+On\+Button\+Main\+Menu\+Clicked (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Wenn \char`\"{}\+Quit Game\char`\"{}-\/\+Knopf gedrückt wird\+: Schließt das Spiel Fenster und den Dialog, Das Hauptmenü bleibt offen 
+
+Code ausschließlich von Tim\mbox{\Hypertarget{class_poke_quet_1_1_game_over_dialog_a1f55fe2f8582123f180ceee6d4ea9150}\label{class_poke_quet_1_1_game_over_dialog_a1f55fe2f8582123f180ceee6d4ea9150}} 
+\index{Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}!Quit\+Clicked@{Quit\+Clicked}}
+\index{Quit\+Clicked@{Quit\+Clicked}!Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}}
+\subsubsection{\texorpdfstring{Quit\+Clicked()}{QuitClicked()}}
+{\footnotesize\ttfamily void Poke\+Quet.\+Game\+Over\+Dialog.\+Quit\+Clicked (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Wenn \char`\"{}\+Quit Game\char`\"{}-\/\+Knopf gedrückt wird\+: Schließt Fenster und beendet das Programm komplett 
+
+Code ausschließlich von Tim\mbox{\Hypertarget{class_poke_quet_1_1_game_over_dialog_aa12eeeb856f3efec7e3bfff392a59af5}\label{class_poke_quet_1_1_game_over_dialog_aa12eeeb856f3efec7e3bfff392a59af5}} 
+\index{Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}!Restart\+Clicked@{Restart\+Clicked}}
+\index{Restart\+Clicked@{Restart\+Clicked}!Poke\+Quet\+::\+Game\+Over\+Dialog@{Poke\+Quet\+::\+Game\+Over\+Dialog}}
+\subsubsection{\texorpdfstring{Restart\+Clicked()}{RestartClicked()}}
+{\footnotesize\ttfamily void Poke\+Quet.\+Game\+Over\+Dialog.\+Restart\+Clicked (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Wenn Restart-\/\+Knopf gedrückt wird\+: Startet das Spiel neu und schließt den Dialog 
+
+Code ausschließlich von André
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Over\+Dialog.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,347 @@
+\hypertarget{class_main_window}{}\section{Main\+Window Class Reference}
+\label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+Das Hauptfenster (das Spiel)  
+
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a159f4e738afbdf1dc79068aad1068725}{Main\+Window}} (string player\+Name, int ai\+Type, int starting\+Player, int deck\+Size)
+\begin{DoxyCompactList}\small\item\em Konstruktor des Hauptfensters. Startet bereitet das Fenster vor und startet das Spiel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_afcb02d6059de11622938a544e3eda66a}{Init\+Game}} (string player\+Name, int ai\+Type)
+\begin{DoxyCompactList}\small\item\em Initialisierung des Spiels\+: Laden der Karten, Erzeugung von Spielern auf Grundlage der gewählten KI, (Initialisierung der KI; obsolet) Erzeugung des Stich-\/\+Stapels Beginne Spiel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ad9f0cc9d0eafd2f12bbe701c1183450e}{Load\+Cards}} ()
+\begin{DoxyCompactList}\small\item\em Lädt Karten aus der All\+Cards.\+json Datei und speicher sie in \mbox{\hyperlink{class_main_window_ae1c30b48118e2c8c6cd16171fab0cd31}{Card\+Pool}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a1eb0f2f5d231502046a64fef4a894a80}{Start\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Startet das Spiel\+: mischt und verteilt Decks, leert den Stich-\/\+Stapel, bestimmt den beginnenden Spieler, startet den ersten Zug \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a66c105aa2c336bc2b05d9d574ab4eb74}{Next\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em Beginne einen neuen Zug\+: aktiviere Knöpfe falls Spieler 1 am Zug ist, mache C\+P\+U-\/\+Zug falls ein nicht-\/\+Spieler am Zug ist \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ac527beb2a3d814c60578bd415c589dcf}{Display\+Cards}} ()
+\begin{DoxyCompactList}\small\item\em Zeigt alle Informationen zur Karte von Spieler 1(die eigene) an; Leert die Informationen zur Karte von Spieler 2; Aktualisiert Kartenanzahlen für Decks; Stellt die normale Schriftfarbe der Disziplinen wieder her \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ab0f20d9b5a33f6469d5b837799e534fc}{Choose\+Discipline}} (\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} discipline)
+\begin{DoxyCompactList}\small\item\em Wenn der Spieler eine Disziplin ausgewählt hat\+: Deaktiviere Disziplin-\/\+Knöpfe, Vergleiche Disziplin \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a25b45e71a3e8fc76ab004cf4c9725c66}{Make\+C\+P\+U\+Move}} ()
+\begin{DoxyCompactList}\small\item\em Mache den C\+P\+U-\/\+Zug (Spieler 2 macht seinen Zug) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a635fb220648803e533830c65bbe29fd8}{Show\+Opponent\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Aufdecken der aktuellen Karte und Werte von Spieler 2. Wird durch \mbox{\hyperlink{class_main_window_a4bbff733cfab680758c3fcc80a0de055}{Compare\+Discipline(\+Discipline)}} aufgerufen, nach Auswahl der Disziplin \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aa29917f24b4b216e576a90b000db089d}{Show\+Turn\+Winner}} (\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} discipline, \mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} winning\+Player)
+\begin{DoxyCompactList}\small\item\em Anzeige welcher Spieler die aktuelle Runde gewonnen hat\+: Färbt Kartenwerte der gewählten Disziplin ein, Zeigt Gewinner über \char`\"{}\+Next Card\char`\"{}-\/\+Knopf an \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a4bbff733cfab680758c3fcc80a0de055}{Compare\+Discipline}} (\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} discipline)
+\begin{DoxyCompactList}\small\item\em Kampflogik\+: Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt oder ob es unentschieden endet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a94a1278f08f427a805ea3fedf760e03c}{Round\+Decided}} (\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} winning\+Player, \mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} losing\+Player, \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} discipline)
+\begin{DoxyCompactList}\small\item\em Nach dem die Runde entschieden wurde\+: Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu, bzw. bei einem Unentschieden werden die Karten den \mbox{\hyperlink{class_main_window_a71f4eaa448a91297c8c54786e5c0516e}{Tie\+Cards}} hinzugefügt; Weise dem \mbox{\hyperlink{class_main_window_a4ce463cb4e7d116640b55416557ea741}{Active\+Player}} den Gewinner der aktuellen Runde zu (Der Gewinner ist als nächster am Zug.); Überprüfe ob das Spiel zuende ist durch einen Aufruf von \mbox{\hyperlink{class_main_window_a74ec52917be1fdf6a641639d5da39d53}{Check\+Winning\+State}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a74ec52917be1fdf6a641639d5da39d53}{Check\+Winning\+State}} ()
+\begin{DoxyCompactList}\small\item\em Überprüft anhand der verbleibenden Karten in den Decks, ob ein Spieler das Spiel gewonnen hat, oder ob das Spiel unentschieden endet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_ae149b6fbe2080c77fe7bf34880fe4b15}\label{class_main_window_ae149b6fbe2080c77fe7bf34880fe4b15}} 
+const string {\bfseries T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+W\+I\+N\+N\+ER} = \char`\"{}\{0\} won the turn!\char`\"{}
+\item 
+\mbox{\Hypertarget{class_main_window_a678df4fce522ee399f2d91901da72004}\label{class_main_window_a678df4fce522ee399f2d91901da72004}} 
+const string {\bfseries T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+T\+IE} = \char`\"{}It\textquotesingle{}s a tie!\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a1ddfc1a8ba6354a1a9d29fa8ba942caa}\label{class_main_window_a1ddfc1a8ba6354a1a9d29fa8ba942caa}} 
+static readonly Random {\bfseries R\+NG} = new Random()
+\item 
+\mbox{\Hypertarget{class_main_window_ad3cdf380f793df7d8df3632b8073093d}\label{class_main_window_ad3cdf380f793df7d8df3632b8073093d}} 
+static readonly Gdk.\+Color {\bfseries R\+ED} = new Gdk.\+Color((byte)255, (byte)20, (byte)20)
+\item 
+\mbox{\Hypertarget{class_main_window_abf9286e51d9c9868c1d1c420383bc146}\label{class_main_window_abf9286e51d9c9868c1d1c420383bc146}} 
+static readonly Gdk.\+Color {\bfseries G\+R\+E\+EN} = new Gdk.\+Color((byte)0, (byte)215, (byte)0)
+\item 
+\mbox{\Hypertarget{class_main_window_ac8dc783760d112de13cd19cffa89e51e}\label{class_main_window_ac8dc783760d112de13cd19cffa89e51e}} 
+static readonly Gdk.\+Color {\bfseries G\+R\+EY} = new Gdk.\+Color((byte)0, (byte)0, (byte)0)
+\item 
+\mbox{\Hypertarget{class_main_window_af583645658035054e22a48ba2e29fa61}\label{class_main_window_af583645658035054e22a48ba2e29fa61}} 
+static readonly Gdk.\+Color {\bfseries B\+L\+A\+CK} = new Gdk.\+Color((byte)0, (byte)0, (byte)0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a148f7bce0a5842ae629b21de2516e585}{Next\+Card\+Clicked}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Wenn der Spieler auf den \char`\"{}\+Next Card\char`\"{}-\/\+Knopf drückt\+: Beginne den nächsten Zug \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_ad015c2c419d25830d71dcaac0f97b199}\label{class_main_window_ad015c2c419d25830d71dcaac0f97b199}} 
+void {\bfseries Type\+Discipline\+Selected} (object sender, Event\+Args e)
+\item 
+\mbox{\Hypertarget{class_main_window_a4adf98b53f1040dab240bcb004c88342}\label{class_main_window_a4adf98b53f1040dab240bcb004c88342}} 
+void {\bfseries H\+P\+Discipline\+Selected} (object sender, Event\+Args e)
+\item 
+\mbox{\Hypertarget{class_main_window_a1d3d2bb960da9925ef3c85b3f5fbef42}\label{class_main_window_a1d3d2bb960da9925ef3c85b3f5fbef42}} 
+void {\bfseries A\+T\+K\+Discipline\+Selected} (object sender, Event\+Args e)
+\item 
+\mbox{\Hypertarget{class_main_window_add34c6d17740a7e065c6d1bededaf145}\label{class_main_window_add34c6d17740a7e065c6d1bededaf145}} 
+void {\bfseries D\+E\+F\+Discipline\+Selected} (object sender, Event\+Args e)
+\item 
+\mbox{\Hypertarget{class_main_window_af0fbe61daf0feaf38240ffca739f4a88}\label{class_main_window_af0fbe61daf0feaf38240ffca739f4a88}} 
+void {\bfseries S\+P\+D\+Discipline\+Selected} (object sender, Event\+Args e)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_main_window_ae1c30b48118e2c8c6cd16171fab0cd31}{Card\+Pool}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array aller geladenen Karten \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} \mbox{\hyperlink{class_main_window_a4ce463cb4e7d116640b55416557ea741}{Active\+Player}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Der aktive Spieler(= der Spieler der am Zug ist) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_a49ed88cd1ccd49cb4489fd432ac6efa5}\label{class_main_window_a49ed88cd1ccd49cb4489fd432ac6efa5}} 
+\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} {\bfseries Player1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_main_window_aed5200384ee8a791a584c07ae034b0d6}\label{class_main_window_aed5200384ee8a791a584c07ae034b0d6}} 
+\mbox{\hyperlink{class_poke_quet_1_1_a_i_player}{A\+I\+Player}} {\bfseries Player2}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}} \mbox{\hyperlink{class_main_window_a71f4eaa448a91297c8c54786e5c0516e}{Tie\+Cards}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Der Stich-\/\+Stapel \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Das Hauptfenster (das Spiel) 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a159f4e738afbdf1dc79068aad1068725}\label{class_main_window_a159f4e738afbdf1dc79068aad1068725}} 
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Main\+Window()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window.\+Main\+Window (\begin{DoxyParamCaption}\item[{string}]{player\+Name,  }\item[{int}]{ai\+Type,  }\item[{int}]{starting\+Player,  }\item[{int}]{deck\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor des Hauptfensters. Startet bereitet das Fenster vor und startet das Spiel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Name} & Name für Spieler 1\\
+\hline
+{\em ai\+Type} & K\+I-\/\+Level\+: 1=Bug Catcher(\+Zufall), 2=Gym Leader(höchster Wert)\\
+\hline
+{\em starting\+Player} & Beginnender Spieler\+: 1$\vert$2\+: Spieler 1$\vert$2, 0\+: Zufall\\
+\hline
+{\em deck\+Size} & Anfängliche Deckgröße der Spieler\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a74ec52917be1fdf6a641639d5da39d53}\label{class_main_window_a74ec52917be1fdf6a641639d5da39d53}} 
+\index{Main\+Window@{Main\+Window}!Check\+Winning\+State@{Check\+Winning\+State}}
+\index{Check\+Winning\+State@{Check\+Winning\+State}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Check\+Winning\+State()}{CheckWinningState()}}
+{\footnotesize\ttfamily void Main\+Window.\+Check\+Winning\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Überprüft anhand der verbleibenden Karten in den Decks, ob ein Spieler das Spiel gewonnen hat, oder ob das Spiel unentschieden endet. 
+
+Code fast ausschließlich von Tim\mbox{\Hypertarget{class_main_window_ab0f20d9b5a33f6469d5b837799e534fc}\label{class_main_window_ab0f20d9b5a33f6469d5b837799e534fc}} 
+\index{Main\+Window@{Main\+Window}!Choose\+Discipline@{Choose\+Discipline}}
+\index{Choose\+Discipline@{Choose\+Discipline}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Choose\+Discipline()}{ChooseDiscipline()}}
+{\footnotesize\ttfamily void Main\+Window.\+Choose\+Discipline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}}]{discipline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wenn der Spieler eine Disziplin ausgewählt hat\+: Deaktiviere Disziplin-\/\+Knöpfe, Vergleiche Disziplin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em discipline} & Die gewählte Disziplin\\
+\hline
+\end{DoxyParams}
+
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_a4bbff733cfab680758c3fcc80a0de055}\label{class_main_window_a4bbff733cfab680758c3fcc80a0de055}} 
+\index{Main\+Window@{Main\+Window}!Compare\+Discipline@{Compare\+Discipline}}
+\index{Compare\+Discipline@{Compare\+Discipline}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Compare\+Discipline()}{CompareDiscipline()}}
+{\footnotesize\ttfamily void Main\+Window.\+Compare\+Discipline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}}]{discipline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Kampflogik\+: Vergleicht ausgewählte Disziplinen und entscheidet welcher Spieler die aktuelle Runde gewinnt oder ob es unentschieden endet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em discipline} & \\
+\hline
+\end{DoxyParams}
+
+
+Code fast ausschließlich von Tim\mbox{\Hypertarget{class_main_window_ac527beb2a3d814c60578bd415c589dcf}\label{class_main_window_ac527beb2a3d814c60578bd415c589dcf}} 
+\index{Main\+Window@{Main\+Window}!Display\+Cards@{Display\+Cards}}
+\index{Display\+Cards@{Display\+Cards}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Display\+Cards()}{DisplayCards()}}
+{\footnotesize\ttfamily void Main\+Window.\+Display\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zeigt alle Informationen zur Karte von Spieler 1(die eigene) an; Leert die Informationen zur Karte von Spieler 2; Aktualisiert Kartenanzahlen für Decks; Stellt die normale Schriftfarbe der Disziplinen wieder her 
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_afcb02d6059de11622938a544e3eda66a}\label{class_main_window_afcb02d6059de11622938a544e3eda66a}} 
+\index{Main\+Window@{Main\+Window}!Init\+Game@{Init\+Game}}
+\index{Init\+Game@{Init\+Game}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Init\+Game()}{InitGame()}}
+{\footnotesize\ttfamily void Main\+Window.\+Init\+Game (\begin{DoxyParamCaption}\item[{string}]{player\+Name,  }\item[{int}]{ai\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialisierung des Spiels\+: Laden der Karten, Erzeugung von Spielern auf Grundlage der gewählten KI, (Initialisierung der KI; obsolet) Erzeugung des Stich-\/\+Stapels Beginne Spiel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Name} & Name für Spieler 1\\
+\hline
+{\em ai\+Type} & K\+I-\/\+Level\+: 1=Bug Catcher(\+Zufall), 2=Gym Leader(höchster Wert)\\
+\hline
+\end{DoxyParams}
+
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_ad9f0cc9d0eafd2f12bbe701c1183450e}\label{class_main_window_ad9f0cc9d0eafd2f12bbe701c1183450e}} 
+\index{Main\+Window@{Main\+Window}!Load\+Cards@{Load\+Cards}}
+\index{Load\+Cards@{Load\+Cards}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Load\+Cards()}{LoadCards()}}
+{\footnotesize\ttfamily void Main\+Window.\+Load\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lädt Karten aus der All\+Cards.\+json Datei und speicher sie in \mbox{\hyperlink{class_main_window_ae1c30b48118e2c8c6cd16171fab0cd31}{Card\+Pool}}. 
+
+Code von Tim mit Hilfe von André(Generic-\/\+Syntax) auf Grundlage eines Beispiels in der J\+S\+O\+N.\+N\+ET Dokumentaion\mbox{\Hypertarget{class_main_window_a25b45e71a3e8fc76ab004cf4c9725c66}\label{class_main_window_a25b45e71a3e8fc76ab004cf4c9725c66}} 
+\index{Main\+Window@{Main\+Window}!Make\+C\+P\+U\+Move@{Make\+C\+P\+U\+Move}}
+\index{Make\+C\+P\+U\+Move@{Make\+C\+P\+U\+Move}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Make\+C\+P\+U\+Move()}{MakeCPUMove()}}
+{\footnotesize\ttfamily void Main\+Window.\+Make\+C\+P\+U\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mache den C\+P\+U-\/\+Zug (Spieler 2 macht seinen Zug) 
+
+\mbox{\Hypertarget{class_main_window_a148f7bce0a5842ae629b21de2516e585}\label{class_main_window_a148f7bce0a5842ae629b21de2516e585}} 
+\index{Main\+Window@{Main\+Window}!Next\+Card\+Clicked@{Next\+Card\+Clicked}}
+\index{Next\+Card\+Clicked@{Next\+Card\+Clicked}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Next\+Card\+Clicked()}{NextCardClicked()}}
+{\footnotesize\ttfamily void Main\+Window.\+Next\+Card\+Clicked (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wenn der Spieler auf den \char`\"{}\+Next Card\char`\"{}-\/\+Knopf drückt\+: Beginne den nächsten Zug 
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_a66c105aa2c336bc2b05d9d574ab4eb74}\label{class_main_window_a66c105aa2c336bc2b05d9d574ab4eb74}} 
+\index{Main\+Window@{Main\+Window}!Next\+Turn@{Next\+Turn}}
+\index{Next\+Turn@{Next\+Turn}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Next\+Turn()}{NextTurn()}}
+{\footnotesize\ttfamily void Main\+Window.\+Next\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Beginne einen neuen Zug\+: aktiviere Knöpfe falls Spieler 1 am Zug ist, mache C\+P\+U-\/\+Zug falls ein nicht-\/\+Spieler am Zug ist 
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_a94a1278f08f427a805ea3fedf760e03c}\label{class_main_window_a94a1278f08f427a805ea3fedf760e03c}} 
+\index{Main\+Window@{Main\+Window}!Round\+Decided@{Round\+Decided}}
+\index{Round\+Decided@{Round\+Decided}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Round\+Decided()}{RoundDecided()}}
+{\footnotesize\ttfamily void Main\+Window.\+Round\+Decided (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}}}]{winning\+Player,  }\item[{\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}}}]{losing\+Player,  }\item[{\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}}]{discipline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Nach dem die Runde entschieden wurde\+: Entfernt die beiden Karten der aktuellen Runde aus den Decks und fügt sie dem Deck des Gewinners hinzu, bzw. bei einem Unentschieden werden die Karten den \mbox{\hyperlink{class_main_window_a71f4eaa448a91297c8c54786e5c0516e}{Tie\+Cards}} hinzugefügt; Weise dem \mbox{\hyperlink{class_main_window_a4ce463cb4e7d116640b55416557ea741}{Active\+Player}} den Gewinner der aktuellen Runde zu (Der Gewinner ist als nächster am Zug.); Überprüfe ob das Spiel zuende ist durch einen Aufruf von \mbox{\hyperlink{class_main_window_a74ec52917be1fdf6a641639d5da39d53}{Check\+Winning\+State}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em winning\+Player} & Der gewinnende Spieler\\
+\hline
+{\em losing\+Player} & Der verlierende Spieler\\
+\hline
+{\em discipline} & Die gespielte Disiplin\\
+\hline
+\end{DoxyParams}
+
+
+Code fast ausschließlich von Tim\mbox{\Hypertarget{class_main_window_a635fb220648803e533830c65bbe29fd8}\label{class_main_window_a635fb220648803e533830c65bbe29fd8}} 
+\index{Main\+Window@{Main\+Window}!Show\+Opponent\+Card@{Show\+Opponent\+Card}}
+\index{Show\+Opponent\+Card@{Show\+Opponent\+Card}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Show\+Opponent\+Card()}{ShowOpponentCard()}}
+{\footnotesize\ttfamily void Main\+Window.\+Show\+Opponent\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Aufdecken der aktuellen Karte und Werte von Spieler 2. Wird durch \mbox{\hyperlink{class_main_window_a4bbff733cfab680758c3fcc80a0de055}{Compare\+Discipline(\+Discipline)}} aufgerufen, nach Auswahl der Disziplin 
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_aa29917f24b4b216e576a90b000db089d}\label{class_main_window_aa29917f24b4b216e576a90b000db089d}} 
+\index{Main\+Window@{Main\+Window}!Show\+Turn\+Winner@{Show\+Turn\+Winner}}
+\index{Show\+Turn\+Winner@{Show\+Turn\+Winner}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Show\+Turn\+Winner()}{ShowTurnWinner()}}
+{\footnotesize\ttfamily void Main\+Window.\+Show\+Turn\+Winner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}}]{discipline,  }\item[{\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}}}]{winning\+Player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Anzeige welcher Spieler die aktuelle Runde gewonnen hat\+: Färbt Kartenwerte der gewählten Disziplin ein, Zeigt Gewinner über \char`\"{}\+Next Card\char`\"{}-\/\+Knopf an 
+
+
+\begin{DoxyParams}{Parameters}
+{\em discipline} & Die gewählte Disziplin zum Einfärben\\
+\hline
+{\em winning\+Player} & Der Spieler, der gewonnen hat oder null bei Unentschieden\\
+\hline
+\end{DoxyParams}
+
+
+Code ausschließlich von André\mbox{\Hypertarget{class_main_window_a1eb0f2f5d231502046a64fef4a894a80}\label{class_main_window_a1eb0f2f5d231502046a64fef4a894a80}} 
+\index{Main\+Window@{Main\+Window}!Start\+Game@{Start\+Game}}
+\index{Start\+Game@{Start\+Game}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Start\+Game()}{StartGame()}}
+{\footnotesize\ttfamily void Main\+Window.\+Start\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Startet das Spiel\+: mischt und verteilt Decks, leert den Stich-\/\+Stapel, bestimmt den beginnenden Spieler, startet den ersten Zug 
+
+Code fast ausschließlich von André
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_main_window_a4ce463cb4e7d116640b55416557ea741}\label{class_main_window_a4ce463cb4e7d116640b55416557ea741}} 
+\index{Main\+Window@{Main\+Window}!Active\+Player@{Active\+Player}}
+\index{Active\+Player@{Active\+Player}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Active\+Player}{ActivePlayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} Main\+Window.\+Active\+Player\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Der aktive Spieler(= der Spieler der am Zug ist) 
+
+\mbox{\Hypertarget{class_main_window_ae1c30b48118e2c8c6cd16171fab0cd31}\label{class_main_window_ae1c30b48118e2c8c6cd16171fab0cd31}} 
+\index{Main\+Window@{Main\+Window}!Card\+Pool@{Card\+Pool}}
+\index{Card\+Pool@{Card\+Pool}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Card\+Pool}{CardPool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} \mbox{[}$\,$\mbox{]} Main\+Window.\+Card\+Pool\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Array aller geladenen Karten 
+
+\mbox{\Hypertarget{class_main_window_a71f4eaa448a91297c8c54786e5c0516e}\label{class_main_window_a71f4eaa448a91297c8c54786e5c0516e}} 
+\index{Main\+Window@{Main\+Window}!Tie\+Cards@{Tie\+Cards}}
+\index{Tie\+Cards@{Tie\+Cards}!Main\+Window@{Main\+Window}}
+\subsubsection{\texorpdfstring{Tie\+Cards}{TieCards}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}} Main\+Window.\+Tie\+Cards\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Der Stich-\/\+Stapel 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Main\+Window.\+cs\end{DoxyCompactItemize}

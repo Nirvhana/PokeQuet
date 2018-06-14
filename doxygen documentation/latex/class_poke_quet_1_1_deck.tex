@@ -1,0 +1,106 @@
+\hypertarget{class_poke_quet_1_1_deck}{}\section{Poke\+Quet.\+Deck Class Reference}
+\label{class_poke_quet_1_1_deck}\index{Poke\+Quet.\+Deck@{Poke\+Quet.\+Deck}}
+
+
+Klasse die ein Kartendeck darstellt und keine  
+
+
+Inheritance diagram for Poke\+Quet.\+Deck\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_poke_quet_1_1_deck}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} \mbox{\hyperlink{class_poke_quet_1_1_deck_a54d648dd64cb769d6817cc4bcf0e9af2}{Get\+Current\+Card}} ()
+\begin{DoxyCompactList}\small\item\em Gibt die aktuelle(vorderste) Karte des Decks zurück. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_poke_quet_1_1_deck_a48673ad29ddff99adc0d494192d5f47c}{Put\+Cards\+At\+Back}} (I\+Enumerable$<$ \mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} $>$ cards)
+\begin{DoxyCompactList}\small\item\em Packt eine Menge an Karten hinten auf das \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_poke_quet_1_1_deck_ae72396d102166a59850288ccb5be7fd1}{Put\+Cards\+At\+Back}} (params \mbox{\hyperlink{class_poke_quet_1_1_card}{Card}}\mbox{[}$\,$\mbox{]} cards)
+\begin{DoxyCompactList}\small\item\em Packt eine Menge an Karten hinten auf das \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}. Implementiert um params-\/\+Aufrufe zu ermöglichen. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_poke_quet_1_1_deck_a12d9b5d3adc4c8c129f04ad024000a0c}{Fill\+Decks\+From\+Card\+Pool}} (\mbox{\hyperlink{class_poke_quet_1_1_card}{Card}}\mbox{[}$\,$\mbox{]} pool, \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}} deck1, \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}} deck2, int deck\+Size)
+\begin{DoxyCompactList}\small\item\em Packt eine Menge an Karten hinten auf das \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}. Implementiert um params-\/\+Aufrufe zu ermöglichen. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poke_quet_1_1_deck_a3a9710bea0016f80f89e0160717b457f}\label{class_poke_quet_1_1_deck_a3a9710bea0016f80f89e0160717b457f}} 
+static readonly Random {\bfseries R\+NG} = new Random()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Klasse die ein Kartendeck darstellt und keine 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poke_quet_1_1_deck_a12d9b5d3adc4c8c129f04ad024000a0c}\label{class_poke_quet_1_1_deck_a12d9b5d3adc4c8c129f04ad024000a0c}} 
+\index{Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}!Fill\+Decks\+From\+Card\+Pool@{Fill\+Decks\+From\+Card\+Pool}}
+\index{Fill\+Decks\+From\+Card\+Pool@{Fill\+Decks\+From\+Card\+Pool}!Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}}
+\subsubsection{\texorpdfstring{Fill\+Decks\+From\+Card\+Pool()}{FillDecksFromCardPool()}}
+{\footnotesize\ttfamily static void Poke\+Quet.\+Deck.\+Fill\+Decks\+From\+Card\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} \mbox{[}$\,$\mbox{]}}]{pool,  }\item[{\mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}}]{deck1,  }\item[{\mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}}]{deck2,  }\item[{int}]{deck\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Packt eine Menge an Karten hinten auf das \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}. Implementiert um params-\/\+Aufrufe zu ermöglichen. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Karte des Decks
+\end{DoxyReturn}
+
+
+Code von Tim und André\mbox{\Hypertarget{class_poke_quet_1_1_deck_a54d648dd64cb769d6817cc4bcf0e9af2}\label{class_poke_quet_1_1_deck_a54d648dd64cb769d6817cc4bcf0e9af2}} 
+\index{Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}!Get\+Current\+Card@{Get\+Current\+Card}}
+\index{Get\+Current\+Card@{Get\+Current\+Card}!Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}}
+\subsubsection{\texorpdfstring{Get\+Current\+Card()}{GetCurrentCard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} Poke\+Quet.\+Deck.\+Get\+Current\+Card (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gibt die aktuelle(vorderste) Karte des Decks zurück. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Karte des Decks
+\end{DoxyReturn}
+
+
+Code ausschließlich von André\mbox{\Hypertarget{class_poke_quet_1_1_deck_a48673ad29ddff99adc0d494192d5f47c}\label{class_poke_quet_1_1_deck_a48673ad29ddff99adc0d494192d5f47c}} 
+\index{Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}!Put\+Cards\+At\+Back@{Put\+Cards\+At\+Back}}
+\index{Put\+Cards\+At\+Back@{Put\+Cards\+At\+Back}!Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}}
+\subsubsection{\texorpdfstring{Put\+Cards\+At\+Back()}{PutCardsAtBack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Poke\+Quet.\+Deck.\+Put\+Cards\+At\+Back (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ \mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} $>$}]{cards }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Packt eine Menge an Karten hinten auf das \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Karte des Decks
+\end{DoxyReturn}
+
+
+Code ausschließlich von André\mbox{\Hypertarget{class_poke_quet_1_1_deck_ae72396d102166a59850288ccb5be7fd1}\label{class_poke_quet_1_1_deck_ae72396d102166a59850288ccb5be7fd1}} 
+\index{Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}!Put\+Cards\+At\+Back@{Put\+Cards\+At\+Back}}
+\index{Put\+Cards\+At\+Back@{Put\+Cards\+At\+Back}!Poke\+Quet\+::\+Deck@{Poke\+Quet\+::\+Deck}}
+\subsubsection{\texorpdfstring{Put\+Cards\+At\+Back()}{PutCardsAtBack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Poke\+Quet.\+Deck.\+Put\+Cards\+At\+Back (\begin{DoxyParamCaption}\item[{params \mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} \mbox{[}$\,$\mbox{]}}]{cards }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Packt eine Menge an Karten hinten auf das \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}. Implementiert um params-\/\+Aufrufe zu ermöglichen. Im wesentlichen nur eine Wrapperfunktion, die dazu da ist Listenoperationen durch Analogien aus dem echten Leben verständlicher zu machen. 
+
+\begin{DoxyReturn}{Returns}
+Die aktuelle Karte des Decks
+\end{DoxyReturn}
+
+
+Code ausschließlich von André
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Card.\+cs\end{DoxyCompactItemize}
