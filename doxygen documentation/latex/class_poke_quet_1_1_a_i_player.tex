@@ -1,0 +1,96 @@
+\hypertarget{class_poke_quet_1_1_a_i_player}{}\section{Poke\+Quet.\+A\+I\+Player Class Reference}
+\label{class_poke_quet_1_1_a_i_player}\index{Poke\+Quet.\+A\+I\+Player@{Poke\+Quet.\+A\+I\+Player}}
+
+
+Eine Klasse für Computergesteuerte Gegner die selbstständig Züge machen.  
+
+
+Inheritance diagram for Poke\+Quet.\+A\+I\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_poke_quet_1_1_a_i_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poke_quet_1_1_a_i_player_aa003be7c23e044540792bfb254b58b45}\label{class_poke_quet_1_1_a_i_player_aa003be7c23e044540792bfb254b58b45}} 
+{\bfseries A\+I\+Player} (string name)
+\item 
+void \mbox{\hyperlink{class_poke_quet_1_1_a_i_player_a91da43db7587617dbfe7858a6fafd434}{Init}} (\mbox{\hyperlink{class_poke_quet_1_1_card}{Card}}\mbox{[}$\,$\mbox{]} card\+Pool)
+\begin{DoxyCompactList}\small\item\em Eine Methode zum initialisieren der KI sodass diese aufgrund des Kartensatzes z.\+B. die statitisch optimale Disziplin für jede Karte berechnen könnten, aber das Umzusetzen erfordert den ganzen Disziplinvergleich selbst zu implementieren oder das der Disziplinvergleich vom restlichen Spielverlauf getrennt wird. \end{DoxyCompactList}\item 
+abstract \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} \mbox{\hyperlink{class_poke_quet_1_1_a_i_player_ae2862ead657c524614793ea4d3ebf80b}{Make\+Turn}} (\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}} opponent, \mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}} tie\+Cards)
+\begin{DoxyCompactList}\small\item\em Die Methode zur Bestimmung des Zugs des Computerspielers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_poke_quet_1_1_a_i_player_a72ab201b6fd3e18713da18d17824179a}{D\+I\+S\+C\+I\+P\+L\+I\+N\+ES}} = (\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}\mbox{[}$\,$\mbox{]})Enum.\+Get\+Values(typeof(\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}))
+\begin{DoxyCompactList}\small\item\em Ein Array aller Disziplinen in \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Eine Klasse für Computergesteuerte Gegner die selbstständig Züge machen. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poke_quet_1_1_a_i_player_a91da43db7587617dbfe7858a6fafd434}\label{class_poke_quet_1_1_a_i_player_a91da43db7587617dbfe7858a6fafd434}} 
+\index{Poke\+Quet\+::\+A\+I\+Player@{Poke\+Quet\+::\+A\+I\+Player}!Init@{Init}}
+\index{Init@{Init}!Poke\+Quet\+::\+A\+I\+Player@{Poke\+Quet\+::\+A\+I\+Player}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Poke\+Quet.\+A\+I\+Player.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_poke_quet_1_1_card}{Card}} \mbox{[}$\,$\mbox{]}}]{card\+Pool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Eine Methode zum initialisieren der KI sodass diese aufgrund des Kartensatzes z.\+B. die statitisch optimale Disziplin für jede Karte berechnen könnten, aber das Umzusetzen erfordert den ganzen Disziplinvergleich selbst zu implementieren oder das der Disziplinvergleich vom restlichen Spielverlauf getrennt wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em card\+Pool} & Der komplette Kartensatz\\
+\hline
+\end{DoxyParams}
+
+
+Diese Methode ist obsolet\mbox{\Hypertarget{class_poke_quet_1_1_a_i_player_ae2862ead657c524614793ea4d3ebf80b}\label{class_poke_quet_1_1_a_i_player_ae2862ead657c524614793ea4d3ebf80b}} 
+\index{Poke\+Quet\+::\+A\+I\+Player@{Poke\+Quet\+::\+A\+I\+Player}!Make\+Turn@{Make\+Turn}}
+\index{Make\+Turn@{Make\+Turn}!Poke\+Quet\+::\+A\+I\+Player@{Poke\+Quet\+::\+A\+I\+Player}}
+\subsubsection{\texorpdfstring{Make\+Turn()}{MakeTurn()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} Poke\+Quet.\+A\+I\+Player.\+Make\+Turn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_poke_quet_1_1_player}{Player}}}]{opponent,  }\item[{\mbox{\hyperlink{class_poke_quet_1_1_deck}{Deck}}}]{tie\+Cards }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Die Methode zur Bestimmung des Zugs des Computerspielers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opponent} & Der gegnerische Spieler\\
+\hline
+{\em tie\+Cards} & Der Stich-\/\+Stapel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Die Disziplin die als Zug gewählt wird.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_poke_quet_1_1_a_i_player_simple_a4c48360666f3fc8b7400cbfa2c7ea29e}{Poke\+Quet.\+A\+I\+Player\+Simple}}, and \mbox{\hyperlink{class_poke_quet_1_1_a_i_player_random_a8723ee791e3ac1ea34033cd6ce49398f}{Poke\+Quet.\+A\+I\+Player\+Random}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_poke_quet_1_1_a_i_player_a72ab201b6fd3e18713da18d17824179a}\label{class_poke_quet_1_1_a_i_player_a72ab201b6fd3e18713da18d17824179a}} 
+\index{Poke\+Quet\+::\+A\+I\+Player@{Poke\+Quet\+::\+A\+I\+Player}!D\+I\+S\+C\+I\+P\+L\+I\+N\+ES@{D\+I\+S\+C\+I\+P\+L\+I\+N\+ES}}
+\index{D\+I\+S\+C\+I\+P\+L\+I\+N\+ES@{D\+I\+S\+C\+I\+P\+L\+I\+N\+ES}!Poke\+Quet\+::\+A\+I\+Player@{Poke\+Quet\+::\+A\+I\+Player}}
+\subsubsection{\texorpdfstring{D\+I\+S\+C\+I\+P\+L\+I\+N\+ES}{DISCIPLINES}}
+{\footnotesize\ttfamily readonly \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} \mbox{[}$\,$\mbox{]} Poke\+Quet.\+A\+I\+Player.\+D\+I\+S\+C\+I\+P\+L\+I\+N\+ES = (\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}\mbox{[}$\,$\mbox{]})Enum.\+Get\+Values(typeof(\mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}}))\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ein Array aller Disziplinen in \mbox{\hyperlink{namespace_poke_quet_aa425f1b8cf90847021fe1177d6a7199d}{Discipline}} 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+cs\end{DoxyCompactItemize}
