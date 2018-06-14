@@ -103,6 +103,8 @@ public partial class MainWindow
 
 	private global::Gtk.HSeparator hseparator3;
 
+	private global::Gtk.HSeparator hseparator8;
+
 	private global::Gtk.HSeparator hseparator1;
 
 	private global::Gtk.HBox hbox4;
@@ -676,19 +678,25 @@ public partial class MainWindow
 		w48.LeftAttach = ((uint)(2));
 		w48.RightAttach = ((uint)(3));
 		w48.YOptions = ((global::Gtk.AttachOptions)(4));
+		// Container child table3.Gtk.Table+TableChild
+		this.hseparator8 = new global::Gtk.HSeparator();
+		this.hseparator8.Name = "hseparator8";
+		this.table3.Add(this.hseparator8);
+		global::Gtk.Table.TableChild w49 = ((global::Gtk.Table.TableChild)(this.table3[this.hseparator8]));
+		w49.YOptions = ((global::Gtk.AttachOptions)(4));
 		this.vbox3.Add(this.table3);
-		global::Gtk.Box.BoxChild w49 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.table3]));
-		w49.Position = 3;
-		w49.Expand = false;
-		w49.Fill = false;
+		global::Gtk.Box.BoxChild w50 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.table3]));
+		w50.Position = 3;
+		w50.Expand = false;
+		w50.Fill = false;
 		// Container child vbox3.Gtk.Box+BoxChild
 		this.hseparator1 = new global::Gtk.HSeparator();
 		this.hseparator1.Name = "hseparator1";
 		this.vbox3.Add(this.hseparator1);
-		global::Gtk.Box.BoxChild w50 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hseparator1]));
-		w50.Position = 4;
-		w50.Expand = false;
-		w50.Fill = false;
+		global::Gtk.Box.BoxChild w51 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hseparator1]));
+		w51.Position = 4;
+		w51.Expand = false;
+		w51.Fill = false;
 		// Container child vbox3.Gtk.Box+BoxChild
 		this.hbox4 = new global::Gtk.HBox();
 		this.hbox4.Name = "hbox4";
@@ -702,32 +710,32 @@ public partial class MainWindow
 		this.label11.Name = "label11";
 		this.label11.LabelProp = global::Mono.Unix.Catalog.GetString("Cards in Deck:");
 		this.vbox4.Add(this.label11);
-		global::Gtk.Box.BoxChild w51 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.label11]));
-		w51.Position = 0;
-		w51.Expand = false;
-		w51.Fill = false;
+		global::Gtk.Box.BoxChild w52 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.label11]));
+		w52.Position = 0;
+		w52.Expand = false;
+		w52.Fill = false;
 		// Container child vbox4.Gtk.Box+BoxChild
 		this.labelP1CardCount = new global::Gtk.Label();
 		this.labelP1CardCount.Name = "labelP1CardCount";
 		this.labelP1CardCount.LabelProp = global::Mono.Unix.Catalog.GetString("0");
 		this.vbox4.Add(this.labelP1CardCount);
-		global::Gtk.Box.BoxChild w52 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.labelP1CardCount]));
-		w52.Position = 1;
-		w52.Expand = false;
-		w52.Fill = false;
+		global::Gtk.Box.BoxChild w53 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.labelP1CardCount]));
+		w53.Position = 1;
+		w53.Expand = false;
+		w53.Fill = false;
 		// Container child vbox4.Gtk.Box+BoxChild
 		this.imageDeck1 = new global::Gtk.Image();
 		this.imageDeck1.Name = "imageDeck1";
 		this.vbox4.Add(this.imageDeck1);
-		global::Gtk.Box.BoxChild w53 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.imageDeck1]));
-		w53.Position = 2;
-		w53.Expand = false;
-		w53.Fill = false;
-		this.hbox4.Add(this.vbox4);
-		global::Gtk.Box.BoxChild w54 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox4]));
-		w54.Position = 0;
+		global::Gtk.Box.BoxChild w54 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.imageDeck1]));
+		w54.Position = 2;
 		w54.Expand = false;
 		w54.Fill = false;
+		this.hbox4.Add(this.vbox4);
+		global::Gtk.Box.BoxChild w55 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox4]));
+		w55.Position = 0;
+		w55.Expand = false;
+		w55.Fill = false;
 		// Container child hbox4.Gtk.Box+BoxChild
 		this.vbox7 = new global::Gtk.VBox();
 		this.vbox7.Name = "vbox7";
@@ -737,31 +745,31 @@ public partial class MainWindow
 		this.label13.Name = "label13";
 		this.label13.LabelProp = global::Mono.Unix.Catalog.GetString("Tie Cards");
 		this.vbox7.Add(this.label13);
-		global::Gtk.Box.BoxChild w55 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.label13]));
-		w55.Position = 0;
-		w55.Expand = false;
-		w55.Fill = false;
+		global::Gtk.Box.BoxChild w56 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.label13]));
+		w56.Position = 0;
+		w56.Expand = false;
+		w56.Fill = false;
 		// Container child vbox7.Gtk.Box+BoxChild
 		this.labelTieCardCount = new global::Gtk.Label();
 		this.labelTieCardCount.Name = "labelTieCardCount";
 		this.labelTieCardCount.LabelProp = global::Mono.Unix.Catalog.GetString("0");
 		this.vbox7.Add(this.labelTieCardCount);
-		global::Gtk.Box.BoxChild w56 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.labelTieCardCount]));
-		w56.Position = 1;
-		w56.Expand = false;
-		w56.Fill = false;
+		global::Gtk.Box.BoxChild w57 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.labelTieCardCount]));
+		w57.Position = 1;
+		w57.Expand = false;
+		w57.Fill = false;
 		// Container child vbox7.Gtk.Box+BoxChild
 		this.imageDeck3 = new global::Gtk.Image();
 		this.imageDeck3.Name = "imageDeck3";
 		this.vbox7.Add(this.imageDeck3);
-		global::Gtk.Box.BoxChild w57 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.imageDeck3]));
-		w57.Position = 2;
-		w57.Expand = false;
-		w57.Fill = false;
-		this.hbox4.Add(this.vbox7);
-		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox7]));
+		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.vbox7[this.imageDeck3]));
 		w58.Position = 2;
+		w58.Expand = false;
 		w58.Fill = false;
+		this.hbox4.Add(this.vbox7);
+		global::Gtk.Box.BoxChild w59 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox7]));
+		w59.Position = 2;
+		w59.Fill = false;
 		// Container child hbox4.Gtk.Box+BoxChild
 		this.vbox5 = new global::Gtk.VBox();
 		this.vbox5.Name = "vbox5";
@@ -771,37 +779,37 @@ public partial class MainWindow
 		this.label12.Name = "label12";
 		this.label12.LabelProp = global::Mono.Unix.Catalog.GetString("Cards in Deck:");
 		this.vbox5.Add(this.label12);
-		global::Gtk.Box.BoxChild w59 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.label12]));
-		w59.Position = 0;
-		w59.Expand = false;
-		w59.Fill = false;
+		global::Gtk.Box.BoxChild w60 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.label12]));
+		w60.Position = 0;
+		w60.Expand = false;
+		w60.Fill = false;
 		// Container child vbox5.Gtk.Box+BoxChild
 		this.labelP2CardCount = new global::Gtk.Label();
 		this.labelP2CardCount.Name = "labelP2CardCount";
 		this.labelP2CardCount.LabelProp = global::Mono.Unix.Catalog.GetString("0");
 		this.vbox5.Add(this.labelP2CardCount);
-		global::Gtk.Box.BoxChild w60 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.labelP2CardCount]));
-		w60.Position = 1;
-		w60.Expand = false;
-		w60.Fill = false;
+		global::Gtk.Box.BoxChild w61 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.labelP2CardCount]));
+		w61.Position = 1;
+		w61.Expand = false;
+		w61.Fill = false;
 		// Container child vbox5.Gtk.Box+BoxChild
 		this.imageDeck2 = new global::Gtk.Image();
 		this.imageDeck2.Name = "imageDeck2";
 		this.vbox5.Add(this.imageDeck2);
-		global::Gtk.Box.BoxChild w61 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.imageDeck2]));
-		w61.Position = 2;
-		w61.Expand = false;
-		w61.Fill = false;
-		this.hbox4.Add(this.vbox5);
-		global::Gtk.Box.BoxChild w62 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox5]));
-		w62.Position = 4;
+		global::Gtk.Box.BoxChild w62 = ((global::Gtk.Box.BoxChild)(this.vbox5[this.imageDeck2]));
+		w62.Position = 2;
 		w62.Expand = false;
 		w62.Fill = false;
-		this.vbox3.Add(this.hbox4);
-		global::Gtk.Box.BoxChild w63 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hbox4]));
-		w63.Position = 5;
+		this.hbox4.Add(this.vbox5);
+		global::Gtk.Box.BoxChild w63 = ((global::Gtk.Box.BoxChild)(this.hbox4[this.vbox5]));
+		w63.Position = 4;
 		w63.Expand = false;
 		w63.Fill = false;
+		this.vbox3.Add(this.hbox4);
+		global::Gtk.Box.BoxChild w64 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hbox4]));
+		w64.Position = 5;
+		w64.Expand = false;
+		w64.Fill = false;
 		this.Add(this.vbox3);
 		if ((this.Child != null))
 		{
