@@ -1,0 +1,323 @@
+﻿[
+  //Das Dateiformat weicht vom ursprünglichen ab um Databinding zu vereinfachen.
+  {
+    "name": "Bulbasaur",
+    "flavorText": "Bulbasaur uses its bulb to store extra energy. This makes it possible for Bulbasaur to survive for days without eating.",
+    "texture": "./card_textures/Bulbasaur.png",
+    "type": "Grass",
+    "hp": 45,
+    "atk": 70,
+    "def": 50,
+    "spd": 50
+  },
+  {
+    "name": "Charmander",
+    "flavorText": "Physically, Charmander has a slender body, a short nose, and a long tail, as well as other lizard-like characteristics.",
+    "texture": "./card_textures/Charmander.png",
+    "type": "Fire",
+    "hp": 40,
+    "atk": 60,
+    "def": 45,
+    "spd": 65
+  },
+  {
+    "name": "Squirtle",
+    "flavorText": "Squirtle appears to be based on turtles.",
+    "texture": "./card_textures/Squirtle.png",
+    "type": "Water",
+    "hp": 75,
+    "atk": 50,
+    "def": 60,
+    "spd": 45
+  },
+  {
+    "name": "Butterfree",
+    "flavorText": "Its design appears to be based on the Black-veined White butterfly.",
+    "texture": "./card_textures/Butterfree.png",
+    "type": "Grass",
+    "hp": 50,
+    "atk": 45,
+    "def": 50,
+    "spd": 70
+  },
+  {
+    "name": "Beedrill",
+    "flavorText": "Bzzz Bzzz, run!",
+    "texture": "./card_textures/Beedrill.png",
+    "type": "Grass",
+    "hp": 50,
+    "atk": 60,
+    "def": 35,
+    "spd": 75
+  },
+  {
+    "name": "Pidgeotto",
+    "flavorText": "Pidgeotto is a raptor-like avian Pokémon.",
+    "texture": "./card_textures/Pidgeotto.png",
+    "type": "Fire",
+    "hp": 65,
+    "atk": 60,
+    "def": 45,
+    "spd": 75
+  },
+  {
+    "name": "Rattata",
+    "flavorText": "Rattata is a small, quadruped rodent Pokémon. Its most notable feature is its large teeth.",
+    "texture": "./card_textures/Rattata.png",
+    "type": "Fire",
+    "hp": 30,
+    "atk": 50,
+    "def": 35,
+    "spd": 90
+  },
+  {
+    "name": "Arbok",
+    "flavorText": "Arbok is a serpent like Pokémon with purple scales all over its body.",
+    "texture": "./card_textures/Arbok.png",
+    "type": "Fire",
+    "hp": 50,
+    "atk": 80,
+    "def": 60,
+    "spd": 70
+  },
+  {
+    "name": "Eevee",
+    "flavorText": "This is the favorite Pokémon of Mr. Kramp, one of the game developers!",
+    "texture": "./card_textures/Eevee.png",
+    "type": "Grass",
+    "hp": 55,
+    "atk": 55,
+    "def": 40,
+    "spd": 90
+  },
+  {
+    "name": "Vaporeon",
+    "flavorText": "Vaporeon is mostly found in urban settings and is rarely seen in the wild.",
+    "texture": "./card_textures/Vaporeon.png",
+    "type": "Water",
+    "hp": 90,
+    "atk": 50,
+    "def": 50,
+    "spd": 50
+  },
+  {
+    "name": "Flareon",
+    "flavorText": "Flareon stores and heats inhaled air in this sac, and then exhales it as fire.",
+    "texture": "./card_textures/Flareon.png",
+    "type": "Fire",
+    "hp": 50,
+    "atk": 90,
+    "def": 50,
+    "spd": 50
+  },
+  {
+    "name": "Lickitung",
+    "flavorText": "At over 2m, Lickitung's tongue is twice as long as its body.",
+    "texture": "./card_textures/Lickitung.png",
+    "type": "Grass",
+    "hp": 90,
+    "atk": 55,
+    "def": 75,
+    "spd": 30
+  },
+  {
+    "name": "Exeggutor",
+    "flavorText": "Exeggutor is a tall, bipedal Pokémon that strongly resembles a coconut palm or other palm tree.",
+    "texture": "./card_textures/Exeggutor.png",
+    "type": "Grass",
+    "hp": 70,
+    "atk": 75,
+    "def": 75,
+    "spd": 25
+  },
+  {
+    "name": "Exeggcute",
+    "flavorText": "Exeggcute gathers in swarms of six.",
+    "texture": "./card_textures/Exeggcute.png",
+    "type": "Grass",
+    "hp": 60,
+    "atk": 40,
+    "def": 80,
+    "spd": 40
+  },
+  {
+    "name": "Shellder",
+    "flavorText": "Shellder can develop a symbiotic relationship with Slowpoke.",
+    "texture": "./card_textures/Shellder.png",
+    "type": "Water",
+    "hp": 30,
+    "atk": 50,
+    "def": 80,
+    "spd": 30
+  },
+  {
+    "name": "Grimer",
+    "flavorText": "Grimer is a slimy, amorphous blob-like Pokémon, made of living purple sludge.",
+    "texture": "./card_textures/Grimer.png",
+    "type": "Grass",
+    "hp": 80,
+    "atk": 80,
+    "def": 50,
+    "spd": 25
+  },
+  {
+    "name": "Seel",
+    "flavorText": "Seel lives on icebergs in frigid ocean waters.",
+    "texture": "./card_textures/Seel.png",
+    "type": "Water",
+    "hp": 70,
+    "atk": 45,
+    "def": 55,
+    "spd": 45
+  },
+  {
+    "name": "Slowbro",
+    "flavorText": "Slowbro has lost the capability to feel pain due to the Shellder's poison.",
+    "texture": "./card_textures/Slowbro.png",
+    "type": "Water",
+    "hp": 80,
+    "atk": 70,
+    "def": 100,
+    "spd": 15
+  },
+  {
+    "name": "Slowpoke",
+    "flavorText": "Slowpoke has notoriously dim intellect, and often forgets what it was doing.",
+    "texture": "./card_textures/Slowpoke.png",
+    "type": "Water",
+    "hp": 90,
+    "atk": 65,
+    "def": 65,
+    "spd": 15
+  },
+  {
+    "name": "Ponyta",
+    "flavorText": "Ponyta can control its flames so that its rider is not burned by them.",
+    "texture": "./card_textures/Ponyta.png",
+    "type": "Fire",
+    "hp": 50,
+    "atk": 85,
+    "def": 55,
+    "spd": 90
+  },
+  {
+    "name": "Tentacool",
+    "flavorText": "Tentacool absorbs sunlight and refracts it using water inside its body to convert it into beam energy.",
+    "texture": "./card_textures/Tentacool.png",
+    "type": "Water",
+    "hp": 40,
+    "atk": 40,
+    "def": 45,
+    "spd": 70
+  },
+  {
+    "name": "Weepinbell",
+    "flavorText": "Weepinbell camouflages itself as a plant in the forest whilst awaiting an unwary victim.",
+    "texture": "./card_textures/Weepinbell.png",
+    "type": "Grass",
+    "hp": 65,
+    "atk": 85,
+    "def": 35,
+    "spd": 45
+  },
+  {
+    "name": "Bellsprout",
+    "flavorText": "Bellsprout is a plant-based Pokémon with a stem-like brown body.",
+    "texture": "./card_textures/Bellsprout.png",
+    "type": "Grass",
+    "hp": 50,
+    "atk": 75,
+    "def": 35,
+    "spd": 40
+  },
+  {
+    "name": "Poliwhirl",
+    "flavorText": "While Poliwhirl is capable of moving on land, it prefers to stay in the water",
+    "texture": "./card_textures/Poliwhirl.png",
+    "type": "Water",
+    "hp": 80,
+    "atk": 65,
+    "def": 65,
+    "spd": 60
+  },
+  {
+    "name": "Poliwag",
+    "flavorText": "Poliwag resembles a blue, spherical tadpole. It has large eyes and pink lips.",
+    "texture": "./card_textures/Poliwag.png",
+    "type": "Water",
+    "hp": 40,
+    "atk": 50,
+    "def": 40,
+    "spd": 90
+  },
+  {
+    "name": "Growlithe",
+    "flavorText": "Growlithe is a friendly and loyal Pokémon that will fearlessly defend its Trainer and territory from harm.",
+    "texture": "./card_textures/Growlithe.png",
+    "type": "Fire",
+    "hp": 55,
+    "atk": 70,
+    "def": 45,
+    "spd": 60
+  },
+  {
+    "name": "Golduck",
+    "flavorText": "Golduck is a fast swimmer, out-swimming even the most athletic of humans.",
+    "texture": "./card_textures/Golduck.png",
+    "type": "Water",
+    "hp": 65,
+    "atk": 80,
+    "def": 70,
+    "spd": 50
+  },
+  {
+    "name": "Psyduck",
+    "flavorText": "Psyduck is a yellow Pokémon that resembles a duck or bipedal platypus.",
+    "texture": "./card_textures/Psyduck.png",
+    "type": "Water",
+    "hp": 70,
+    "atk": 50,
+    "def": 50,
+    "spd": 50
+  },
+  {
+    "name": "Venonat",
+    "flavorText": "Venonat has a round body covered in purple fur.",
+    "texture": "./card_textures/Venonat.png",
+    "type": "Grass",
+    "hp": 60,
+    "atk": 55,
+    "def": 50,
+    "spd": 45
+  },
+  {
+    "name": "Paras",
+    "flavorText": "Red-and-yellow mushrooms known as tochukaso grow on this Pokémon's back.",
+    "texture": "./card_textures/Paras.png",
+    "type": "Grass",
+    "hp": 35,
+    "atk": 70,
+    "def": 60,
+    "spd": 25
+  },
+  {
+    "name": "Gloom",
+    "flavorText": "Gloom is a blue, bipedal Pokémon with rudimentary hands and feet.",
+    "texture": "./card_textures/Gloom.png",
+    "type": "Water",
+    "hp": 60,
+    "atk": 65,
+    "def": 70,
+    "spd": 35
+  },
+  {
+    "name": "Vulpix",
+    "flavorText": "Vulpix is a small, quadruped, fox-like Pokémon.",
+    "texture": "./card_textures/Vulpix.png",
+    "type": "Fire",
+    "hp": 45,
+    "atk": 55,
+    "def": 40,
+    "spd": 65
+  }
+]
