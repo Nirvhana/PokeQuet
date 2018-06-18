@@ -50,6 +50,8 @@ public partial class MainWindow : Gtk.Window
         imageDeck1.File = "./images/pokemonCardBack3.png";
         imageDeck2.File = "./images/pokemonCardBack3.png";
         imageDeck3.File = "./images/pokemonCardBack3.png";
+        imageDeck1.Visible = false;
+        imageDeck2.Visible = false;
         imageDeck3.Visible = false;
 		this.startingPlayer = startingPlayer;
         this.deckSize = deckSize;
@@ -110,6 +112,10 @@ public partial class MainWindow : Gtk.Window
     {
         Deck.FillDecksFromCardPool(CardPool, Player1.Deck, Player2.Deck, deckSize);
         TieCards.Clear();
+
+        //Zeige Decks beider Spieler an.
+        imageDeck1.Visible = true;
+        imageDeck2.Visible = true;
 
         //Falls Spieler 1 anfängt oder ein Zufallspieler und eine zufällige Zahl(0 oder 1) gleich 0 ist(50% Chance)
 		if (startingPlayer == 1 || startingPlayer == 0 && RNG.Next(2) == 0)
